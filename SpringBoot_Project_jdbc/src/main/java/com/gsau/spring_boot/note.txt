@@ -1,0 +1,18 @@
+mysql Zip版Windows下安装
+一.安装位置：D:\DevelopmentTool\mysql5.7.25
+二.安装步骤
+    1.以管理员身份进入cmd
+    2.切换到安装位置 D:\DevelopmentTool\mysql5.7.25\bin>
+    3.执行安装  D:\DevelopmentTool\mysql5.7.25\bin>mysqld install
+        问题1：The service already exists!
+             原因：之前安装的没有卸载干净
+             解决：sc delete mysql
+    4.查取初始化root密码  D:\DevelopmentTool\mysql5.7.25\bin>mysqld --initialize --console
+    5.启动mysql服务 net start mysql
+    6.进入mysql  mysql -uroot -p[第四步查取的密码]
+    7.设置root用户的密码 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'
+    8.创建新用户：       mysql> CREATE USER 'hadoop'@'%' IDENTIFIED WITH mysql_native_password BY 'hadoop';
+    9.授权远程数据库:    mysql> grant all privileges on *.* to 'hadoop'@'%';
+    10.授权基本的查询修改权限，按需求设置
+                        mysql> grant select,insert,update,delete,create,drop,alter on *.* to 'hadoop'@'%';
+    11.查看用户权限      mysql> show grants for 'hadoop'@'%';
