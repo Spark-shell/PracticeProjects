@@ -62,5 +62,19 @@
         描述： 方法执行后的返回值（仅当方法执行之后的判断有效，如‘unless'， ’cache put’的表达式 ’cache evict’的表达式beforeInvocation=false）
         示例： #result
    相关的配置案例说明：https://www.cnblogs.com/yueshutong/p/9381540.html
-
+四.SpringBoot对消息队列(MQ)的支持
+         1.异步消息的主要目的是为了系统与系统之间的通信，所谓异步消息即消息发送者无需等待消息接收者的处理以及返回，甚至无需关心消息是否发送成功
+        2.在异步消息中有两个很重要的概念，即消息代理和目的地，当消息发送者发送消息之后，消息将由消息代理接管，消息代理保证消息传递到指定目的地。
+        3.异步消息主要有两种目的地形式，队列（queue）和主题(topic)，队列用于点对点形式的消息通信，主题用于发布订阅式的消息通信。
+     4.1 目的地形式分类
+        4.1.1 点对点式
+            当消息发送者发送消息，消息代理将消息后将消息放进一个队列里，当有消息接收者来接收消息的时候，消息将从队列中取出传递给消息接收者，这时候队列里就没有了这条消息。
+        点对点式确保每一条消息只有唯一的发送者和接收者，但这并不能说明只有一个接收者能够从队列中接收消息，因为队列中有多个消息，点对点式只保证每一条消息只有唯一的发送者和接收者
+        4.1.2 发布/订阅式
+            发布订阅式是消息发送者发送消息到主题，而多个消息接收者监听这个主题，此时的消息发送者和接收者分别叫做发布者和订阅者
+     4.2 企业级消息代理
+        JMS即JAVA消息服务，是基于JVM的消息代理规范，ActiveMQ是一个JMS的实现,AMQP也是一个消息代理的规范，他不仅兼容JMS，还支持跨语言和平台，AMQP的主要实现是RabbitMQ
+     4.3 Spring以及SpringBoot对消息的支持
+        Spring针对JMS和RabbitMQ分别提供了JmsTemplete和RabbitTemplete来发送消息。为我们提供了@JmsListener,@RabbitListener注解来监听消息代理发送的消息。我们分别需要通过@EnableJms和@EnableRabbit来开启支持
+      SpringBoot自动配置了上述@EnableJms，@EnableRabbit，JmsTemplete，RabbitTemplete的支持，同时我们可以在application.properties文件中分别以spring.activemq和spring.rabbitmq来分别配置所需的属性。
 
