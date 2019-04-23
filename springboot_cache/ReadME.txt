@@ -98,6 +98,11 @@
         7.Connection:       连接，对于RabbitMQ而言，其实就是一个位于客户端和Broker之间的TCP连接。
         8.Channel:          信道，仅仅创建了客户端到Broker之间的连接后，客户端还是不能发送消息的。需要为每一个Connection创建Channel，AMQP协议规定只有通过Channel才能执行AMQP的命令。一个Connection可以包含多个Channel。之所以需要Channel，是因为TCP连接的建立和释放都是十分昂贵的，如果一个客户端每一个线程都需要与Broker交互，如果每一个线程都建立一个TCP连接，暂且不考虑TCP连接是否浪费，就算操作系统也无法承受每秒建立如此多的TCP连接。RabbitMQ建议客户端线程之间不要共用Channel，至少要保证共用Channel的线程发送消息必须是串行的，但是建议尽量共用Connection。
         9.Command:          AMQP的命令，客户端通过Command完成与AMQP服务器的交互来实现自身的逻辑。例如在RabbitMQ中，客户端可以通过publish命令发送消息，txSelect开启一个事务，txCommit提交一个事务。
-
-
-
+五.springboot的任务
+    5.1 异步任务
+        Service 层的方法上使用  @Async
+        Application启动类上使用  @EnableAsync
+    5.2 定时任务
+        Service 层的方法上使用    @Scheduled(cron = "* * * * * MON-SAT")   表示此方法是定时执行的方法，定时规则就是cron指定的
+        Application启动类上使用   @@EnableScheduling  开启定时注解功能
+    5.3 邮件任务
