@@ -2,6 +2,7 @@ package com.gsau.cache.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class securityController {
@@ -22,26 +23,17 @@ public class securityController {
     }
 
     @GetMapping("/level1/{path}")
-    public String level1() {
-        return prefix + "login";
+    public String level1(@PathVariable("path") String path) {
+        return prefix + "level1/"+path;
     }
 
     @GetMapping("/level2/{path}")
-    public String level2() {
-        return "success";
+    public String level2(@PathVariable("path") String path) {
+        return prefix + "level2/"+path;
     }
 
     @GetMapping("/level3/{path}")
-    public String level3() {
-        return "success";
-    }
-
-    /**
-     *
-     * @return
-     */
-    @GetMapping("/level4/{path}")
-    public String level4() {
-        return "success";
+    public String level3(@PathVariable("path") String path) {
+        return prefix + "level3/"+path;
     }
 }

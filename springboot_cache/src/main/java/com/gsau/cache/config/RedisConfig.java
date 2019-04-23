@@ -26,7 +26,7 @@ import java.util.List;
  * @date 2019/4/22 14:46
  * @Desc Redis缓存配置，缓存对象存储配置成 JSON 方式存储
  */
-@Configuration
+// @Configuration
 public class RedisConfig {
     // /**
     //  * 定制RedisTemplate
