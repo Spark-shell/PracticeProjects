@@ -13,7 +13,7 @@ public class securityController {
      */
     @GetMapping("/")
     public String index() {
-        return "success";
+        return "welcome";
     }
 
     @GetMapping("/userlogin")
