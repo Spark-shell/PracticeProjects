@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class securityController {
     private final String prefix = "pages/";
 
+    /**
+     * index
+     * @return
+     */
     @GetMapping("/")
     public String index() {
         return "success";
