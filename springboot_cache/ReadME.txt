@@ -114,4 +114,6 @@
                 </dependency>
                 <!--添加邮件场景启动器 end-->
         第二步：在proertis中配置邮箱信息
+六.springboot 安全框架
+    6.1
 

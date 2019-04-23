@@ -19,7 +19,7 @@ public class ScheduledTaskService {
      *  cron = "* * * * * *" 定时表达式，总共六位代表的含义是
      *  cron = "秒 分 时 日 月 周几"
      */
-    @Scheduled(cron = "* * * * * MON-SAT")
+    @Scheduled(cron = "0 0 * * * MON-SAT")
     public void hello(){
         Date day=new Date();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
