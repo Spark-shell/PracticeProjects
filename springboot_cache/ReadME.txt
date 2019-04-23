@@ -106,3 +106,12 @@
         Service 层的方法上使用    @Scheduled(cron = "* * * * * MON-SAT")   表示此方法是定时执行的方法，定时规则就是cron指定的
         Application启动类上使用   @@EnableScheduling  开启定时注解功能
     5.3 邮件任务
+        第一步：添加邮件场景启动依赖
+               <!--添加邮件场景启动器 start-->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-email</artifactId>
+                </dependency>
+                <!--添加邮件场景启动器 end-->
+        第二步：在prioertis中配置邮箱信息
+
