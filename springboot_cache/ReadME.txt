@@ -122,5 +122,6 @@
         6.1.4. permitAll表示该请求任何人都可以访问，.anyRequest().authenticated(),表示其他的请求都必须要有权限认证。
         6.1.5. 这里我们可以通过匹配器来匹配路径，比如antMatchers方法，假设我要管理员才可以访问admin文件夹下的内容，我可以这样来写：.antMatchers("/admin/**").hasRole("ROLE_ADMIN")，也可以设置admin文件夹下的文件可以有多个角色来访问，写法如下：.antMatchers("/admin/**").hasAnyRole("ROLE_ADMIN","ROLE_USER")
         6.1.6. 可以通过hasIpAddress来指定某一个ip可以访问该资源,假设只允许访问ip为210.210.210.210的请求获取admin下的资源，写法如下.antMatchers("/admin/**").hasIpAddress("210.210.210.210")
-        6.1.7. 更多的权限控制方式参看下表：
-
+    6.2 使用spring thymeleaf和security的时候页面需要引入他们的名称空间
+        <html xmlns:th="http://www.thymeleaf.org"
+        	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
