@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsau.cache.mapper.EmployeeMapper">
+    <!--查询-->
+    <select id="getEmpById" resultType="com.gsau.cache.entity.Employee">
+        select *
+        from employee
+        where id = #{id}
+    </select>
+    <!--查询-->
+    <select id="getEmpByLastName" resultType="com.gsau.cache.entity.Employee" >
+        select *
+        from employee
+        where lastName = #{lastName}
+    </select>
+    <!--更新-->
+    <update id="updateEmp">
+        update Employee
+        set lastName = #{lastName},
+            d_id     = #{id},
+            gender   = #{gender},
+            email    = #{email}
+        where id = #{id}
+    </update>
+    <!--删除-->
+    <delete id="deleteEmp">
+        delete
+        from employee
+        where id = #{id}
+    </delete>
+    <!--添加-->
+    <insert id="insertEmp">
+        insert into employee (lastName, email, gender, d_id)
+        values (#{lastName},
+                #{email},
+                #{gender},
+                #{dId})
+    </insert>
+</mapper>
