@@ -12,6 +12,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.4.RELEASE</version>
     </parent>
+    <!--项目下的模块-->
     <modules>
         <module>api_8081</module>
         <module>provider-dept8082</module>
