@@ -10,7 +10,7 @@ springCloud 学习DEMO笔记
             compile:    编译命令，会在项目路径下生成一个target目录，目录包含一个classes文件夹，里面是class文件和字节码文件
             package:    在compile的基础上生成jar、war文件
             test:
-            site:       
-            deploy:     
-            validate:   
+            site:
+            deploy:
+            validate:
 
