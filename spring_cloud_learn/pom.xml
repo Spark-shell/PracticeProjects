@@ -5,7 +5,6 @@
     <groupId>com.gsau</groupId>
     <artifactId>spring_cloud_learn</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring_cloud_learn</name>
     <packaging>pom</packaging>
     <description>Spring Cloud 练习DEMO父项目</description>
     <parent>
@@ -15,6 +14,7 @@
     </parent>
     <modules>
         <module>api_8081</module>
+        <module>provider-dept8082</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
