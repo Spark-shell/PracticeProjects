@@ -85,7 +85,7 @@
 
     <build>
         <!--finalName 父工程名称-->
-        <finalName>spring-cloud-study</finalName>
+        <finalName>spring-cloud-learn</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
