@@ -9,8 +9,8 @@ springCloud 学习DEMO笔记
             install:    在package的基础上，会在本地maven仓库生成jar文件，供其他项目使用
             compile:    编译命令，会在项目路径下生成一个target目录，目录包含一个classes文件夹，里面是class文件和字节码文件
             package:    在compile的基础上生成jar、war文件
-            test:       删除项目路径下的target文件，但是不会删除本地的maven仓库已经生成的jar文件
-            site:       删除项目路径下的target文件，但是不会删除本地的maven仓库已经生成的jar文件
-            deploy:     删除项目路径下的target文件，但是不会删除本地的maven仓库已经生成的jar文件
-            validate:   删除项目路径下的target文件，但是不会删除本地的maven仓库已经生成的jar文件
+            test:
+            site:       
+            deploy:     
+            validate:   
 
