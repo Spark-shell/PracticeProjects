@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gsau</groupId>
+        <artifactId>spring_cloud_learn</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>api_8081</artifactId>
+    <description>子模块块一启动端口8081</description>
+
+    <dependencies>
+        <!--lombok主要用来简化代码的编写量,常用注解含义
+            @Setter                 //set方法
+            @Getter                 //get方法
+            @Data                   //该注解使用在类上，该注解会提供getter、setter、equals、canEqual、hashCode、toString方法。
+            @Log(这是一个泛型注解，具体有很多种形式)
+            @AllArgsConstructor     //该注解使用在类上，该注解提供一个全参数的构造方法，默认不提供无参构造
+            @NoArgsConstructor      //该注解使用在类上，该注解提供一个无参构造
+            @EqualsAndHashCode      //该注解使用在类上，该注解在类级别注释会同时生成equals和hashCode。
+            @NonNull                //该注解使用在属性上，该注解用于属的非空检查，当放在setter方法的字段上，将生成一个空检查，如果为空，则抛出NullPointerException。
+该注解会默认是生成一个无参构造。
+            @Cleanup                    //该注解使用在属性前，该注解是用来保证分配的资源被释放。在本地变量上使用该注解，任何后续代码都将封装在try/finally中，确保当前作用于中的资源被释放。默认@Cleanup清理的方法为close，可以使用value指定不同的方法名称
+            @ToString
+            @RequiredArgsConstructor    //该注解使用在类上，使用类中所有带有 @NonNull 注解的或者带有 final 修饰的成员变量生成对应的构造方法
+            @Value                      //这个注解用在 类 上，会生成含所有参数的构造方法，get 方法，此外还提供了equals、hashCode、toString 方法
+            @SneakyThrows               //该注解使用在方法上，这个注解用在 方法 上，可以将方法中的代码用 try-catch 语句包裹起来，捕获异常并在 catch 中用 Lombok.sneakyThrow(e) 把异常抛出，可以使用 @SneakyThrows(Exception.class) 的形式指定抛出哪种异常。该注解需要谨慎使用
+            @Synchronized
+        -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--增加Feign的依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+    </dependencies>
+    <!--在<build>中，
+        <pluginManagement>与<plugins>并列，两者之间的关系类似于<dependencyManagement>与<dependencies>之间的关系。
+        <pluginManagement>中也配置<plugin>，其配置参数与<plugins>中的<plugin>完全一致。只是，
+        <pluginManagement>往往出现在父项目中，其中配置的<plugin>往往通用于子项目。
+        子项目中只要在<plugins>中以<plugin>声明该插件，该插件的具体配置参数则继承自父项目中<pluginManagement>
+        对该插件的配置，从而避免在子项目中进行重复配置
+        -->
+    <build>
+        <!--给出构建过程中需哟啊用到的插件
+                groupId
+                artifactId
+                version
+                extensions，     是否加载该插件的扩展，默认false
+                inherited，      该插件的configuration中的配置是否可以被（继承该POM的其他Maven项目）继承，默认true
+                configuration，  该插件所需要的特殊配置，在父子项目之间可以覆盖或合并
+                dependencies，   该插件所特有的依赖类库
+                executions，     该插件的某个goal（一个插件中可能包含多个goal）的执行方式。一个execution有如下设置：
+                id，             唯一标识
+                goals，          要执行的插件的goal（可以有多个），如<goal>run</goal>
+                phase，          插件的goal要嵌入到Maven的phase中执行，如verify
+                inherited，      该execution是否可被子项目继承
+                configuration，  该execution的其他配置参数
+        -->
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.3</version>
+                <!--<extensions>是执行构建过程中可能用到的其他工具，在执行构建的过程中被加入到classpath中。
+                    也可以通过<extensions>激活构建插件，从而改变构建的过程。
+                    通常，通过<extensions>给出通用插件的一个具体实现，用于构建过程。
+                    <extensions>
+                是否加载该插件的扩展，默认false-->
+                <executions>
+                    <execution>
+                        <id>generate-docs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html</backend>
+                            <doctype>book</doctype>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.restdocs</groupId>
+                        <artifactId>spring-restdocs-asciidoctor</artifactId>
+                        <version>${spring-restdocs.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
