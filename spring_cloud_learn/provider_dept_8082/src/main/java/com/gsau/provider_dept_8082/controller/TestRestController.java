@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author WangGuoQing
+ * @date 2019/4/28 12:15
+ * @Desc 
+ */
 @RestController
 public class TestRestController {
     @Autowired
