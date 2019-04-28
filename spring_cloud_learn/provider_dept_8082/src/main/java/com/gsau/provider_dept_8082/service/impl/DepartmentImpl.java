@@ -18,6 +18,7 @@ public class DepartmentImpl implements DeptService {
 
     @Autowired
     DepartmentDao departmentDao;
+
     @Override
     public boolean addDept(Department Department) {
         return departmentDao.addDept(Department);

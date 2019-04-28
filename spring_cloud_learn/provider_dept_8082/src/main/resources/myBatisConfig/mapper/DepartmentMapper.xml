@@ -3,7 +3,7 @@
 <mapper namespace="com.gsau.provider_dept_8082.dao.DepartmentDao">
     <!--插入-->
     <insert id="addDept" >
-        INSERT INTO dept(dept_name,db_source) VALUE (#{deptName},DATABASE());
+        INSERT INTO Department(dnName,dbSource) VALUE (#{dnName},#{dbSource});
     </insert>
     <select id="findById" resultType="com.gsau.api_8081.entities.Department" >
         select  * from Department where id=#{id}

@@ -11,6 +11,31 @@
     <description>部门服务消费着</description>
 
     <artifactId>consumer_dept_8083</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.gsau</groupId>
+            <artifactId>api_8081</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <!--热部署 修改后立即生效-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>
