@@ -14,11 +14,11 @@ import java.util.List;
 public interface DepartmentDao {
     /**
      * 插入
-     * @param deptEntity
+     * @param department
      *
      * @return
      */
-    boolean addDept(Department deptEntity);
+    boolean addDept(Department department);
 
     /**
      * 根据id查找
