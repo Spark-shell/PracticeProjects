@@ -1,6 +1,6 @@
 ### Eureka原理:
     Eureka 是 Netflix 出品的用于实现服务注册和发现的工具。 Spring Cloud 集成了 Eureka，并提供了开箱即用的支持。其中， Eureka 又可细分为 Eureka Server 和 Eureka Client。
- ![](..\noteImages\Eureka原理图.png)
+ ![原理图](..\noteImages\Eureka原理图.png)
 #### 1. 基本原理简介：
 上图是来自eureka的官方架构图，这是基于集群配置的eureka； 
 - 处于不同节点的eureka通过Replicate进行数据同步 
