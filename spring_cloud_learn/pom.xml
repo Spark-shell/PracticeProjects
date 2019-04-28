@@ -11,6 +11,7 @@
     <modules>
         <module>api_8081</module>
         <module>provider_dept_8082</module>
+        <module>consumer_dept_8083</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="provider_dept_8082" />
+        <module name="consumer_dept_8083" />
         <module name="api_8081" />
       </profile>
     </annotationProcessing>
