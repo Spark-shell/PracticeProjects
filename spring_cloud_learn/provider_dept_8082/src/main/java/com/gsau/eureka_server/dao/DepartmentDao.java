@@ -1,4 +1,4 @@
-package com.gsau.provider_dept_8082.dao;
+package com.gsau.eureka_server.dao;
 
 import com.gsau.api_8081.entities.Department;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,8 +1,6 @@
-package com.gsau.provider_dept_8082.service;
+package com.gsau.eureka_server.service;
 
 import com.gsau.api_8081.entities.Department;
-import com.gsau.provider_dept_8082.dao.DepartmentDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

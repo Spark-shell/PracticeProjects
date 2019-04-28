@@ -1,4 +1,4 @@
-package com.gsau.provider_dept_8082;
+package com.gsau.eureka_server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
