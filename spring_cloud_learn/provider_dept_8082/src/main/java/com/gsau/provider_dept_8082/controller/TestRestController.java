@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author WangGuoQing
  * @date 2019/4/28 12:15
@@ -20,5 +22,14 @@ public class TestRestController {
     @GetMapping("/rest/{id}")
     public Department findById(@PathVariable("id") int id) {
        return service.findById(id);
+    }
+
+    /**
+     * 全部查询
+     * @return
+     */
+    @GetMapping("/rest/list")
+    public List<Department> list() {
+       return service.findAll();
     }
 }
