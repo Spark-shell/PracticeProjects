@@ -1,4 +1,4 @@
-package com.gsau.providerdept88082;
+package com.gsau.provider_dept_8082;
 
 import com.gsau.api_8081.entities.Department;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

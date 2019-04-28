@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <!--插入-->
+    <insert id="addDept" >
+        INSERT INTO dept(dept_name,db_source) VALUE (#{deptName},DATABASE());
+    </insert>
+
+</mapper> 
