@@ -5,5 +5,10 @@
     <insert id="addDept" >
         INSERT INTO dept(dept_name,db_source) VALUE (#{deptName},DATABASE());
     </insert>
-
-</mapper> 
+    <select id="findById" resultType="com.gsau.api_8081.entities.Department" >
+        select  * from Department where id=#{id}
+    </select>
+    <select id="findById" resultType="com.gsau.api_8081.entities.Department" >
+        SELECT * FROM  Department;
+    </select>
+</mapper>

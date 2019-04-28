@@ -25,7 +25,7 @@ public interface DepartmentDao {
      * @param deptNo
      * @return
      */
-    Department findById(Long deptNo);
+    Department findById(int deptNo);
 
     /**
      * 查询全部
