@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="provider_dept_8082" />
         <module name="api_8081" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api_8081" options="-parameters" />
       <module name="demo" options="-parameters" />
+      <module name="provider_dept_8082" options="-parameters" />
     </option>
   </component>
 </project>
