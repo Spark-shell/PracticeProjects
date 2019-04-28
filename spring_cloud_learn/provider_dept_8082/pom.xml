@@ -25,12 +25,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <!--添加eureka服务依赖      end-->
+        <!--actuaotr是spring boot项目中非常强大的一个功能，有助于对应用程序进行监控和管理，通过restful api请求来监管、审计、收集应用的运行情况-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
+        <!--添加eureka服务依赖      end-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
