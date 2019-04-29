@@ -18,8 +18,7 @@ public class ConsumerController {
     //部分生产者地址，非微服务等的方式访问
     // private static final String REST_URL_PREFIX="http://localhost:8082/rest";
     //微服务的方式访问
-    private static final String REST_URL_PREFIX1="http://PROVIDER-DEPT-SEVICE-8084";
-    private static final String REST_URL_PREFIX2="http://PROVIDER-DEPT-SEVICE-8082";
+    private static final String REST_URL_PREFIX1="http://PROVIDER-DEPT-SEVICE";
     @Autowired
     RestTemplate restTemplate;
     @GetMapping(value = "/consumer/add")
@@ -32,5 +31,13 @@ public class ConsumerController {
                 REST_URL_PREFIX1+"/rest",                        //URL
                 department,                                         //数据集
                 Boolean.class);                                     //返回值类型
+    }
+    @GetMapping(value = "/consumer/list")
+    public Object list(){
+        //三个参数：url,requestMap ResponseBean.class
+        /**
+         * 发送POST请求
+         */
+        return  restTemplate.getForObject(REST_URL_PREFIX1+"/rest/list",Object.class);
     }
 }

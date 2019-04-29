@@ -1,1 +1,1 @@
-create database spring_cloud;
+create database spring_cloud_02;

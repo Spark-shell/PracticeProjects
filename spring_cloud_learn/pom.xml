@@ -13,6 +13,7 @@
         <module>provider_dept_8082</module>
         <module>consumer_dept_8083</module>
         <module>Eureka_Server_7001</module>
+        <module>provider_dept_8084</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
