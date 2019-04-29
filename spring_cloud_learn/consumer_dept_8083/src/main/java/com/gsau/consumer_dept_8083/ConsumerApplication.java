@@ -2,6 +2,7 @@ package com.gsau.consumer_dept_8083;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author WangGuoQing
@@ -9,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Desc 
  */
 @SpringBootApplication
-public class Application {
+@EnableEurekaClient
+public class ConsumerApplication {
     public static void main(String[] args) {
-        // Department department = new Department();
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 }

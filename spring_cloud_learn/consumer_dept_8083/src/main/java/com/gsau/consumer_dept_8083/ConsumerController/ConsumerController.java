@@ -15,8 +15,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 public class ConsumerController {
-    //部分生产者地址
-    private static final String REST_URL_PREFIX="http://localhost:8082/rest";
+    //部分生产者地址，非微服务等的方式访问
+    // private static final String REST_URL_PREFIX="http://localhost:8082/rest";
+    //微服务的方式访问
+    private static final String REST_URL_PREFIX="http://PROVIDER-DEPT-SEVICE";
     @Autowired
     RestTemplate restTemplate;
     @GetMapping(value = "/consumer/add")
@@ -26,8 +28,8 @@ public class ConsumerController {
          * 发送POST请求
          */
         return  restTemplate.postForObject(
-                REST_URL_PREFIX,                        //URL
-                department,                             //数据集
-                Boolean.class);                         //返回值类型
+                REST_URL_PREFIX+"/rest",                        //URL
+                department,                                         //数据集
+                Boolean.class);                                     //返回值类型
     }
 }
