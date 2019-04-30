@@ -23,6 +23,9 @@ object HelloScala {
         //调用方法
         declareVariable()
         dataType()
+        dataTypeTransform()
+        forcedTypeConversion()
+        operatorSymbol()
     }
     /**
       * @author WangGuoQing
@@ -57,6 +60,71 @@ object HelloScala {
         var name: String = "字符串"
         println(s"name=$name")
         println(name.concat("串"))
-       return ()
+        return ()
     }
+    /**
+      * @author WangGuoQing
+      * @date 2019/4/30 17:16
+      * @Desc 数据类型转换,精度从低的往高的转换
+      */
+    def dataTypeTransform(): Unit = {
+        var i: Int = 10
+        var j: Float = 20
+        println(i * j)
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/4/30 17:20
+      * @Desc scala强制类型转换：自动转换的逆过程，高精度强制转向低精度的时候，可能造成精度降低或者溢出
+      */
+    def forcedTypeConversion(): Unit = {
+        var x: Int = 23
+        var y: Double = 343.23
+        println(x)
+        println(y)
+        //强制类型转换
+        println(y.toInt)
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/4/30 17:27
+      * @Desc 运算符
+      *      1.算术运算符：=、-、*、/、%（取余）、+
+      *      2.赋值运算符：=、+=、-=、*=、/=、%=
+      *      3.比较运算符：==、!=、<、>、<=、>=
+      *      4.逻辑运算符：&& 、|| 、!
+      *      5.位运算符:<<=、>>=、&=、^=、|=
+      */
+    def operatorSymbol(): Unit = {
+        //1.算术运算符：=、-、*、/、%（取余）、+
+        var x1:Int=2
+        var y1:Int=3
+        println (s"x=$x1  y=$y1 x+y ="+ (x1+y1))
+        println (s"x=$x1  y=$y1 x-y ="+ (x1-y1))
+        println (s"x=$x1  y=$y1 x * y ="+ (x1*y1))
+        println (s"x=$x1  y=$y1 x / y ="+ (x1/y1))
+        println (s"x=$x1  y=$y1 x % y ="+ (x1%y1))
+        //2.赋值运算符：=、+=、-=、*=、/=、%=
+        x1 = 2; x1 += 5
+        println (s"x =" + x1)
+        x1 = 2; x1 -= 5
+        println (s"x =" + x1)
+        x1 = 2; x1 *= 5
+        println (s"x =" + x1)
+        x1 = 2;x1 /= 5
+        println (s"x =" + x1)
+        x1 = 2;x1 %= 5
+        println (s"x =" + x1)
+        //3.比较运算符：==、!=、<、>、<=、>=
+        //4.逻辑运算符：&& 、|| 、!
+        //5.位运算符:<<=、>>=、&=、^=、|=
+    }
+}
+/**
+  * @author WangGuoQing
+  * @date 2019/4/30 17:11
+  * @Desc
+  */
+class Dog {
+
 }
