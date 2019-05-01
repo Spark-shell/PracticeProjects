@@ -1,4 +1,5 @@
 package com.gsau
+import scala.io.StdIn
 /**
   * @author WangGuoQing
   * @date 2019/4/30 14:37
@@ -26,6 +27,7 @@ object HelloScala {
         dataTypeTransform()
         forcedTypeConversion()
         operatorSymbol()
+        kekWorldInput()
     }
     /**
       * @author WangGuoQing
@@ -95,41 +97,63 @@ object HelloScala {
       *      4.逻辑运算符：&& 、|| 、!
       *      5.位运算符:&、|、~、<<、>>、>>>
       *      6.运算符的优先级：
-      *               ^  ()[]
-      *               ^  单目运算符
-      *               ^  算数运算符
-      *               ^  位移运算符
-      *               ^  比较运算符
-      *               ^  位运算符
-      *               ^  关系运算符
-      *               ^  赋值运算符
+      *       ^  ()[]
+      *       ^  单目运算符
+      *       ^  算数运算符
+      *       ^  位移运算符
+      *       ^  比较运算符
+      *       ^  位运算符
+      *       ^  关系运算符
+      *       ^  赋值运算符
       */
     def operatorSymbol(): Unit = {
         //1.算术运算符：=、-、*、/、%（取余）、+
-        var x1:Int=2
-        var y1:Int=3
-        println (s"x=$x1  y=$y1 x+y ="+ (x1+y1))
-        println (s"x=$x1  y=$y1 x-y ="+ (x1-y1))
-        println (s"x=$x1  y=$y1 x * y ="+ (x1*y1))
-        println (s"x=$x1  y=$y1 x / y ="+ (x1/y1))
-        println (s"x=$x1  y=$y1 x % y ="+ (x1%y1))
+        var x1: Int = 2
+        var y1: Int = 3
+        println(s"x=$x1  y=$y1 x+y =" + (x1 + y1))
+        println(s"x=$x1  y=$y1 x-y =" + (x1 - y1))
+        println(s"x=$x1  y=$y1 x * y =" + (x1 * y1))
+        println(s"x=$x1  y=$y1 x / y =" + (x1 / y1))
+        println(s"x=$x1  y=$y1 x % y =" + (x1 % y1))
         //2.赋值运算符：=、+=、-=、*=、/=、%=
-        x1 = 2; x1 += 5
-        println (s"x =" + x1)
-        x1 = 2; x1 -= 5
-        println (s"x =" + x1)
-        x1 = 2; x1 *= 5
-        println (s"x =" + x1)
-        x1 = 2;x1 /= 5
-        println (s"x =" + x1)
-        x1 = 2;x1 %= 5
-        println (s"x =" + x1)
+        x1 = 2;
+        x1 += 5
+        println(s"x =" + x1)
+        x1 = 2;
+        x1 -= 5
+        println(s"x =" + x1)
+        x1 = 2;
+        x1 *= 5
+        println(s"x =" + x1)
+        x1 = 2;
+        x1 /= 5
+        println(s"x =" + x1)
+        x1 = 2;
+        x1 %= 5
+        println(s"x =" + x1)
         //3.比较运算符：==、!=、<、>、<=、>=
         //4.逻辑运算符：&& 、|| 、!
         //5.位运算符:<<=、>>=、&=、^=、|=
         //不支持三目运算符只有if else
-        val index=if(x1>y1) 20 else 30
+        val index = if (x1 > y1) 20 else 30
         println(index)
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/1 18:59
+      * @Desc 键盘输入练习
+      *
+      */
+    def kekWorldInput(): Unit = {
+        println("输入name")
+        var name = StdIn.readLine()    //从默认输入中读取一整行。如果已到达输入流的末尾，则返回“null”
+        println("输入age")
+        var age = StdIn.readInt()
+        println("输入id")
+        var id = StdIn.readInt()
+        println("输入addr")
+        var addr = StdIn.readLine()
+        println(s"name=$name \n   age=$age   \n id=$id   \n addr=$addr")
     }
 }
 /**
