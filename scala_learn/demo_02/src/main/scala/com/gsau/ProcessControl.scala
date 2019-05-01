@@ -9,7 +9,8 @@ object ProcessControl {
     def main(args: Array[String]): Unit = {
         //orderControl()
         //branchControl()
-        cycleControl()
+        forCycleControl()
+        whileCycleControl()
     }
     /**
       * @author WangGuoQing
@@ -25,7 +26,7 @@ object ProcessControl {
     /**
       * @author WangGuoQing
       * @date 2019/5/1 19:13
-      * @Desc 分支控制
+      * @Desc       分支控制
       *      1.单分支
       *      2.多分支
       *      3.双分支
@@ -58,10 +59,52 @@ object ProcessControl {
     /**
       * @author WangGuoQing
       * @date 2019/5/1 19:13
-      * @Desc 循环控制
+      * @Desc for循环控制
       */
-    def cycleControl(): Unit = {
-        //for循环
-    }
+    def forCycleControl(): Unit = {
+        //for循环  范围数据循环方式一（打印1 到 10前后封闭）
+        for (i <- 1 to 10) {
+            print(i)
+        }
+        var list = List("start", 1, 2, 4, 5, 6, "end")
+        for (item <- list) {
+            if (item == "start") {
+                println()
+            }
+            if (item != "end")
+                print(item + " <-")
+            else
+                print(item)
 
+        }
+        //for循环  范围数据循环方式二（打印1 到 10前后不封闭）
+        for (i <- 1 until 10) println("until " + i)
+        //for循环  循环守卫
+        for (i <- 1 to 100 if i < 50) println("守卫 " + i)
+        //for循环  引入变量
+        for (i <- 1 to 100; j = i + 33; if j > 50) println("引入变量 " + i + "  j(33)  " + j)
+        //for循环  嵌套循环
+        for (i <- 1 to 100; j <- i + 1 to 10) println("嵌套循环 " + i + "  j=i+1=  " + j)
+        //循环返回值  使用yield将遍历的结果返回到一个新的Vector（向量）中
+        var returnValue = for (i <- 0 to 20) yield i
+        println(returnValue)
+        //for循环 可以使用｛｝代替（）
+        for {
+            i <- 1 to 30
+            if i < 25
+            j = i * i
+        } {println((i, j))}
+        //for循环 的步长控制
+        for (i <- Range(1, 100, 2)) {
+            println(i)
+        }
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/1 20:07
+      * @Desc while循环控制
+      */
+    def whileCycleControl(): Unit = {
+
+    }
 }
