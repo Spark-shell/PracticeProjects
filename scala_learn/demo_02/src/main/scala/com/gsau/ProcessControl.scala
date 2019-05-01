@@ -3,7 +3,8 @@ import scala.io.StdIn
 /**
   * @author WangGuoQing
   * @date 2019/5/1 19:10
-  * @Desc 练习二
+  * @Desc 循环练习
+  *      1.Scala内置控制结构去掉了break和continue，推荐使用函数的风格解决break和continue的功能
   */
 object ProcessControl {
     def main(args: Array[String]): Unit = {
@@ -103,8 +104,20 @@ object ProcessControl {
       * @author WangGuoQing
       * @date 2019/5/1 20:07
       * @Desc while循环控制
+      *      1.while循环没有返回值
+      *      2.条件是一个返回值布尔值的表达式
+      *      3.不推荐用while推荐使用for
       */
     def whileCycleControl(): Unit = {
-
+        var i = 0
+        while (i < 1000) {
+            println(i)
+            i += 1
+        }
+        //do while循环
+        do {
+            println(i)
+            i += 10
+        } while (i < 10000)
     }
 }
