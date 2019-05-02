@@ -12,10 +12,14 @@ package com.gsau
   */
 object FunctionalProgramming {
     def main(args: Array[String]): Unit = {
-        function1(1,2)
+        function1(1, 2)
         function3
         function4
         function5
+        getInfo()
+        getInfo("小明",23,"12345455")
+        getInfo(name="小白")
+
     }
     //基础语法练习（Basic grammar practice）
     /**
@@ -69,7 +73,17 @@ object FunctionalProgramming {
         var i = 0
         var j = i + 1
         //函数中定义函数
-        def innerFunct(x: Int, y: Int): Any = x +"|________|"+ y
-        println("函数嵌套： "+innerFunct(i,j))
+        def innerFunct(x: Int, y: Int): Any = x + "|________|" + y
+        println("函数嵌套： " + innerFunct(i, j))
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/2 19:45
+      * @Desc  创建带有默认形参值的函数
+      *      1.如果函数存在多个参数都可以设定默认值，那么这个时候传递的参数到底是覆盖默认值，还是赋值给没有默认值的参数？
+      *      这就不确定了（默认是按照从左到右的方式覆盖），这种情况下可以采用带名参数， getInfo(name="小白")这样咯
+      */
+    def getInfo(name:String="王国庆",age:Int=12,addr:String="上海"): Any = {
+            println(s"name=$name   age=$age    addr=$addr")
     }
 }
