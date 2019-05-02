@@ -12,9 +12,10 @@ package com.gsau
   */
 object FunctionalProgramming {
     def main(args: Array[String]): Unit = {
-        println("function1 "+function1(1, 2)+
-                "\nfunction2 "+function2()
-        )
+        function1(1,2)
+        function3
+        function4
+        function5
     }
     //基础语法练习（Basic grammar practice）
     /**
@@ -34,5 +35,41 @@ object FunctionalProgramming {
         var i = 2
         var j = 3
         i + j
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/2 19:16
+      * @Desc
+      *      1.函数的形参列表可以是多个，如果函数没有形参那么调用的时候可以不使用（）括号
+      *      2.形参列表和返回值列表的数据类型可以是值类型和引用类型
+      *      3.scala中的函数可以根据函数体最后一行代码自行推断函数的返回值类型，所以可以省略return
+      */
+    def function3() {
+        println("function3函数被调用了！！！！")
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/2 19:21
+      * @Desc 因为Scala可以推断返回值类型，所以省略return关键字的场合返回值的类型也是可以省略的
+      *      1.如果函数体中使用了return关键字，那么函数就不能自行推断了，这个时候就需要明确指定返回值得类型（:String =）
+      *      2.如果不要求函数有返回值[如：def  func(){} ]，那么即使在函数体内使用了return value也是无效的
+      */
+    def function4() = {
+        var num1 = 13
+        var num2 = 12
+        (num1 + num2)
+    }
+    /**
+      * @author WangGuoQing
+      * @date 2019/5/2 19:30
+      * @Desc 如果明确无返回值或者不确定返回值类型，那么返回值的类型可以省略，或者声明成Any
+      *      1.scala中任何的语法结构都可以嵌套其他语法结构
+      */
+    def function5(): Any = {
+        var i = 0
+        var j = i + 1
+        //函数中定义函数
+        def innerFunct(x: Int, y: Int): Any = x +"|________|"+ y
+        println("函数嵌套： "+innerFunct(i,j))
     }
 }
