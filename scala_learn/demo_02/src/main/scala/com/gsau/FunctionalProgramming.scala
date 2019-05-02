@@ -19,6 +19,7 @@ object FunctionalProgramming {
         getInfo()
         getInfo("小明",23,"12345455")
         getInfo(name="小白")
+        dynamicParams(name = "12121212",1,2,4,6,3)
 
     }
     //基础语法练习（Basic grammar practice）
@@ -84,6 +85,10 @@ object FunctionalProgramming {
       *      这就不确定了（默认是按照从左到右的方式覆盖），这种情况下可以采用带名参数， getInfo(name="小白")这样咯
       */
     def getInfo(name:String="王国庆",age:Int=12,addr:String="上海"): Any = {
-            println(s"name=$name   age=$age    addr=$addr")
+        println(s"name=$name   age=$age    addr=$addr")
+    }
+    //可变参数,当有多个参数其中有一个可变参数的时候需要把可变参数放到最后一位
+    def dynamicParams(name:String,n:Int *): Any ={
+        println (n)
     }
 }
