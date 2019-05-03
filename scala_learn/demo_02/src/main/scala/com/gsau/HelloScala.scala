@@ -156,11 +156,3 @@ object HelloScala {
         println(s"name=$name \n   age=$age   \n id=$id   \n addr=$addr")
     }
 }
-/**
-  * @author WangGuoQing
-  * @date 2019/4/30 17:11
-  * @Desc
-  */
-class Dog {
-
-}
