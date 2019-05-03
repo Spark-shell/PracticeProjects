@@ -15,8 +15,9 @@ object ExceptionProcess {
             var x1: Int = 0
             var x2: Int = 1
             caluteNum(0, 1)
-            //1.表示函数的返回类型(Function Type)
-            var x: (Int) => Int = double
+            //1.表示函数的返回类型(Function Type),函数的参数是Int 返回值类型是Int，计算逻辑乘以1024
+            //var x: (Int) => Int = i=>i*1024
+            var x: (Int) => Int = (_ * 1024)
             println("--------" + x(3))
             //2.匿名函数定义， 左边是参数 右边是函数实现体
             var xx = (x: Int) => {
