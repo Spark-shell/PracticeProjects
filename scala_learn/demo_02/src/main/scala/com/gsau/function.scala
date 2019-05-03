@@ -16,10 +16,11 @@ object function {
         val sum: (Int, Int, Int) => Int = (x, y, z) => {x + y + z} //声明函数一
         val sum_1: (Int) => Int = sum(1, 2, _: Int)                 //部分应用函数
         println(sum_1(20))
-
         //从函数或者方法中返回一个函数（算法）
-        val  say=saySomeThing("开始说了...")
+        val say = saySomeThing("开始说了...")
+        var greet = greeting("Chinese")
         println(say("说什么？"))
+        println(greet("王先生"))
     }
     /**
       * 函数字面量简写方式
@@ -80,11 +81,18 @@ object function {
     }
     /**
       * 定义一个返回函数的函数
-      *     “=”号的左边是，是常见的方法定义，右边是一个函数字面量
+      * “=”号的左边是，是常见的方法定义，右边是一个函数字面量
+      *
       * @param prefix
       * @return
       */
-    def  saySomeThing(prefix:String)=(s:String)=>{
-        prefix+"    "+s
+    def saySomeThing(prefix: String) = (s: String) => {
+        prefix + "    " + s
+    }
+    def greeting(language: String) = (name: String) => {
+        language match {
+            case "Englist" => "Hello " + name
+            case "Chinese" => "你好 " + name
+        }
     }
 }
