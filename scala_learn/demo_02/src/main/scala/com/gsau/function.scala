@@ -21,7 +21,8 @@ object function {
         var greet = greeting("Chinese")
         println(say("说什么？"))
         println(greet("王先生"))
-        println(divide.isDefinedAt(0))
+        //调用偏函数
+        println(divide(12))
     }
     /**
       * 函数字面量简写方式
