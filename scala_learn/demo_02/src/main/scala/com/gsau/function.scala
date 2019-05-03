@@ -21,6 +21,7 @@ object function {
         var greet = greeting("Chinese")
         println(say("说什么？"))
         println(greet("王先生"))
+        println(divide.isDefinedAt(0))
     }
     /**
       * 函数字面量简写方式
@@ -93,6 +94,38 @@ object function {
         language match {
             case "Englist" => "Hello " + name
             case "Chinese" => "你好 " + name
+        }
+    }
+    /**
+      * 偏函数详解
+      * 函数的输入值是Int
+      * 函数的返回值是Int
+      *
+      * @return
+      */
+    def divide = new PartialFunction[Int, Int] {
+        def apply(x: Int) = 42 / x
+        def isDefinedAt(x: Int) = x != 0
+        /**
+          * 声明一个偏函数，输入Int返回String
+          * isDefinedAt（判断输入值是否在值域内）
+          */
+        val convertLowNumToString = new PartialFunction[Int, String] {
+            override def isDefinedAt(x: Int) = x > 0 && x < 6
+            override def apply(v1: Int): String = v1.toString
+        }
+        //偏函数很棒的特性就是可以将它们连在一起使用，比如一个可以计算奇数另一个可以计算偶数，那他们连起来就可以计算所有的整数了
+        val convert1to5=new PartialFunction[Int,String] {
+            override def isDefinedAt(x: Int)= x >=1 && x<=5
+            override def apply(v1: Int): String = v1+"->"
+        }
+        val convert5to10=new PartialFunction[Int,String] {
+            override def isDefinedAt(x: Int)=  x>5&&x<=10
+            override def apply(v1: Int): String = v1+"->"
+        }
+        val nums=convert1to5 orElse convert5to10            //orElse 是PartialFunction特质特有的
+        for(item<- List.range(1,10)){
+            println(nums(item))
         }
     }
 }
