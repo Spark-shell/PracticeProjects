@@ -8,9 +8,11 @@ object function {
     def main(args: Array[String]): Unit = {
         test1
     }
-
+    /**
+      * 函数字面量简写方式
+      */
     def test1(): Unit = {
-        val x = List.range(1, 100)
+        val x = List.range(1, 10)
         //给list常量x得分 filter方法传入匿名函数，创建一个只有偶数的新list
         val events = x.filter((i: Int) => i % 2 == 0)   //定义函数字面量的明确形式
         val events1 = x.filter(i => i % 2 == 0)         //简化一：因为scala变异器可以推断出i是一个Int所以可以不用显示指定
@@ -24,5 +26,11 @@ object function {
              2.=>       转换器
              3.i % 2 == 0 函数体
          */
+        //示例二
+        x.foreach((i:Int)=>print("   "+i))     //定义函数字面量的明确形式
+        x.foreach((i)=>print("   "+i))         //简化一
+        x.foreach(i=>print("   "+i))           //简化二
+        x.foreach(println(_))                  //简化三
+        x.foreach(println)                  //简化三
     }
 }
