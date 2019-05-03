@@ -23,6 +23,7 @@ object function {
         println(greet("王先生"))
         //调用偏函数
         println(divide(12))
+        driver
     }
     /**
       * 函数字面量简写方式
@@ -116,17 +117,44 @@ object function {
             override def apply(v1: Int): String = v1.toString
         }
         //偏函数很棒的特性就是可以将它们连在一起使用，比如一个可以计算奇数另一个可以计算偶数，那他们连起来就可以计算所有的整数了
-        val convert1to5=new PartialFunction[Int,String] {
-            override def isDefinedAt(x: Int)= x >=1 && x<=5
-            override def apply(v1: Int): String = v1+"->"
+        val convert1to5 = new PartialFunction[Int, String] {
+            override def isDefinedAt(x: Int) = x >= 1 && x <= 5
+            override def apply(v1: Int): String = v1 + "->"
         }
-        val convert5to10=new PartialFunction[Int,String] {
-            override def isDefinedAt(x: Int)=  x>5&&x<=10
-            override def apply(v1: Int): String = v1+"->"
+        val convert5to10 = new PartialFunction[Int, String] {
+            override def isDefinedAt(x: Int) = x > 5 && x <= 10
+            override def apply(v1: Int): String = v1 + "->"
         }
-        val nums=convert1to5 orElse convert5to10            //orElse 是PartialFunction特质特有的
-        for(item<- List.range(1,10)){
+        val nums = convert1to5 orElse convert5to10            //orElse 是PartialFunction特质特有的
+        for (item <- List.range(1, 10)) {
             println(nums(item))
         }
+    }
+    //函数综合使用案例
+    def driver {
+        val fx = (x: Double) => 3 * x + math.sin(x) - math.pow(math.E, x)
+        val fxPrime = (x: Double) => 3 + math.cos(x) - math.pow(math.E, x)
+        val initalGuess = 0.0
+        val tolerance = 0.00005
+        val answer = newTonsMethod(fx,fxPrime,initalGuess,tolerance)
+        println("===end=====")
+    }
+    def newTonsMethod(fx: Double => Double,
+                      fxPrime: Double => Double,
+                      x: Double,
+                      tolerance: Double): Double = {
+        var x1 = x
+        var xNext = newTonsMethodHelper(fx, fxPrime, x1)
+        while (math.abs(x1 - 1) > tolerance) {   //math.abs取绝对值
+            x1 = xNext
+            println(xNext)
+            xNext = newTonsMethodHelper(fx, fxPrime, x1)
+        }
+        xNext
+    }
+    def newTonsMethodHelper(fx: Double => Double,
+                            fxPrime: Double => Double,
+                            x: Double): Double = {
+        x - fx(x) / fxPrime(1)
     }
 }
