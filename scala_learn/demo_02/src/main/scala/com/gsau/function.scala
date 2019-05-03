@@ -28,7 +28,16 @@ object function {
         println(list.filter(f2))
         println(list.filter(f3))
         println(list.filter(f4))
-
+        //隐式声明函数(implicit approach)
+        val add=(x:Int,y:Int)=>{x+y}
+        val add1=(x:Int,y:Int)=>x+y
+        //显式声明函数(explicit approach)
+        val add2:(Int,Int)=>Int =(x,y)=>{x+y}
+        val add3:(Int,Int)=>Int =(x,y)=>x+y
+        println(add(1,2))
+        println(add1(1,2))
+        println(add2(1,2))
+        println(add3(1,2))
     }
     /**
       * 函数字面量简写方式
