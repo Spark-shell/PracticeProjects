@@ -14,7 +14,9 @@ object function {
         println(c(30))
         println(pow(1, 3))
         val sum: (Int, Int, Int) => Int = (x, y, z) => {x + y + z} //声明函数一
-        val sum_1: (Int) => Int = sum(1, 2, _: Int)                 //部分应用函数
+        val sum_1: (Int) => Int = sum(1, 2, _: Int)                 //使用
+
+        // 部分应用函数
         println(sum_1(20))
         //从函数或者方法中返回一个函数（算法）
         val say = saySomeThing("开始说了...")
