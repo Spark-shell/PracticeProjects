@@ -14,6 +14,9 @@
         <module>consumer_dept_8083</module>
         <module>Eureka_Server_7001</module>
         <module>provider_dept_8084</module>
+        <module>config_eureka_server_7001</module>
+        <module>config_3344</module>
+        <module>config_client_3355</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
