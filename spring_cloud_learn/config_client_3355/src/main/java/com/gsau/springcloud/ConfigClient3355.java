@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description
  */
 @SpringBootApplication
-public class ConfigClient3355App {
+public class ConfigClient3355 {
     public static void main(String[] args) {
-        SpringApplication.run(ConfigClient3355App.class, args);
+        SpringApplication.run(ConfigClient3355.class, args);
     }
 }

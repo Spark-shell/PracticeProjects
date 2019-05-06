@@ -17,6 +17,8 @@
         <module>config_eureka_server_7001</module>
         <module>config_3344</module>
         <module>config_client_3355</module>
+        <module>config_client_8201</module>
+        <module>config_client_8202</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

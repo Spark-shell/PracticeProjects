@@ -1,20 +1,19 @@
-package com.gsau.springcloud.test;
+package test;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 /**
- * @author GongXings
- * @createTime 31 19:45
- * @description
+ * @author WangGuoQing
+ * @date 2019/5/6 10:36
+ * @Desc   @Value("${spring.application.name}")获取配置文件中的配置信息
  */
 @RestController
 public class ConfigClientRest {
-
+    //
     @Value("${spring.application.name}")
     private String applicationName;
-    @Value("${eureka.client.server-url.defaultZone}")
+    @Value("${eureka.client.service-url.defaultZone}")
     private String eurekaServers;
     @Value("${server.port}")
     private String port;
@@ -26,7 +25,7 @@ public class ConfigClientRest {
                 +"eurekaServers:"+this.eurekaServers
                 +"port:"+this.port);
         return "applicationName:"+this.applicationName
-                +"eurekaServers:"+this.eurekaServers
-                +"port:"+this.port;
+                +"\neurekaServers:"+this.eurekaServers
+                +"\nport:"+this.port;
     }
 }
