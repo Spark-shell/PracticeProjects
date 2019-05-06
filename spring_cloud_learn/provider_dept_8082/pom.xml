@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>provider_dept_8082</artifactId>
-
     <dependencies>
         <dependency>
             <groupId>com.gsau</groupId>

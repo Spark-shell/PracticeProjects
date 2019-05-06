@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9badae82-d638-4d73-a903-09b48d107a15" name="Default Changelist" comment="spring_cloud_config">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_eureka_server_7001/src/main/java/com/gsau/eureka_server/ConfigEurekaSersverApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/ConfigProviderDept8021Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/controller/TestRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/dao/DepartmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/service/DeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/service/impl/DepartmentImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/exeSql/createDataBase.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/exeSql/createTables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/myBatisConfig/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/myBatisConfig/myBatisConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring_cloud_config_repository" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_cloud_config_repository" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_3344/target/classes/com/gsau/config/ConfigSersverApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_eureka_server_7001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config_eureka_server_7001/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_provider_dept_8201/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config_provider_dept_8201/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider_dept_8082/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider_dept_8082/pom.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/api_8081/target/" />
+    <ignored path="$PROJECT_DIR$/consumer_dept_8083/target/" />
+    <ignored path="$PROJECT_DIR$/provider_dept_8082/target/" />
+    <ignored path="$PROJECT_DIR$/provider_dept_8084/target/" />
+    <ignored path="$PROJECT_DIR$/eureka_server_7001/target/" />
+    <ignored path="$PROJECT_DIR$/config_eureka_server_7001/target/" />
+    <ignored path="$PROJECT_DIR$/config_3344/target/" />
+    <ignored path="$PROJECT_DIR$/config_client_3355/target/" />
+    <ignored path=".idea/" />
+    <ignored path="$PROJECT_DIR$/config_client_8202/target/" />
+    <ignored path="$PROJECT_DIR$/config_client_8201/target/" />
+    <ignored path="$PROJECT_DIR$/config_provider_dept_8201/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/bootstrap.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>org.eclipse</find>
+      <find>config-repo</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/config_3344/src/main/java/eureka_server/EurekaSersverApplication.java" />
+        <option value="$PROJECT_DIR$/config_3344/src/main/java/com/gsau/config/EurekaSersverApplication.java" />
+        <option value="$PROJECT_DIR$/config_3344/pom.xml" />
+        <option value="$PROJECT_DIR$/config_3344/src/main/resources/ll.yml" />
+        <option value="$PROJECT_DIR$/config_3344/src/main/java/com/gsau/config/ConfigSersverApplication.java" />
+        <option value="$PROJECT_DIR$/config_client_3355/src/main/java/com/gsau/springcloud/ConfigClient3355App.java" />
+        <option value="$PROJECT_DIR$/config_client_3355/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/config_client_3355/pom.xml" />
+        <option value="$PROJECT_DIR$/config_3344/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/config_client_3355/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/config_client_3355/src/main/java/com/gsau/springcloud/test/ConfigClientRest.java" />
+        <option value="$PROJECT_DIR$/config_client_3355/src/test/java/test/ConfigClientRest.java" />
+        <option value="$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/provider_dept_8082/pom.xml" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/pom.xml" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/dao/DepartmentDao.java" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/config_eureka_server_7001/pom.xml" />
+        <option value="$PROJECT_DIR$/config_eureka_server_7001/src/main/java/com/gsau/eureka_server/ConfigEurekaSersverApplication.java" />
+        <option value="$PROJECT_DIR$/config_3344/src/main/java/com/gsau/config/Config3344Application.java" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/ProviderDept8081Application.java" />
+        <option value="$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/bootstrap.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\DevelopmentTool\maven3.6.0\repository" />
+        <option name="userSettingsFile" value="D:\DevelopmentTool\maven3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="719" />
+    <option name="y" value="221" />
+    <option name="width" value="1547" />
+    <option name="height" value="839" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="myBatisConfig" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring_cloud_learn" type="462c0819:PsiDirectoryNode" />
+              <item name="config_provider_dept_8201" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="myBatisConfig" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="spring_cloud_learn" type="58d84e3e:PackageViewProjectNode" />
+              <item name="config_3344" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="58d84e3e:PackageViewProjectNode" />
+              <item name="config_client_3355" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="58d84e3e:PackageViewProjectNode" />
+              <item name="config_eureka_server_7001" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Eureka_Server_7001" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="spring_cloud_learn" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Eureka_Server_7001" type="616d4139:PackageViewModuleNode" />
+              <item name="com.gsau.eureka_server" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config_eureka_server_7001/src/main/resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="spring" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="eureka_server" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MyWorkSpace\repository\spring_cloud_learn\config_eureka_server_7001\src\main\resources" />
+      <recent name="F:\MyWorkSpace\repository\spring_cloud_learn\config_provider_dept_8201\src\main\resources" />
+      <recent name="F:\MyWorkSpace\repository\spring_cloud_learn\config_eureka_server_7001\src\main" />
+      <recent name="F:\MyWorkSpace\repository\spring_cloud_learn\config_provider_dept_8201" />
+      <recent name="F:\MyWorkSpace\repository\spring_cloud_learn" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Config3344Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="config_3344" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gsau.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gsau.config.Config3344Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigClient3355" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="config_client_3355" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gsau.springcloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gsau.springcloud.ConfigClient3355" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigEurekaSersverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="config_eureka_server_7001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gsau.eureka_server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gsau.eureka_server.ConfigEurekaSersverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigProviderDept8021Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="config_provider_dept_8201" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gsau.eureka_server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gsau.eureka_server.ConfigProviderDept8021Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaSersverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Eureka_Server_7001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gsau.eureka_server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gsau.eureka_server.EurekaSersverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ConfigProviderDept8021Application" />
+        <item itemvalue="Spring Boot.ConfigEurekaSersverApplication" />
+        <item itemvalue="Spring Boot.Config3344Application" />
+        <item itemvalue="Spring Boot.ConfigClient3355" />
+        <item itemvalue="Spring Boot.EurekaSersverApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9badae82-d638-4d73-a903-09b48d107a15" name="Default Changelist" comment="" />
+      <created>1557023794476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557023794476</updated>
+      <workItem from="1557023799910" duration="22298000" />
+    </task>
+    <task id="LOCAL-00001" summary="spring_cloud_config">
+      <created>1557036665324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557036665324</updated>
+    </task>
+    <task id="LOCAL-00002" summary="spring_cloud_config">
+      <created>1557048296024</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557048296024</updated>
+    </task>
+    <task id="LOCAL-00003" summary="spring_cloud_config 整合eureka">
+      <created>1557110829569</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557110829569</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="22298000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="JRebel" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Messages" weight="0.329718" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="JRebel Executor" />
+      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="JRebel Setup Guide" weight="0.16791044" />
+      <window_info anchor="right" id="Redis Servers" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="spring_cloud_config" />
+    <MESSAGE value="spring_cloud_config 整合eureka" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring_cloud_config 整合eureka" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/provider_dept_8084/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-config-server/1.3.1.RELEASE/spring-cloud-config-server-1.3.1.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-starter-eureka/1.3.1.RELEASE/spring-cloud-starter-eureka-1.3.1.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_3344/config_3344.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="41" lean-forward="true" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_3344/src/main/resources/ll.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_3344/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="21" selection-start-line="13" selection-start-column="7" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.22.RELEASE/spring-beans-4.3.22.RELEASE.jar!/org/springframework/beans/factory/annotation/Value.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_3355/src/test/java/test/ConfigClientRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_8201/src/main/java/com/gsau/springcloud/ConfigClient3355.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8202/config_provider_dept_8202.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8202/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka_server_7001/src/main/java/com/gsau/eureka_server/EurekaSersverApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider_dept_8082/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="27" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-eureka-client/1.3.1.RELEASE/spring-cloud-netflix-eureka-client-1.3.1.RELEASE.jar!/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="461" column="16" selection-start-line="461" selection-start-column="16" selection-end-line="461" selection-end-column="16" />
+          <folding>
+            <element signature="e#14844#14845#0" expanded="true" />
+            <element signature="e#14888#14889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/provider_dept_8082/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="75" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka_server_7001/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka_server_7001/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="38" column="19" selection-start-line="11" selection-start-column="3" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/dao/DepartmentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_3355/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_3355/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_eureka_server_7001/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_3355/src/main/java/com/gsau/springcloud/ConfigClient3355.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_client_3355/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_3344/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_3344/src/main/java/com/gsau/config/Config3344Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="30" selection-end-line="6" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_eureka_server_7001/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/myBatisConfig/mapper/DepartmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/ConfigProviderDept8021Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/java/com/gsau/eureka_server/controller/TestRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_eureka_server_7001/src/main/java/com/gsau/eureka_server/ConfigEurekaSersverApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_provider_dept_8201/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>config_eureka_server_7001</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

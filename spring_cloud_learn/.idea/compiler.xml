@@ -8,12 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="provider_dept_8084" />
         <module name="provider_dept_8082" />
+        <module name="config_provider_dept_8201" />
         <module name="config_eureka_server_7001" />
         <module name="config_3344" />
         <module name="consumer_dept_8083" />
         <module name="config_client_3355" />
         <module name="api_8081" />
         <module name="Eureka_Server_7001" />
+      </profile>
+      <profile name="Annotation profile for spring_cloud_learn" enabled="true">
+        <sourceOutputDir name="../config_client_8202/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../config_client_8202/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config_provider_dept_8202" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
