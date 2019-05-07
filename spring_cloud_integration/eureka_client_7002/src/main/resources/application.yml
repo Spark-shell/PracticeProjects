@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: MICROSERVICE-INTEGRATION-EUREKA-CLIENT-7002
+  datasource:         #Spring boot 数据源配置
+    url: jdbc:mysql://localhost:3306/spring_cloud_01
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: microservice-integration-eureka-client-7002
+    prefer-ip-address: true   #访问路径显示Ip
