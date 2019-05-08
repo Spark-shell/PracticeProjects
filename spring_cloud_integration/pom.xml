@@ -11,8 +11,6 @@
     <modules>
         <module>eureka_client_7002</module>
         <module>eureka_server_7001</module>
-        <module>zuul-gateway-8001</module>
-        <module>springcloud-session-redis</module>
         <module>springcloud-session-redis-8001</module>
         <module>zuul-session-gateway-8002</module>
     </modules>

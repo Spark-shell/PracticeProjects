@@ -17,7 +17,6 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RefreshScope
 public class UserManagementController {
-
     @GetMapping("/getUser")
     public String getUser(HttpServletRequest request) {
         HttpSession session = request.getSession();
