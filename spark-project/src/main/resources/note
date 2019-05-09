@@ -1,0 +1,126 @@
+spark执行异常：
+     现象1：
+          有时会出现的一种情况非常普遍，在spark的作业中；shuffle file not found。（spark作业中，非常非常常见的）而且，有的时候，它是偶尔才会出现的一种情况。有的时候，出现这种情况以后，会重新去提交stage、task。重新执行一遍，发现就好了。没有这种错误了。
+     现象2：
+          如果说，你是基于yarn来提交spark。比如yarn-cluster或者yarn-client。你可以指定提交到某个hadoop队列上的。每个队列都是可以有自己的资源的。
+     比如在一个生产环境中的，给spark用的yarn资源队列的情况：500G内存，200个cpu core。
+     比如说，某个spark application，在spark-submit里面你自己配了，executor，80个；每个executor，4G内存；每个executor，2个cpu core。你的spark作业每次运行，大概要消耗掉320G内存，以及160个cpu core。
+     乍看起来，咱们的队列资源，是足够的，500G内存，280个cpu core。
+     首先，第一点，你的spark作业实际运行起来以后，耗费掉的资源量，可能是比你在spark-submit里面配置的，以及你预期的，是要大一些的。400G内存，190个cpu core。
+     那么这个时候，的确，咱们的队列资源还是有一些剩余的。但是问题是，如果你同时又提交了一个spark作业上去，一模一样的。那就可能会出问题。
+     第二个spark作业，又要申请320G内存+160个cpu core。结果，发现队列资源不足。。。。
+     此时，可能会出现两种情况：（备注，具体出现哪种情况，跟你的YARN、Hadoop的版本，你们公司的一些运维参数，以及配置、硬件、资源肯能都有关系）
+         1、YARN，发现资源不足时，你的spark作业，并没有等在那里，等待资源的分配，而是直接打印一行fail的log，直接就fail掉了。
+         2、YARN，发现资源不足，你的spark作业，就h等在那里。一直等待之前的spark作业执行完，等待有资源分配给自己来执行。
+     采用如下方案：
+         1、在你的J2EE（我们这个项目里面，spark作业的运行，之前说过了，J2EE平台触发的，执行spark-submit脚本），限制，同时只能提交一个spark作业到yarn上去执行，确保一个spark作业的资源肯定是有的。
+         2、你应该采用一些简单的调度区分的方式，比如说，你有的spark作业可能是要长时间运行的，比如运行30分钟；有的spark作业，可能是短时间运行的，可能就运行2分钟。此时，都提交到一个队列上去，肯定不合适。
+         很可能出现30分钟的作业卡住后面一大堆2分钟的作业。分队列，可以申请（跟你们的YARN、Hadoop运维的同学申请）。你自己给自己搞两个调度队列。每个队列的根据你要执行的作业的情况来设置。在你的J2EE程序里面，
+         要判断，如果是长时间运行的作业，就干脆都提交到某一个固定的队列里面去把；如果是短时间运行的作业，就统一提交到另外一个队列里面去。这样，避免了长时间运行的作业，阻塞了短时间运行的作业。
+         3、你的队列里面，无论何时，只会有一个作业在里面运行。那么此时，就应该用我们之前讲过的性能调优的手段，去将每个队列能承载的最大的资源，分配给你的每一个spark作业，比如80个executor；6G的内存；3个
+         cpu core。尽量让你的spark作业每一次运行，都达到最满的资源使用率，最快的速度，最好的性能；并行度，240个cpu core，720个task。
+         4、在J2EE中，通过线程池的方式（一个线程池对应一个资源队列），来实现上述我们说的方案。
+     现象3：用client模式去提交spark作业，观察本地打印出来的log。如果出现了类似于Serializable、Serialize等等字眼，报错的log，那么恭喜大家，就碰到了序列化问题导致的报错，虽然是报错，但是序列化报错，应该是属于比较简单的了，很好处理。
+     序列化报错要注意的三个点：
+          1、你的算子函数里面，如果使用到了外部的自定义类型的变量，那么此时，就要求你的自定义类型，必须是可序列化的。
+              final Teacher teacher = new Teacher("leo");
+              studentsRDD.foreach(new VoidFunction() {
+                String teacherName = teacher.getName();
+                ....
+              }
+              });
+              public class Teacher implements Serializable {
+              }
+          2、如果要将自定义的类型，作为RDD的元素类型，那么自定义的类型也必须是可以序列化的
+              JavaPairRDD<Integer, Teacher> teacherRDD
+              JavaPairRDD<Integer, Student> studentRDD
+              studentRDD.join(teacherRDD)
+              public class Teacher implements Serializable {
+              }
+              public class Student implements Serializable {
+              }
+          3、不能在上述两种情况下，去使用一些第三方的，不支持序列化的类型
+              Connection conn =
+              studentsRDD.foreach(new VoidFunction() {
+              public void call(Row row) throws Exception {
+                conn.....
+              }
+              });
+              Connection是不支持序列化的
+     现象3：
+          在算子函数中，返回null
+              //		return actionRDD.mapToPair(new PairFunction<Row, String, Row>() {
+              //			private static final long serialVersionUID = 1L;
+              //			@Override
+              //			public Tuple2<String, Row> call(Row row) throws Exception {
+              //				return new Tuple2<String, Row>("-999", RowFactory.createRow("-999"));
+              //			}
+              //		});
+
+              大家可以看到，在有些算子函数里面，是需要我们有一个返回值的。但是，有时候，我们可能对某些值，就是不想有什么返回值。我们如果直接返回NULL的话，那么可以不幸的告诉大家，是不行的，会报错的。
+              Scala.Math(NULL)，异常
+              如果碰到你的确是对于某些值，不想要有返回值的话，有一个解决的办法：
+              1、在返回的时候，返回一些特殊的值，不要返回null，比如“-999”
+              2、在通过算子获取到了一个RDD之后，可以对这个RDD执行filter操作，进行数据过滤。filter内，可以对数据进行判定，如果是-999，那么就返回false，给过滤掉就可以了。
+              3、大家不要忘了，之前咱们讲过的那个算子调优里面的coalesce算子，在filter之后，可以使用coalesce算子压缩一下RDD的partition的数量，让各个partition的数据比较紧凑一些。也能提升一些性能。
+
+     现象4：
+          实践经验，碰到的yarn-cluster的问题：
+          有的时候，运行一些包含了spark sql的spark作业，可能会碰到yarn-client模式下，可以正常提交运行；yarn-cluster模式下，可能是无法提交运行的，会报出JVM的PermGen（永久代）的内存溢出，OOM。
+          yarn-client模式下，driver是运行在本地机器上的，spark使用的JVM的PermGen的配置，是本地的spark-class文件（spark客户端是默认有配置的），JVM的永久代的大小是128M，这个是没有问题的；但是呢，在yarn-cluster模式下，driver是运行在yarn集群的某个节点上的，使用的是没有经过配置的默认设置（PermGen永久代大小），82M。
+          spark-sql，它的内部是要进行很复杂的SQL的语义解析、语法树的转换等等，特别复杂，在这种复杂的情况下，如果说你的sql本身特别复杂的话，很可能会比较导致性能的消耗，内存的消耗。可能对PermGen永久代的占用会比较大。
+          所以，此时，如果对永久代的占用需求，超过了82M的话，但是呢又在128M以内；就会出现如上所述的问题，yarn-client模式下，默认是128M，这个还能运行；如果在yarn-cluster模式下，默认是82M，就有问题了。会报出PermGen Out of Memory error log。
+          解决方案：
+             既然是JVM的PermGen永久代内存溢出，那么就是内存不够用。咱们呢，就给yarn-cluster模式下的，driver的PermGen多设置一些。
+             spark-submit脚本中，加入以下配置即可：
+             --conf spark.driver.extraJavaOptions="-XX:PermSize=128M -XX:MaxPermSize=256M"
+             这个就设置了driver永久代的大小，默认是128M，最大是256M。那么，这样的话，就可以基本保证你的spark作业不会出现上述的yarn-cluster模式导致的永久代内存溢出的问题。
+     spark数据倾斜，有两种表现：
+             1、你的大部分的task，都执行的特别特别快，刷刷刷，就执行完了（你要用client模式，standalone client，yarn client，本地机器主要一执行spark-submit脚本，就会开始打印log），task175 finished；
+             剩下几个task，执行的特别特别慢，前面的task，一般1s可以执行完5个；最后发现1000个task，998，999 task，要执行1个小时，2个小时才能执行完一个task, 出现数据倾斜了
+             还算好的，因为虽然老牛拉破车一样，非常慢，但是至少还能跑。
+             2、运行的时候，其他task都刷刷刷执行完了，也没什么特别的问题；但是有的task，就是会突然间，啪，报了一个OOM，JVM Out Of Memory，内存溢出了，task failed，task lost，resubmitting task。反复执行几次都
+             到了某个task就是跑不通，最后就挂掉。 某个task就直接OOM，那么基本上也是因为数据倾斜了，task分配的数量实在是太大了！！！所以内存放不下，然后你的task每处理一条数据，还要创建大量的对象。内存爆掉了。
+             原因定位：
+                根据log去定位出现数据倾斜的原因，基本只可能是因为发生了shuffle操作，在shuffle的过程中，出现了数据倾斜的问题。因为某个，或者某些key对应的数据，远远的高于其他的key。
+                1、你在自己的程序里面找找，哪些地方用了会产生shuffle的算子，groupByKey、countByKey、reduceByKey、join
+                2、看log log一般会报是在你的哪一行代码，导致了OOM异常；或者呢，看log，看看是执行到了第几个stage！！！
+                我们这里不会去剖析stage的划分算法，（如果之前不了解，但是想要了解，建议先学习北风网的《Spark从入门到精通》），spark代码，是怎么划分成一个一个的stage的。哪一个stage，task特别慢，
+                就能够自己用肉眼去对你的spark代码进行stage的划分，就能够通过stage定位到你的代码，哪里发生了数据倾斜
+                去找找，代码那个地方，是哪个shuffle操作。
+              结果方案：
+                   一.聚合源数据
+                   二.过滤导致倾斜的key
+                   三.提高shuffle操作的reduce并行度(rdd.reduceByKey(new function(),1000)这样写就可以，这时reduce端的task就是1000个)
+                   四.使用随机key实现双重聚合
+                      1、使用场景
+                        （1）groupByKey
+                        （2）reduceByKey
+                   五. 将reduce join 改成map join
+                   六.sample采样倾斜key单独进行join
+                         使用抽样算子：抽出10%或者更多的数据，然后从这些数据中找出key出现最多的那个，那他和需要join的对象进行join
+                                       剩下的过滤掉这些key对应的数据，然后进行jion
+                         原理：将key，从另外一个RDD中过滤出的数据，可能只有一条，或者几条，此时，咱们可以任意进行扩容，扩成1000倍。
+                               将从第一个RDD中拆分出来的那个倾斜key RDD，打上1000以内的一个随机数。
+                               这种情况下，还可以配合上，提升shuffle reduce并行度，join(rdd, 1000)。通常情况下，效果还是非常不错的。
+                               打散成100份，甚至1000份，2000份，去进行join，那么就肯定没有数据倾斜的问题了吧
+                   七.采用随机数和扩容表进行join解决数倾斜
+                        缺点：这个方案是没办法彻底解决数据倾斜的，更多的，是一种对数据倾斜的缓解。
+                        步骤：
+                            1、选择一个RDD，要用flatMap，进行扩容，将每条数据映射为多条数据，每个映射出来的数据，都带了一个n以内的随机数，通常来说会选择10。
+                            2、将另外一个RDD，做普通的map映射操作，每条数据都打上一个10以内的随机数。
+                            3、最后，将两个处理后的RDD，进行join操作
+                        局限性：
+                            1、因为你的两个RDD都很大，所以你没有办法去将某一个RDD扩的特别大，一般咱们就是10倍。
+                            2、如果就是10倍的话，那么数据倾斜问题，的确是只能说是缓解和减轻，不能说彻底解决。
+
+
+
+
+
+
+
+
+
+
+

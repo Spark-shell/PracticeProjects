@@ -1,0 +1,92 @@
+生产中的集群规模：
+   一般情况下，在生产环境中根据集群查的规模分成三种
+        一，小型集群
+            20台以内
+        二, 中型集群
+            50台以内
+        三，大型集群
+            50台以上
+基本组件的配置：
+       1.zookeeper
+             一，小型集群：3-5个节点
+             二, 中型集群：5、7个节点
+             三，大型集群：奇数个节点
+       3.HDFS：主要做的是海量数据的存储
+            3.1 ：首先进行的hadoop版本的选择
+                Hadoop主要的发行版本：
+                    1.Apache：
+                    2.CDH：->Cloudera Distribution Hadoop
+                    3.HDP：->Hortonworks Distribution Hadoop
+                    4.华为的：
+                其中用的最多的是CDH的和HDP的，CHD是cloudera manager公司发行的版本，只支持64位的操作系统
+                选择的原因是
+                    一.免费
+                    二.
+                安装的方式：
+                    1.tar包的方式
+                    2.rpm包的方式
+                    3.parcels包的方式，pacels方式是把所有的东西都封装成了一个压缩包，所以安装起来会方便一些，所以用的是最多的
+                    但是在cdh 4.1.2之后才有的，也是官方推荐的一种安装方式，安装的时候必须要cloudera manager的管理平台进行安装
+            3.2环境准备：
+                3.2.1：磁盘阵列
+                        RAID 0 ：
+                        RAID 1 ：就是两块磁盘映射成一块磁盘使用，当集群运行中当其中的一块磁盘损坏的时候不会损坏集群，因为两块磁盘是相互映射备份的
+                        JBOD   ：DataNode存储数据的推荐方式
+                3.2.1：操作系统
+                    Redhat、Centos推荐6.x,具体的版本配置在cloudera的官网可以查到
+                3.2.2：系统设置
+                    IP地址统一：尽可能在同一网段
+                    主机名设置：
+                    集群时间的同步：找一台服务器作为时间服务器，设置定时任务每隔一段时间同步一次集群的时间
+                    设置文件打开数据和用户最大进程数：
+                        查看方式：
+                            ulimit -a
+                            ulimit -u
+                        修改方式：vim /etc/security/limits.conf
+                    防火墙设置：
+                    开机启动项设置：vim /etc/init.tab
+                    禁用设置：Selinux(如果不禁用，centos会装不成功)   /etc/sysconfi/selinux
+                    用户权限设置：普通用户主要用于安装软件，集群中的所有的普通用户必须一致
+            3.3 搭建本地yum 安装CDH5 Hadoop集群
+                3.1.1 选用parcels方式
+                    3.1.1.1 安装CHD5.3.x
+                        1.断网+rpm+yum本地源
+                            1.1 安装软件下载
+                                网站：http://archive.cloudera.com/cm5/
+                                选择目录：cm-5.3.6->bin->cloudera-manager-installer.bin
+                            1.2 下载CM5.3.6依赖的rpm包
+                                 网站：http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.3.6/
+                                 选择目录：目录下的所有文件
+                3.1.2 搭建本地的yum源
+                        1.查看本地有没有Apache服务器：
+                            1.1 sudo rpm -aq|grep http，如果有httpd-tools....和httpd-2.2.15...说明已经安装了Apache服务
+                            1.2 sudo service httpd status  || sudo service httpd start || sudo chkconfig httpd on
+                            1.3 httpd的文件放在：/var/www/html中
+                            1.4 把下载下来的文件都放到 httpd的文件目录中去，创建一个repodata文件夹，到archive.cloudera.com网站对应的版本下下载repodata下的所有文件然后放进去
+                            1.5 删除/etc/yum.repos.d/下的所有的文件
+                            1.6 自己创建一个yum的源文件
+                            1.7 把源文件的配置项都指向自己本地的源文件
+                        2.安装cm依赖
+                            1. 安装postgresql
+                                1.1进入postgresq-libs文件目录
+                                1.2 sudo rpm -ivh *.rpm
+                            2. 开始安装CDM
+                                2.1 修改cloudera-manager-installer.bin的权限 ：chmod +x 。。。。
+                                2.2 sh cloudera-manager-installer.bin 开始安装CM
+                                2.3 安装界面：
+                                    遇到的都点next ：next
+                                    clouera express license : yes
+                                    Oracle Binary code licese agreement ：yes
+                                2.4 遇到错误查看失败日志：
+                                    cd  /var/log/cloudera-manager-installer
+                                    文件前面的 0.。。。 1.。。。。 2.。。。3.。。。代表第几步的日志，如果那步出错就查看哪一步的日志
+                            /**
+                              * @Description: 未完待续，视频2.3
+                              * @author: wangguoqing
+                              * @date: 2018/12/24 11:54
+                              * @Version：1.0.0
+                             */        
+
+
+
+
