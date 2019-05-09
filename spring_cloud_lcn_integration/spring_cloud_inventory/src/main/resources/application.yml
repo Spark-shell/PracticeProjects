@@ -24,3 +24,7 @@ eureka:
 mybatis:
   mapper-locations: classpath:/myBatisConfig/mappers/*.xml
 
+tm:
+  manager:
+        url:  http://192.168.199.56:8899/tx/manager/
+

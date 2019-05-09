@@ -22,6 +22,6 @@ eureka:
 mybatis:
   mapper-locations: classpath:/myBatisConfig/mappers/*.xml
 
-tx:
+tm:
   manager:
     url:  http://localhost:8888/tx/manager

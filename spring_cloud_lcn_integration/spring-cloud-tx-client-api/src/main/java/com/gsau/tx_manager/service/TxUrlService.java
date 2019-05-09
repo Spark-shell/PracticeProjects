@@ -15,6 +15,7 @@ public class TxUrlService implements TxManagerTxUrlService {
      */
     @Override
     public String getTxUrl() {
-        return "http://192.168.199.56:8888/tx/manager/";
+        //"http://192.168.199.56:8888/tx/manager/"
+        return url;
     }
 }
