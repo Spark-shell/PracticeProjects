@@ -16,10 +16,10 @@ zuul:
     mydept-service:                             #自定义名称
       path: /dept/**                            #/dept/开头的路径转发至service-user微服务
       serviceId: microservice-integration-eureka-client-7002
-      sensitiveHeaders: "*"       #解决经过网关zuul转发请求后发生session失效
-    user-redis-session-service:                #自定义名称
+      sensitiveHeaders: "*"                     #解决经过网关zuul转发请求后发生session失效
+    user-redis-session-service:                 #自定义名称
       path: /user-session/**
       serviceId: springcloud-session-redis-8001
-      sensitiveHeaders: "*"       #解决经过网关zuul转发请求后发生session失效
+      sensitiveHeaders: "*"                     #解决经过网关zuul转发请求后发生session失效
   ignored-services: "*"
   prefix: /customize_prefix

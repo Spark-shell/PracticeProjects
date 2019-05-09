@@ -10,5 +10,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://192.168.199.56:7001/eureka/
-    register-with-eureka: false   #当前的eureka-server自己不注册进服务列表
-    fetch-registry: false         #不通过Eureka获取注册信息
+    register-with-eureka: false                 #当前的eureka-server自己不注册进服务列表
+    fetch-registry: false                       #不通过Eureka获取注册信息
