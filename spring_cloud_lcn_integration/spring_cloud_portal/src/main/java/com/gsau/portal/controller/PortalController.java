@@ -16,7 +16,7 @@ public class PortalController {
     public Map<String,String> addOrder(){
              portalService.addOrder();
              Map<String,String> map=new HashMap<>();
-             map.put("msg","数据插入成功");
+             map.put("msg","data insert success");
              return map;
     }
 }

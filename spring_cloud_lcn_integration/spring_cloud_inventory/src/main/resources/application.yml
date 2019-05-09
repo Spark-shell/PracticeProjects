@@ -26,5 +26,5 @@ mybatis:
 #TxManager配置
 tm:
   manager:
-        url:  http://192.168.199.56:7004/tx/tx/manager/
+        url: http://192.168.199.56:7004/tx/tx/manager/
 
