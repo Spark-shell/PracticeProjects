@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <webroots />
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -130,7 +144,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:1.5.19.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:1.5.19.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.19.RELEASE" level="project" />
-    <orderEntry type="module" module-name="spring_cloud_inventory_service" />
+    <orderEntry type="module" module-name="spring_cloud_order_service" />
     <orderEntry type="module" module-name="spring-cloud-tx-client-api" />
     <orderEntry type="library" name="Maven: com.codingapi:transaction-springcloud:4.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.codingapi:tx-client:4.1.0" level="project" />
