@@ -23,7 +23,8 @@ eureka:
 #  type-aliases-package: com.gsau.Inventory.projo
 mybatis:
   mapper-locations: classpath:/myBatisConfig/mappers/*.xml
+#TxManager配置
 tm:
   manager:
-        url:  http://192.168.199.56:8888/tx/manager/
+        url:  http://192.168.199.56:7004/tx/tx/manager/
 
