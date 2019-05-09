@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-tx-client-api" />
+        <module name="spring_cloud_inventory_service" />
+        <module name="spring_cloud_order_service" />
+        <module name="spring_cloud_eureka_server" />
+        <module name="tx-manager" />
+        <module name="spring_cloud_inventory" />
+        <module name="spring_cloud_order" />
+        <module name="spring_cloud_portal" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsau.order.mapper.OrdersMapper">
+    <!--查询-->
+    <!--加入-->
+    <insert id="insertOrders">
+        insert into orders ( itemid, price)
+        values ( #{itemid}, #{price})
+    </insert>
+    <!--删除-->
+    <!--更新-->
+</mapper>
