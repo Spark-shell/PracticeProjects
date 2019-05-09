@@ -5,9 +5,10 @@ import com.lorne.core.framework.utils.http.HttpUtils;
 import org.springframework.stereotype.Service;
 
 /**
- *  Created by liuliang on 2018/10/10.
+ * @author WangGuoQing
+ * @date 2019/5/9 13:21
+ * @Desc 
  */
-
 @Service
 public class TxManagerHttpRequestServiceImpl implements TxManagerHttpRequestService{
 

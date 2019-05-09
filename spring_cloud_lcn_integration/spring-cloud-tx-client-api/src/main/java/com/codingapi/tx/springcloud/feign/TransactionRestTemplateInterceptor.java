@@ -1,9 +1,10 @@
 package com.codingapi.tx.springcloud.feign;
 
 /**
- * Created by liuliang on 2018/10/10.
+ * @author WangGuoQing
+ * @date 2019/5/9 13:21
+ * @Desc 
  */
-
 import com.codingapi.tx.aop.bean.TxTransactionLocal;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
