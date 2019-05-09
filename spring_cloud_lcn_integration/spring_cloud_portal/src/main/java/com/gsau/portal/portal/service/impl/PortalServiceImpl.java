@@ -21,9 +21,9 @@ public class PortalServiceImpl implements PortalService {
     public void addOrder() {
         Inventory inventory = new Inventory();
         inventory.setItemid(100);
-        inventory.setItemnum(19);
+        inventory.setItemnum(21);
         inventoryService.updateInventory(inventory);
-
+        int i=1/0;
         Orders orders=new Orders();
         orders.setItemid(100);
         orders.setPrice(10);

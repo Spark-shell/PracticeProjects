@@ -11,3 +11,6 @@ eureka:
   instance:
     instance-id: SPRING-CLOUD-PORTAL       #服务实例名称修改
     prefer-ip-address: true                #访问路径显示Ip
+tm:
+  manager:
+    url:  http://192.168.199.56:8888/tx/manager/

@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by liuliang on 2018/10/10.
+ * @author WangGuoQing
+ * @date 2019/5/9 13:47
+ * @Desc 
  */
 @Service
 public class TxManagerTxUrlServiceImpl implements TxManagerTxUrlService{
