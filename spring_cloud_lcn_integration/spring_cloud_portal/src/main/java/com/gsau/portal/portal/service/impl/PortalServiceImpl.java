@@ -16,6 +16,7 @@ public class PortalServiceImpl implements PortalService {
 
     @Autowired
     private PortalOrderService orderService;
+
     @TxTransaction(isStart = true)
     @Override
     public void addOrder() {
@@ -23,8 +24,7 @@ public class PortalServiceImpl implements PortalService {
         inventory.setItemid(100);
         inventory.setItemnum(21);
         inventoryService.updateInventory(inventory);
-        int i=1/0;
-        Orders orders=new Orders();
+        Orders orders = new Orders();
         orders.setItemid(100);
         orders.setPrice(10);
         orderService.addOder(orders);
