@@ -1,5 +1,6 @@
 package com.gsau.Inventory.service.impl;
 
+import com.codingapi.tx.annotation.TxTransaction;
 import com.gsau.Inventory.mapper.InventoryMapper;
 import com.gsau.Inventory.service.InventoryService;
 import com.gsau.inventory_sersvice.projo.Inventory;
@@ -23,6 +24,7 @@ public class InventoryServiceImpl implements InventoryService {
      */
     @Override
     @Transactional
+    @TxTransaction
     public void updateInventory(Inventory inventory) {
         inventoryMapper.updateInventory(inventory);
     }

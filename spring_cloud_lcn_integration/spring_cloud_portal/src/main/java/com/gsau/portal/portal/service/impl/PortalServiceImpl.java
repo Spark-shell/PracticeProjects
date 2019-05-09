@@ -1,5 +1,6 @@
 package com.gsau.portal.portal.service.impl;
 
+import com.codingapi.tx.annotation.TxTransaction;
 import com.gsau.inventory_sersvice.projo.Inventory;
 import com.gsau.order_sersvice.projo.Orders;
 import com.gsau.portal.feign_service.PortalInventoryService;
@@ -15,7 +16,7 @@ public class PortalServiceImpl implements PortalService {
 
     @Autowired
     private PortalOrderService orderService;
-
+    @TxTransaction(isStart = true)
     @Override
     public void addOrder() {
         Inventory inventory = new Inventory();
