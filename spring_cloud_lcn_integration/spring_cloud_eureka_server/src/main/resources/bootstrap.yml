@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: springcloud-intergrate-urekaserver-config      #需要从github上服务的资源名称（文件名称），注意没有yml后缀
+      profile: dev                                         #本次访问的配置项
+      label: master
+      uri: http://192.168.199.14:8081                       #本次服务启动后，先去找3344服务，通过SpringCloudConfig获取github上的配置

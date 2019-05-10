@@ -1,38 +1,4 @@
-server:
-  port: 7004
 spring:
   application:
     name: SPRING-CLOUD-PORTAL-7004
-# eureka配置
-eureka:
-  client:
-    service-url:
-      defaultZone: http://192.168.199.56:7001/eureka/
-  instance:
-    instance-id: spring-cloud-portal       #服务实例名称修改
-    prefer-ip-address: true                #访问路径显示Ip
-#TxManager配置
-tm:
-  manager:
-    url:  http://192.168.199.56:8888/tx/manager/
-#网关配置
-zuul:
-  routes:
-    inventory-service:                             #自定义名称（inventory-service）表示代理inventory微服务
-      path: /inventory/**                          #/inventory/开头的路径转发至表示代理inventory微服务
-      serviceId: spring-cloud-inventory
-      sensitiveHeaders: "*"                        #解决经过网关zuul转发请求后发生session失效
-    order-service:
-      path: /order/**
-      serviceId: spring-cloud-order
-      sensitiveHeaders: "*"
-    portal-service:
-      path: /portal/**
-      serviceId: spring-cloud-portal
-      sensitiveHeaders: "*"
-    tx-manager:
-      path: /tx/**
-      serviceId: tx-manager
-      sensitiveHeaders: "*"
-  ignored-services: "*"
-  prefix: /test
+

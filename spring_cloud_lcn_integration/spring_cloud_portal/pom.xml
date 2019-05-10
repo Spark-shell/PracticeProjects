@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring_cloud_portal</artifactId>
     <dependencies>
+        <!--引入config client依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
         <!--引入EurekaClient依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -34,11 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
-        <!--引入网关-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
+        <!--&lt;!&ndash;引入网关&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-zuul</artifactId>-->
+        <!--</dependency>-->
         <!--引入服务接口-->
         <dependency>
             <groupId>com.gsau.spring_cloud</groupId>

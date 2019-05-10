@@ -11,6 +11,11 @@
 
     <artifactId>spring_cloud_order</artifactId>
     <dependencies>
+        <!--引入config client依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
         <!--引入EurekaServer依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

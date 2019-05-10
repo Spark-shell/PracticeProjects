@@ -3,25 +3,4 @@ server:
 spring:
   application:
     name: SPRING-CLOUD-ORDER-7003
-#Spring boot 数据源配置
-  datasource:
-    url: jdbc:mysql://localhost:3306/spring_cloud_01
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-#Eureka配置
-eureka:
-  client:
-    service-url:
-      defaultZone: http://192.168.199.56:7001/eureka/
-  instance:
-    instance-id: spring-cloud-order       #服务实例名称修改
-    prefer-ip-address: true               #访问路径显示Ip
-#mybatis配置
-mybatis:
-  mapper-locations: classpath:/myBatisConfig/mappers/*.xml
-#Tx-Manager配置
-tm:
-  manager:
-      url:  http://192.168.199.56:7004/tx/tx/manager/
+
