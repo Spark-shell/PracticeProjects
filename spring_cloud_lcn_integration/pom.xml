@@ -19,6 +19,7 @@
         <module>tx-manager</module>
         <module>spring-cloud-tx-client-api</module>
         <module>spring_cloud_config</module>
+        <module>spring-cloud-zuul-session</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

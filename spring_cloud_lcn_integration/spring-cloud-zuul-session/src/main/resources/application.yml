@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: SPRINGCLOUD-SESSION-ZUUL-8001
