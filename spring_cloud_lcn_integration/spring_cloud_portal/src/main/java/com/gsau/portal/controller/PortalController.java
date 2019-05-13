@@ -14,7 +14,6 @@ import java.util.Map;
 public class PortalController {
     @Autowired
     private PortalService portalService;
-
     @RequestMapping("/addOrder")
     public Map<String, String> addOrder() {
         portalService.addOrder();
@@ -22,7 +21,6 @@ public class PortalController {
         map.put("msg", "data insert success");
         return map;
     }
-
     @RequestMapping("/test")
     public String access() {
         return "访问成功";
