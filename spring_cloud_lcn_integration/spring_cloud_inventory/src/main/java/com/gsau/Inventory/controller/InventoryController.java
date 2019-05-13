@@ -4,6 +4,7 @@ import com.gsau.inventory_sersvice.projo.Inventory;
 import com.gsau.inventory_sersvice.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,5 +19,9 @@ public class InventoryController  implements InventoryService {
     @Override
     public void updateInventory(@RequestBody Inventory inventory) {
         inventoryService.updateInventory(inventory);
+    }
+    @RequestMapping("/test")
+    public String access() {
+        return "Inventory访问成功";
     }
 }

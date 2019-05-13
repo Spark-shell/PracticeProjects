@@ -12,11 +12,17 @@ import java.util.Map;
 public class PortalController {
     @Autowired
     private PortalService portalService;
+
     @RequestMapping("/addOrder")
-    public Map<String,String> addOrder(){
-             portalService.addOrder();
-             Map<String,String> map=new HashMap<>();
-             map.put("msg","data insert success");
-             return map;
+    public Map<String, String> addOrder() {
+        portalService.addOrder();
+        Map<String, String> map = new HashMap<>();
+        map.put("msg", "data insert success");
+        return map;
+    }
+
+    @RequestMapping("/test")
+    public String access() {
+        return "访问成功";
     }
 }
