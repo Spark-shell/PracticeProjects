@@ -55,6 +55,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+        <!--引入thymeleaf模板-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!--使用springboot的thymeleaf模板时默认会对HTML进行严格的检查,导致当你的标签没有闭合时就会通不过
+        nekohtml这个依赖可以解决这一问题。-->
+        <dependency>
+            <groupId>nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+        </dependency>
         <!--引入服务接口-->
         <dependency>
             <groupId>com.gsau.spring_cloud</groupId>

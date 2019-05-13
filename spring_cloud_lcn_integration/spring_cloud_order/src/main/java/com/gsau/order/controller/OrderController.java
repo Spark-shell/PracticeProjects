@@ -28,4 +28,8 @@ public class OrderController implements OrderService {
     public String access() {
         return "Order访问成功";
     }
+    @RequestMapping("/index")
+    public String index() {
+        return "index";
+    }
 }
