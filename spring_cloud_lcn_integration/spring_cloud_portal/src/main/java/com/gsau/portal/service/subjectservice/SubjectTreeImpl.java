@@ -19,8 +19,6 @@ import java.util.List;
 
 @Service
 public class SubjectTreeImpl {
-
-
     @Autowired
     private SubjectRepository subjectRepository;
 

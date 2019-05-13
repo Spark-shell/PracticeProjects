@@ -1,17 +1,16 @@
 package com.gsau.portal.controller.web;
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.Choicequestion;
-import com.liang.pojo.po.ChoicequestionExplain;
-import com.liang.pojo.po.Subject;
-import com.liang.repository.ChoicequestionExplainRepository;
-import com.liang.repository.ChoicequestionRepository;
-import com.liang.repository.SubjectRepository;
-import com.liang.service.subjectservice.ChoiceQuestionManager;
-import com.liang.util.GsonUtil;
-import com.liang.util.IDmanager;
-import com.liang.util.StringUtil;
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.Choicequestion;
+import com.gsau.portal.pojo.po.ChoicequestionExplain;
+import com.gsau.portal.repository.ChoicequestionExplainRepository;
+import com.gsau.portal.repository.ChoicequestionRepository;
+import com.gsau.portal.repository.SubjectRepository;
+import com.gsau.portal.service.subjectservice.ChoiceQuestionManager;
+import com.gsau.portal.util.GsonUtil;
+import com.gsau.portal.util.IDmanager;
+import com.gsau.portal.util.StringUtil;
+import com.gsau.portal.util.SystemConfig;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:12
+ * @Desc 
  */
 @Controller
 @RequestMapping("/web/choicequestion")

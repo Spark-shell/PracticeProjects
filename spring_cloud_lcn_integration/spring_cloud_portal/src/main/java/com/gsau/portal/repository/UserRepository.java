@@ -1,17 +1,15 @@
 package com.gsau.portal.repository;
 
-import com.liang.pojo.po.UserInfo;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 
-import javax.transaction.Transactional;
+import com.gsau.portal.pojo.po.UserInfo;
+
 import java.util.List;
 
 /**
- * Created by liang on 2017/3/25.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:20
+ * @Desc 
  */
-
-
 @Transactional
 public interface UserRepository extends CrudRepository<UserInfo, Integer> {
 

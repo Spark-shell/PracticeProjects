@@ -1,29 +1,29 @@
 package com.gsau.portal.controller.app;
 
-/**
- * Created by liang on 2017/8/13.
- */
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.Choicequestion;
-import com.liang.pojo.po.LearnCurrent;
-import com.liang.pojo.po.LearnQuestion;
-import com.liang.pojo.po.UserInfo;
-import com.liang.repository.ChoicequestionRepository;
-import com.liang.repository.LearnCurrentRepository;
-import com.liang.repository.LearnQuestionRepository;
-import com.liang.repository.UserRepository;
-import com.liang.service.learnservice.LearnQuestionManager;
-import com.liang.util.GsonUtil;
-import com.liang.util.StringUtil;
+
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.Choicequestion;
+import com.gsau.portal.pojo.po.LearnCurrent;
+import com.gsau.portal.pojo.po.LearnQuestion;
+import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.repository.ChoicequestionRepository;
+import com.gsau.portal.repository.LearnCurrentRepository;
+import com.gsau.portal.repository.LearnQuestionRepository;
+import com.gsau.portal.repository.UserRepository;
+import com.gsau.portal.service.learnservice.LearnQuestionManager;
+import com.gsau.portal.util.GsonUtil;
+import com.gsau.portal.util.StringUtil;
+import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:13
+ * @Desc 
  */
 @RestController
 @RequestMapping("/app/learnquestion")

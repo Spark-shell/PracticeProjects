@@ -1,19 +1,15 @@
 package com.gsau.portal.repository;
 
-import com.liang.pojo.po.MoniYear;
-import com.liang.pojo.po.Subject;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gsau.portal.pojo.po.MoniYear;
 
 import java.util.List;
 
 /**
- * Created by liang on 2017/7/13.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:20
+ * @Desc 
  */
-
-
 public interface MoniYearRepository  extends CrudRepository<MoniYear, Integer> {
 
     @Query(value = "select * from tb_moniyear " ,nativeQuery=true)

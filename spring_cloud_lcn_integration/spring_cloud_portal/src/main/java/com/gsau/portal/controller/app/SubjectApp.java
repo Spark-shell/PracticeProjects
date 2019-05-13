@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:16
+ * @Desc 
  */
 @RestController
 @RequestMapping("/app/subject")

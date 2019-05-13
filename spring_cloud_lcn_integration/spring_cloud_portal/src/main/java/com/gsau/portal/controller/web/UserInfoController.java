@@ -1,10 +1,10 @@
 package com.gsau.portal.controller.web;
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.UserInfo;
-import com.liang.repository.UserRepository;
-import com.liang.util.MD5Util;
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.repository.UserRepository;
+import com.gsau.portal.util.MD5Util;
+import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +14,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * Created by liang on 2017/3/25.
- * @author yuan_liang
+ * @author WangGuoQing
+ * @date 2019/5/13 21:15
+ * @Desc 
  */
-
 @Controller
 @RequestMapping("/web/userinfo")
 public class UserInfoController {
@@ -52,7 +52,7 @@ public class UserInfoController {
      */
     @RequestMapping(value="/finduserinfo" , method = RequestMethod.GET)
     @ResponseBody
-    public UserInfo findUserInfo(Model model,HttpSession session){
+    public UserInfo findUserInfo(Model model, HttpSession session){
         UserInfo userInfo =null;
         try {
             if(null != session.getAttribute(SystemConfig.Session_key))
@@ -75,11 +75,11 @@ public class UserInfoController {
     @RequestMapping(value="/createuserinfo", method = RequestMethod.POST)
     @ResponseBody
     public MessageObject createUserinfo(@RequestParam(required = false) String usertel ,
-                                 @RequestParam(required = false) String username ,
-                                 @RequestParam(required = false) String userpassword ,
-                                 @RequestParam(required = false) String msex ,
-                                 @RequestParam(required = false) String mstatus ,
-                                 Model model,HttpSession session){
+                                        @RequestParam(required = false) String username ,
+                                        @RequestParam(required = false) String userpassword ,
+                                        @RequestParam(required = false) String msex ,
+                                        @RequestParam(required = false) String mstatus ,
+                                        Model model, HttpSession session){
         UserInfo userInfo =  userRepository.findByUsertel(usertel);
         MessageObject messageObject = new MessageObject(SystemConfig.mess_succ,"执行成功！");
         try {

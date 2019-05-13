@@ -6,7 +6,9 @@ import com.gsau.portal.pojo.po.Subject;
 import java.util.List;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:20
+ * @Desc 
  */
 public interface SubjectRepository extends CrudRepository<Subject, Integer> {
 

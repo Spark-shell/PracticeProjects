@@ -3,7 +3,9 @@ package com.gsau.portal.pojo.vo;
 import javax.persistence.Id;
 
 /**
- * Created by liang on 2017/9/9.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:20
+ * @Desc 
  */
 public class SubjectVo {
     public String subjectid;

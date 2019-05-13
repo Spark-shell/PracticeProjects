@@ -8,7 +8,9 @@ import java.net.URLConnection;
 import java.util.Scanner;
 
 /**
- * Created by liang on 2017/10/1.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:18
+ * @Desc 
  */
 public class ReaderUrlHelper {
 

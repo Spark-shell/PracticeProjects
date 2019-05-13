@@ -1,19 +1,17 @@
 package com.gsau.portal.pojo.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+
+import java.beans.Transient;
 
 /**
- * Created by liang on 2017/6/9.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:18
+ * @Desc
  * 科目
- *
  * 软件工程
  * 信息系统集成
  * 软件工程师
  */
-
 @Entity
 @Table(name="tb_subject")
 public class Subject {

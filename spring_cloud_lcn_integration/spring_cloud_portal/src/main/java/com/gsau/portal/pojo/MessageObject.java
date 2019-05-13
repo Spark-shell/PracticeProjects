@@ -3,7 +3,9 @@ package com.gsau.portal.pojo;
 import com.liang.util.SystemConfig;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:21
+ * @Desc 
  */
 public class MessageObject {
     public MessageObject(String code, String mdesc) {

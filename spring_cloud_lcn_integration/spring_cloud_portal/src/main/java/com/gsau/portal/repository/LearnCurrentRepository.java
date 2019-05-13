@@ -6,7 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Created by liang on 2017/8/13.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:21
+ * @Desc 
  */
 public interface LearnCurrentRepository extends CrudRepository<LearnCurrent, Integer> {
 

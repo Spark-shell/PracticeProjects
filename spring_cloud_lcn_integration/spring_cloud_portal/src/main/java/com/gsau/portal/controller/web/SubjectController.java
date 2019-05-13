@@ -1,10 +1,10 @@
 package com.gsau.portal.controller.web;
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.Subject;
-import com.liang.repository.SubjectRepository;
-import com.liang.service.subjectservice.SubjectTreeImpl;
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.Subject;
+import com.gsau.portal.repository.SubjectRepository;
+import com.gsau.portal.service.subjectservice.SubjectTreeImpl;
+import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:15
+ * @Desc 
  */
 @Controller
 @RequestMapping("/web/subject")

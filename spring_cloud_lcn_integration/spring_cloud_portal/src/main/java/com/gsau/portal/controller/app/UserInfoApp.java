@@ -1,10 +1,9 @@
 package com.gsau.portal.controller.app;
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.UserInfo;
-import com.liang.repository.UserRepository;
-import com.liang.util.*;
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.repository.UserRepository;
+import com.gsau.portal.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:14
+ * @Desc 
  */
 @RestController
 @RequestMapping("/app/userinfo")

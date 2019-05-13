@@ -1,7 +1,9 @@
 package com.gsau.portal.pojo.po;
 
 /**
- * Created by liang on 2017/8/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:19
+ * @Desc 
  */
 public class Missquestion {
     public long pkid;

@@ -1,18 +1,14 @@
 package com.gsau.portal.pojo.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
- * Created by liang on 2017/6/9.
- * 题目的类型
- *
+ * @author WangGuoQing
+ * @date 2019/5/13 21:17
+ * @Desc 题目的类型
  * 章节类型
  * 随机类型
  * 历年真题
  */
-
 
 @Entity
 @Table(name="tb_question_type")

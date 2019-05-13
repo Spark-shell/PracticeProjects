@@ -1,10 +1,11 @@
 package com.gsau.portal.controller;
 
-import com.liang.pojo.po.Subject;
-import com.liang.pojo.po.UserInfo;
+import com.gsau.portal.pojo.po.UserInfo;
 
 /**
- * Created by liang on 2017/7/11.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:16
+ * @Desc 
  */
 public class Test {
 

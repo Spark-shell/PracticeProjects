@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author WangGuoQing
- * @date 2019/5/13 17:43
+ * @date 2019/5/13 21:13
  * @Desc 
  */
 public interface ChoicequestionExplainRepository extends CrudRepository<ChoicequestionExplain, Integer> {

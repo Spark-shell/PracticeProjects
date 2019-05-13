@@ -1,11 +1,12 @@
 package com.gsau.portal.repository;
 
-import com.liang.pojo.po.LearnQuestion;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+
+import com.gsau.portal.pojo.po.LearnQuestion;
 
 /**
- * Created by liang on 2017/8/13.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:20
+ * @Desc 
  */
 public interface LearnQuestionRepository extends CrudRepository<LearnQuestion, Integer> {
 

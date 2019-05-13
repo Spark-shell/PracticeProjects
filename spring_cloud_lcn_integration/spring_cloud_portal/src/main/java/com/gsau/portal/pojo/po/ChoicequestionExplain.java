@@ -1,15 +1,11 @@
 package com.gsau.portal.pojo.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
- * Created by liang on 2017/6/9.
- *
- * 选择题的解析
+ * @author WangGuoQing
+ * @date 2019/5/13 21:16
+ * @Desc 选择题的解析
  */
-
 @Entity
 @Table(name="tb_choicequestion_explain")
 public class ChoicequestionExplain {

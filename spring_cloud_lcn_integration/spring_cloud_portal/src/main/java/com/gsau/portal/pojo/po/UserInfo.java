@@ -1,13 +1,10 @@
 package com.gsau.portal.pojo.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /**
- * Created by liang on 2017/3/25.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:18
+ * @Desc 
  */
-
 @Entity
 @Table(name = "tb_userinfo")
 public class UserInfo {

@@ -1,10 +1,10 @@
 package com.gsau.portal.controller.web;
 
-import com.liang.util.SystemConfig;
-import com.liang.pojo.po.UserInfo;
-import com.liang.repository.UserRepository;
-import com.liang.util.MD5Util;
-import com.liang.util.StringUtil;
+import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.repository.UserRepository;
+import com.gsau.portal.util.MD5Util;
+import com.gsau.portal.util.StringUtil;
+import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by 袁亮
- * @data 2017年7月10日
- *
+ * @author WangGuoQing
+ * @date 2019/5/13 21:15
+ * @Desc 
  */
 @Controller
 @RequestMapping(value="/sys")

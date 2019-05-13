@@ -1,15 +1,14 @@
 package com.gsau.portal.controller.web;
 
-import com.liang.pojo.MessageObject;
-import com.liang.pojo.po.Choicequestion;
-import com.liang.pojo.po.ChoicequestionExplain;
-import com.liang.pojo.po.Subject;
-import com.liang.repository.*;
-import com.liang.service.subjectservice.ChoiceQuestionManager;
-import com.liang.util.GsonUtil;
-import com.liang.util.IDmanager;
-import com.liang.util.StringUtil;
-import com.liang.util.SystemConfig;
+import com.gsau.portal.pojo.MessageObject;
+import com.gsau.portal.pojo.po.Choicequestion;
+import com.gsau.portal.pojo.po.ChoicequestionExplain;
+import com.gsau.portal.repository.*;
+import com.gsau.portal.service.subjectservice.ChoiceQuestionManager;
+import com.gsau.portal.util.GsonUtil;
+import com.gsau.portal.util.IDmanager;
+import com.gsau.portal.util.StringUtil;
+import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +16,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /**
- * Created by liang on 2017/9/8.
- *
- * 这个类主要处理，历年考题的 新增 、 删除 、更新
- *
+ * @author WangGuoQing
+ * @date 2019/5/13 21:14
+ * @Desc 
  */
 @Controller
 @RequestMapping("/web/hisquestion")
@@ -81,8 +78,8 @@ public class HisQuestionController {
      */
     @RequestMapping(value="/viewlist")
     @ResponseBody
-    public List<Choicequestion> viewlist( @RequestParam(required = false) String subjectid ,
-                                          @RequestParam(required = false) String moniname){
+    public List<Choicequestion> viewlist(@RequestParam(required = false) String subjectid ,
+                                         @RequestParam(required = false) String moniname){
 
         List<Choicequestion> list = new ArrayList<Choicequestion>();
         if(StringUtil.isEmpty(subjectid)){

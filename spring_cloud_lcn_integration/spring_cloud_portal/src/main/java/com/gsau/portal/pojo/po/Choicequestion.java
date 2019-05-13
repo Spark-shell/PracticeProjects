@@ -5,11 +5,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Created by liang on 2017/6/9.
- *
- * 选择题
+ * @author WangGuoQing
+ * @date 2019/5/13 21:16
+ * @Desc 
  */
-
 @Entity
 @Table(name="tb_choicequestion")
 public class Choicequestion {

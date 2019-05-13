@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Created by liang on 2017/8/13.
+ * @author WangGuoQing
+ * @date 2019/5/13 21:19
+ * @Desc 
  */
 @Entity
 @Table(name="tb_learnquestion")

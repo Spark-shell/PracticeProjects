@@ -1,13 +1,10 @@
 package com.gsau.portal.pojo.po;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
- * Created by liang on 2017/7/11.
- *
- * 模拟题的年份
+ * @author WangGuoQing
+ * @date 2019/5/13 21:17
+ * @Desc 模拟题的年份
  */
 @Entity
 @Table(name="tb_moniyear")
