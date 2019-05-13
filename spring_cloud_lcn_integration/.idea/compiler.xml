@@ -10,9 +10,11 @@
         <module name="spring_cloud_inventory_service" />
         <module name="spring_cloud_order_service" />
         <module name="spring_cloud_eureka_server" />
+        <module name="spring_cloud_config" />
         <module name="tx-manager" />
-        <module name="spring_cloud_inventory" />
+        <module name="spring-cloud-zuul-session" />
         <module name="spring_cloud_order" />
+        <module name="spring_cloud_inventory" />
         <module name="spring_cloud_portal" />
       </profile>
     </annotationProcessing>
