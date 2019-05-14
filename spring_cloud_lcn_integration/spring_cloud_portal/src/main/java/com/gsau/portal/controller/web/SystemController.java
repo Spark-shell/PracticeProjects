@@ -31,6 +31,7 @@ public class SystemController {
                                 HttpServletRequest request){
         System.out.println("--"+usertel+"--"+userpassword);
         ModelAndView modelAndView = new ModelAndView();
+
         try {
             HttpSession session = request.getSession();
             if(session.getAttribute(SystemConfig.Session_key) != null){
@@ -68,7 +69,4 @@ public class SystemController {
             return modelAndView;
         }
     }
-
-
-
 }
