@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * @author WangGuoQing
  * @date 2019/5/13 21:15
- * @Desc 
+ * @Desc
  */
 @Controller
 @RequestMapping("/web/userinfo")
@@ -27,37 +27,39 @@ public class UserInfoController {
 
     /**
      * 开始页面
+     *
      * @return
      */
-    @RequestMapping(value="/startpage" , method = RequestMethod.GET)
-    public String startpage(){
+    @RequestMapping(value = "/startpage", method = RequestMethod.GET)
+    public String startpage() {
         return "userinfo/userinfolist";
     }
 
 
     /**
      * 新增
+     *
      * @return
      */
-    @RequestMapping(value="/add" , method = RequestMethod.GET)
-    public String add(){
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String add() {
         return "userinfo/userino-add";
     }
 
     /**
      * 查询用户信息
+     *
      * @param model
      * @param session
      * @return
      */
-    @RequestMapping(value="/finduserinfo" , method = RequestMethod.GET)
+    @RequestMapping(value = "/finduserinfo", method = RequestMethod.GET)
     @ResponseBody
-    public UserInfo findUserInfo(Model model, HttpSession session){
-        UserInfo userInfo =null;
+    public UserInfo findUserInfo(Model model, HttpSession session) {
+        UserInfo userInfo = null;
         try {
-            if(null != session.getAttribute(SystemConfig.Session_key))
-            {
-                userInfo = (UserInfo)session.getAttribute(SystemConfig.Session_key);
+            if (null != session.getAttribute(SystemConfig.Session_key)) {
+                userInfo = (UserInfo) session.getAttribute(SystemConfig.Session_key);
             }
             return userInfo;
         } catch (Exception e) {
@@ -68,32 +70,33 @@ public class UserInfoController {
 
     /**
      * 创建用户信息
+     *
      * @param model
      * @param session
      * @return
      */
-    @RequestMapping(value="/createuserinfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/createuserinfo", method = RequestMethod.POST)
     @ResponseBody
-    public MessageObject createUserinfo(@RequestParam(required = false) String usertel ,
-                                        @RequestParam(required = false) String username ,
-                                        @RequestParam(required = false) String userpassword ,
-                                        @RequestParam(required = false) String msex ,
-                                        @RequestParam(required = false) String mstatus ,
-                                        Model model, HttpSession session){
-        UserInfo userInfo =  userRepository.findByUsertel(usertel);
-        MessageObject messageObject = new MessageObject(SystemConfig.mess_succ,"执行成功！");
+    public MessageObject createUserinfo(@RequestParam(required = false) String usertel,
+                                        @RequestParam(required = false) String username,
+                                        @RequestParam(required = false) String userpassword,
+                                        @RequestParam(required = false) String msex,
+                                        @RequestParam(required = false) String mstatus,
+                                        Model model, HttpSession session) {
+        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
         try {
-            if(userInfo == null){
+            if (userInfo == null) {
                 userInfo = new UserInfo();
                 userpassword = MD5Util.getMD5Code(userpassword);
-                userInfo.setUserpassword( userpassword );
+                userInfo.setUserpassword(userpassword);
                 userInfo.setUsertel(usertel);
                 userInfo.setCreatetime(System.currentTimeMillis());
                 userInfo.setMstatus(mstatus);
                 userInfo.setUsername(username);
                 userInfo.setMsex(msex);
                 userRepository.save(userInfo);
-            }else{
+            } else {
                 messageObject.setCode(SystemConfig.mess_failed);
                 messageObject.setMdesc("创建失败，存在相同的对象！");
                 return messageObject;
@@ -109,24 +112,25 @@ public class UserInfoController {
 
     /**
      * 查询用户列表
+     *
      * @param model
      * @return
      */
-    @RequestMapping(value="/userinfolist" , method = RequestMethod.GET)
+    @RequestMapping(value = "/userinfolist", method = RequestMethod.GET)
     @ResponseBody
-    public List<UserInfo> userlist( Model model){
+    public List<UserInfo> userlist(Model model) {
         List<UserInfo> list = (List<UserInfo>) userRepository.findAll();
-        if(list != null){
-            model.addAttribute("userlist",list);
+        if (list != null) {
+            model.addAttribute("userlist", list);
         }
         return list;
     }
 
-    @RequestMapping(method=RequestMethod.GET , value="/del/{usertel}")
+    @RequestMapping(method = RequestMethod.GET, value = "/del/{usertel}")
     @ResponseBody
-    public void del(@PathVariable String usertel ){
+    public void del(@PathVariable String usertel) {
         UserInfo userInfo = userRepository.findByUsertel(usertel);
-        if(userInfo != null){
+        if (userInfo != null) {
             userRepository.delete(userInfo);
         }
     }

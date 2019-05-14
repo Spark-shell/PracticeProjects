@@ -24,8 +24,6 @@ userinfo.add = function () {
             $(this).dialog('destroy');
         }
     });
-
-
 };
 /**
  * @author WangGuoQing
@@ -33,6 +31,18 @@ userinfo.add = function () {
  * @Desc 修改用户
  */
 userinfo.edit = function () {
+    $("body").append($("<div id='userinfo_win_edit'></div>"));
+    var url = systemNamePath  + "/userinfo/edit";
+    $("#userinfo_win_add").dialog({
+        href: url,
+        width: 400,
+        height: 300,
+        modal: true,
+        title: '新用户',
+        onClose: function () {
+            $(this).dialog('destroy');
+        }
+    });
 };
 /**
  * @author WangGuoQing
