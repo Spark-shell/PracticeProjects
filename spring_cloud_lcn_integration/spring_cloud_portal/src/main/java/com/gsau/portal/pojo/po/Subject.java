@@ -1,7 +1,9 @@
 package com.gsau.portal.pojo.po;
 
-
-import java.beans.Transient;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @author WangGuoQing

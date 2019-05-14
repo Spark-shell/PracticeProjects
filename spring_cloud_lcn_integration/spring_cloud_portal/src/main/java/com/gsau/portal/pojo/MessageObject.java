@@ -1,6 +1,7 @@
 package com.gsau.portal.pojo;
 
-import com.liang.util.SystemConfig;
+
+import com.gsau.portal.util.SystemConfig;
 
 /**
  * @author WangGuoQing

@@ -1,9 +1,11 @@
 package com.gsau.portal.service;
 
-import javax.management.Query;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import java.math.BigInteger;
 import java.util.List;
-
 
 /**
  * @author WangGuoQing

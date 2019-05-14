@@ -39,6 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+        <!--jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
         <!--引入thymeleaf模板-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,11 +55,6 @@
             <groupId>nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
         </dependency>
-        <!--&lt;!&ndash;引入网关&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-zuul</artifactId>-->
-        <!--</dependency>-->
         <!--引入服务接口-->
         <dependency>
             <groupId>com.gsau.spring_cloud</groupId>

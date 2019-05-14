@@ -1,5 +1,8 @@
 package com.gsau.portal.pojo.po;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  * @author WangGuoQing
  * @date 2019/5/13 21:17

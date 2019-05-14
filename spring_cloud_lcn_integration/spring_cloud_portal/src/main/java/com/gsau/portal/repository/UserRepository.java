@@ -2,6 +2,9 @@ package com.gsau.portal.repository;
 
 
 import com.gsau.portal.pojo.po.UserInfo;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

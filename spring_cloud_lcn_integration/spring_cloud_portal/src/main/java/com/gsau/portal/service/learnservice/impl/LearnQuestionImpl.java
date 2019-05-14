@@ -10,6 +10,9 @@ import com.gsau.portal.service.learnservice.LearnQuestionManager;
 import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
 /**
  * @author WangGuoQing
  * @date 2019/5/13 17:40

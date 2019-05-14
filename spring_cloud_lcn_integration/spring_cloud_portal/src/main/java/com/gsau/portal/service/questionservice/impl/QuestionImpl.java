@@ -1,21 +1,20 @@
 package com.gsau.portal.service.questionservice.impl;
 
-import com.liang.helper.ReaderUrlHelper;
-import com.liang.pojo.po.Choicequestion;
-import com.liang.pojo.po.ChoicequestionExplain;
-import com.liang.repository.ChoicequestionExplainRepository;
-import com.liang.repository.ChoicequestionRepository;
-import com.liang.repository.SubjectRepository;
-import com.liang.service.questionservice.QuestionManager;
-import com.liang.service.subjectservice.ChoiceQuestionManager;
-import com.liang.util.GsonUtil;
-import com.liang.util.IDmanager;
-import com.liang.util.StringUtil;
-import com.liang.util.SystemConfig;
+
+import com.gsau.portal.helper.ReaderUrlHelper;
+import com.gsau.portal.pojo.po.Choicequestion;
+import com.gsau.portal.pojo.po.ChoicequestionExplain;
+import com.gsau.portal.repository.ChoicequestionExplainRepository;
+import com.gsau.portal.repository.ChoicequestionRepository;
+import com.gsau.portal.repository.SubjectRepository;
+import com.gsau.portal.service.questionservice.QuestionManager;
+import com.gsau.portal.service.subjectservice.ChoiceQuestionManager;
+import com.gsau.portal.util.GsonUtil;
+import com.gsau.portal.util.IDmanager;
+import com.gsau.portal.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -79,7 +78,7 @@ public class QuestionImpl implements QuestionManager {
      */
     public String readUrlString(){
 
-        System.out.println(""+ReaderUrlHelper.class.getName());
+        System.out.println(""+ ReaderUrlHelper.class.getName());
         StringBuffer strb = new StringBuffer();
 
         try {

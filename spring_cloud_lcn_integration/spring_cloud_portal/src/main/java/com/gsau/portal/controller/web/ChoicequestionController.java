@@ -3,6 +3,7 @@ package com.gsau.portal.controller.web;
 import com.gsau.portal.pojo.MessageObject;
 import com.gsau.portal.pojo.po.Choicequestion;
 import com.gsau.portal.pojo.po.ChoicequestionExplain;
+import com.gsau.portal.pojo.po.Subject;
 import com.gsau.portal.repository.ChoicequestionExplainRepository;
 import com.gsau.portal.repository.ChoicequestionRepository;
 import com.gsau.portal.repository.SubjectRepository;
@@ -54,14 +55,14 @@ public class ChoicequestionController {
     @RequestMapping(value="/viewlist")
     @ResponseBody
     public List<Choicequestion> viewlist(){
-        List<Choicequestion> list= (List<Choicequestion>) choicequestionRepository.findallobjes();
+        List<Choicequestion> list= choicequestionRepository.findallobjes();
         return list;
     }
 
 
     @RequestMapping(value="/add")
     public String add(Model model){
-        List<Subject> subjects = (List<Subject>)subjectRepository.findSubjectByLevel(1);
+        List<Subject> subjects = subjectRepository.findSubjectByLevel(1);
         if(subjects!=null){
             model.addAttribute("subjects",subjects);
         }

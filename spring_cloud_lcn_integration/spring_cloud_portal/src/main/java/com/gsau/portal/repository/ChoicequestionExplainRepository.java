@@ -1,7 +1,7 @@
 package com.gsau.portal.repository;
 
-import com.liang.pojo.po.Choicequestion;
-import com.liang.pojo.po.ChoicequestionExplain;
+
+import com.gsau.portal.pojo.po.ChoicequestionExplain;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
