@@ -126,6 +126,10 @@ public class UserInfoController {
         return list;
     }
 
+    /**
+     * 删除操作
+     * @param usertel
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/del/{usertel}")
     @ResponseBody
     public void del(@PathVariable String usertel) {
