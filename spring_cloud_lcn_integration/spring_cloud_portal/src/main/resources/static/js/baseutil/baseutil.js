@@ -14,7 +14,6 @@ baseutil = {
  * 基础状态的判断
  * val 是值
  */
-
 baseutil.formatter_status = function (val, rowObj) {
     if (val == baseutil.mstatus_normal) {
         return '启用';

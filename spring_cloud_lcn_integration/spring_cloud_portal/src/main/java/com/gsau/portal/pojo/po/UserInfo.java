@@ -85,4 +85,18 @@ public class UserInfo {
     public void setTokenid(String tokenid) {
         this.tokenid = tokenid;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "userid=" + userid +
+                ", usertel='" + usertel + '\'' +
+                ", username='" + username + '\'' +
+                ", userpassword='" + userpassword + '\'' +
+                ", mstatus='" + mstatus + '\'' +
+                ", msex='" + msex + '\'' +
+                ", createtime=" + createtime +
+                ", tokenid='" + tokenid + '\'' +
+                '}';
+    }
 }

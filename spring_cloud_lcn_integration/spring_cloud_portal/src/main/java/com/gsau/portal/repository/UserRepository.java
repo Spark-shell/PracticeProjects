@@ -19,6 +19,9 @@ public interface UserRepository extends CrudRepository<UserInfo, Integer> {
     @Query(value="select * from tb_userinfo where usertel = ?1",nativeQuery=true)
     UserInfo findByUsertel(String usertel);
 
+    @Query(value="select * from tb_userinfo where userid = ?1",nativeQuery=true)
+    UserInfo findByUserId(int id);
+
     @Query(value="select * from tb_userinfo where usertel = ?1 and userpassword = ?2",nativeQuery=true)
     UserInfo findUser(String usertel, String userPassword);
 

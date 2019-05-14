@@ -1,10 +1,9 @@
 /**
- * Created by liang on 2017/7/13.
+ * @author WangGuoQing
+ * @date 2019/5/14 14:00
+ * @Desc 
  */
-
 var hisquestion = {};
-
-
 hisquestion.submitForm = function () {
     var choicequestionname = $("input[name=choicequestionname]");
     var answera = $("input[name=answera]");

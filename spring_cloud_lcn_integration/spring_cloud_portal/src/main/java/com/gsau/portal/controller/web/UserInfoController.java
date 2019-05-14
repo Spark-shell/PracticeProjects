@@ -24,7 +24,6 @@ public class UserInfoController {
     @Autowired
     UserRepository userRepository;
 
-
     /**
      * 开始页面
      *
@@ -35,7 +34,6 @@ public class UserInfoController {
         return "userinfo/userinfolist";
     }
 
-
     /**
      * 新增
      *
@@ -44,6 +42,21 @@ public class UserInfoController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
         return "userinfo/userino-add";
+    }
+
+    /**
+     * 修改用户信息
+     *
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET, value = "/edit/{usertel}")
+    public String eidt(@PathVariable String usertel, Model model) {
+        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        model.addAttribute("userInfo", userInfo);
+        if (userInfo != null) {
+            System.out.println(userInfo.toString());
+        }
+        return "userinfo/updateUserInfo";
     }
 
     /**
@@ -75,7 +88,7 @@ public class UserInfoController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "/createuserinfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/createUserinfo", method = RequestMethod.POST)
     @ResponseBody
     public MessageObject createUserinfo(@RequestParam(required = false) String usertel,
                                         @RequestParam(required = false) String username,
@@ -96,16 +109,53 @@ public class UserInfoController {
                 userInfo.setUsername(username);
                 userInfo.setMsex(msex);
                 userRepository.save(userInfo);
+                messageObject.setMdesc("数据保存成功");
+                return messageObject;
             } else {
                 messageObject.setCode(SystemConfig.mess_failed);
-                messageObject.setMdesc("创建失败，存在相同的对象！");
+                messageObject.setMdesc("用户已经存在");
                 return messageObject;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            messageObject.setCode(SystemConfig.mess_failed);
+            messageObject.setMdesc("用户创建异常");
+            return messageObject;
+        }
+    }
+
+    /**
+     * 创建用户信息
+     *
+     * @param model
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public MessageObject updateUserInfo(@RequestParam(required = false) String usertel,
+                                        @RequestParam(required = false) String username,
+                                        @RequestParam(required = false) String userpassword,
+                                        @RequestParam(required = false) String msex,
+                                        @RequestParam(required = false) String mstatus,
+                                        @RequestParam(required = false) int userid,
+                                        Model model, HttpSession session) {
+        UserInfo userInfo = userRepository.findByUserid(userid);
+        MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
+        try {
+            userpassword = MD5Util.getMD5Code(userpassword);
+            userInfo.setUserpassword(userpassword);
+            userInfo.setUsertel(usertel);
+            userInfo.setCreatetime(System.currentTimeMillis());
+            userInfo.setMstatus(mstatus);
+            userInfo.setUsername(username);
+            userInfo.setMsex(msex);
+            userRepository.save(userInfo);
             return messageObject;
         } catch (Exception e) {
             e.printStackTrace();
             messageObject.setCode(SystemConfig.mess_failed);
-            messageObject.setMdesc("创建失败，执行异常！");
+            messageObject.setMdesc("更新操作发生异常！");
             return messageObject;
         }
     }
@@ -128,6 +178,7 @@ public class UserInfoController {
 
     /**
      * 删除操作
+     *
      * @param usertel
      */
     @RequestMapping(method = RequestMethod.GET, value = "/del/{usertel}")

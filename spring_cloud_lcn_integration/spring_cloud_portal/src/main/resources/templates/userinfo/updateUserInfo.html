@@ -1,0 +1,41 @@
+<form id="userinfoAddForm" method="post" action="/integrate/portal/userinfo/createuserinfo">
+    <table>
+        <tr style="display: none">
+            <td>用户ID：</td>
+            <td><input class="easyui-validatebox" type="text" name="userid" data-options="required:true"
+                       th:value="${userInfo.userid}"></input></td>
+        </tr>
+        <tr>
+            <td>用户手机：</td>
+            <td><input class="easyui-validatebox" type="text" name="usertel" data-options="required:true"
+                       th:value="${userInfo.usertel}"></input></td>
+        </tr>
+        <tr>
+            <td>用户名称：</td>
+            <td><input class="easyui-validatebox" type="text" name="username" data-options="required:true"
+                       th:value="${userInfo.username}"></input></td>
+        </tr>
+        <tr>
+            <td>用户密码：</td>
+            <td><input class="easyui-validatebox" type="text" name="userpassword" data-options="required:true"
+                       th:value="${userInfo.userpassword}"></input></td>
+        </tr>
+        <tr>
+            <td>性别：</td>
+            <td>
+                <input type="radio" name="msex" value="msex.male" checked="checked"/> 男
+                <input type="radio" name="msex" value="msex.female"/> 女
+            </td>
+        </tr>
+        <tr>
+            <td>是否启用：</td>
+            <td>
+                <input type="radio" name="mstatus" value="mstatus.normal" checked="checked"/> 启用
+                <input type="radio" name="mstatus" value="mstatus.stop"/> 停用
+            </td>
+        </tr>
+    </table>
+</form>
+<div style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="userinfo.submitForm('update','updateUserInfo')">保存</a>
+</div>

@@ -44,7 +44,7 @@
         var userpassword = $("input[name=userpassword]");
 
         $('#userinfoAddForm').form('submit', {
-            url: systemNamePath + "/userinfo/createuserinfo",
+            url: systemNamePath + "/userinfo/createUserinfo",
             onSubmit: function () {
                 if (usertel.val() == null || usertel.val() == '') {
                     $.messager.alert('提示', '请填写用户手机！');
