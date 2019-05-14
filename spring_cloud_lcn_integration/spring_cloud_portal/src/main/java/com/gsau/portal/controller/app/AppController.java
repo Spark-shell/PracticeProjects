@@ -7,6 +7,4 @@ package com.gsau.portal.controller.app;
  */
 public class AppController {
 
-
-
 }

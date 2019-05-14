@@ -16,7 +16,6 @@ $(document).ready(function () {
     //easyUI datebox 的默认格式 日/月/年 通过此方法修改为年-月-日
     sys.do_datebox();
 
-
 });
 //end ready
 
@@ -27,11 +26,6 @@ $(document).ready(function () {
  * @Desc 创建一个mian 对象用于操作 main 文件夹下的所有页面的事件
  */
 var sys = {};
-amend;
-sign;
-reformat;
-rearrange;
-optimize;
 /**
  * @author WangGuoQing
  * @date 2019/5/14 11:08
@@ -93,7 +87,9 @@ sys.addTabs = function (title, id) {
 
 };
 /**
- * 当前的tab 是否存在如果存在就 自动选择 否则 创建新的tab
+ * @author WangGuoQing
+ * @date 2019/5/14 13:22
+ * @Desc 当前的tab 是否存在如果存在就 自动选择 否则 创建新的tab
  */
 sys.createTab = function (title, url) {
     /**当前的tab 是否存在如果存在就 自动选择 否则 创建新的tab**/
@@ -109,8 +105,6 @@ sys.createTab = function (title, url) {
     }
     sys.loadContext(title, url);
 };
-
-
 sys.loadContext = function (title, url) {
     /**
      * 这里有两种获得tabpanel的方式
@@ -121,8 +115,6 @@ sys.loadContext = function (title, url) {
     var tab = $('#sys-main-tab').tabs('getTab', title); //pass title or index get panel
     tab.panel('refresh', url);
 };
-
-
 sys.test = function () {
     alert("test");
 };

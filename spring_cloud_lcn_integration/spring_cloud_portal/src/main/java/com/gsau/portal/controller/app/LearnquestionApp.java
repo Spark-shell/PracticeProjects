@@ -1,7 +1,6 @@
 package com.gsau.portal.controller.app;
 
 
-
 import com.gsau.portal.pojo.MessageObject;
 import com.gsau.portal.pojo.po.Choicequestion;
 import com.gsau.portal.pojo.po.LearnCurrent;
@@ -16,7 +15,10 @@ import com.gsau.portal.util.GsonUtil;
 import com.gsau.portal.util.StringUtil;
 import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 
@@ -28,8 +30,6 @@ import java.util.HashMap;
 @RestController
 @RequestMapping("/app/learnquestion")
 public class LearnquestionApp {
-
-
     private MessageObject mo ;
     @Autowired
     ChoicequestionRepository choicequestionRepository;

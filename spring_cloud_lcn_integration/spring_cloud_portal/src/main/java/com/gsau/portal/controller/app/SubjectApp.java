@@ -20,15 +20,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/app/subject")
 public class SubjectApp {
-
     @Autowired
     SubjectRepository subjectRepository;
-
-
     @RequestMapping(value="/viewlist/{mlevel}")
     public MessageObject viewlist(@PathVariable int mlevel){
         MessageObject mo = new MessageObject(SystemConfig.mess_succ,"登录成功");
-        List<Subject> list = (List<Subject>) subjectRepository.findSubjectByLevel(mlevel);
+        List<Subject> list = subjectRepository.findSubjectByLevel(mlevel);
         if(list != null ){
             String content = GsonUtil.objTOjson(list);
             System.out.println("****content***"+content);
@@ -47,7 +44,7 @@ public class SubjectApp {
     public MessageObject viewlist(@PathVariable String parentid){
         MessageObject mo = new MessageObject(SystemConfig.mess_succ,"登录成功");
         System.out.println(parentid+"---kkkkk---");
-        List<Subject> list = (List<Subject>) subjectRepository.findSubjectBypid(parentid);
+        List<Subject> list = subjectRepository.findSubjectBypid(parentid);
         if(list != null ){
             String content = GsonUtil.objTOjson(list);
             System.out.println("****content111***"+content);
