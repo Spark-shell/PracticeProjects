@@ -31,13 +31,15 @@ public class PostFilter extends ZuulFilter {
         ctx.getResponse().setCharacterEncoding("GBK");
         //获取上下文中保存的responseBody
         String responseBody = ctx.getResponseBody();
+
         //如果responseBody不为空，则说明流程有异常发生
-        if (null != responseBody) {
-            //设定返回状态码
-            ctx.setResponseStatusCode(500);
-            //替换响应报文
-            ctx.setResponseBody(responseBody);
-        }
+        System.out.println("==========run===222222222======"+(null != responseBody));
+//        if (null != responseBody) {
+//            //设定返回状态码
+//            ctx.setResponseStatusCode(500);
+//            //替换响应报文
+//            ctx.setResponseBody(responseBody);
+//        }
         return null;
     }
 

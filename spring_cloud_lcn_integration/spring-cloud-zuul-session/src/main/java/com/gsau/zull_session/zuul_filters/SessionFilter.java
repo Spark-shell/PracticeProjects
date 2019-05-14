@@ -31,7 +31,7 @@ public class SessionFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        System.out.println("Session Filter Starter");
+      /*  System.out.println("Session Filter Starter");
         RequestContext ctx = RequestContext.getCurrentContext();                //从RequestContext获取上下文
         HttpServletRequest request = ctx.getRequest();                          //从上下文获取HttpServletRequest
         HttpSession session = request.getSession();
@@ -49,7 +49,7 @@ public class SessionFilter extends ZuulFilter {
             ctx.set("logic-is-success", false);
         }
         System.out.println(session.getId());
-        System.out.println(session.getAttributeNames());
+        System.out.println(session.getAttributeNames());*/
         return null;
     }
 }
