@@ -17,6 +17,6 @@ public interface OrderService {
      * @Desc 添加订单
      */
     @RequestMapping(value = "/addOrder",method= RequestMethod.POST)
-    public void addOder(@RequestBody Orders order);
+    void addOder(@RequestBody Orders order);
 
 }
