@@ -14,27 +14,30 @@
         FROM tb_userinfo AS b
         WHERE b.usertel = #{usertel}
     </select>
+    <select id="findAll" resultType="com.gsau.order_sersvice.projo.po.UserInfo">
+        SELECT *
+        FROM tb_userinfo
+    </select>
     <!--加入-->
     <insert id="insertUserInfo">
-        INSERT INTO tb_userinfo(
-                             usertel,
-                             username,
-                             userpassword,
-                             mstatus,
-                             createtime,
-                             msex,
-                             tokenid
-                             )
-        VALUES (
-                #{userInfo.usertel},
-                #{userInfo.username},
-                #{userInfo.userpassword},
-                #{userInfo.mstatus},
-                #{userInfo.createtime},
-                #{userInfo.msex},
-                #{userInfo.tokenid}
-                )
+        INSERT INTO tb_userinfo(usertel,
+                                username,
+                                userpassword,
+                                mstatus,
+                                createtime,
+                                msex,
+                                tokenid)
+        VALUES (#{usertel},
+                #{username},
+                #{userpassword},
+                #{mstatus},
+                #{createtime},
+                #{msex},
+                #{tokenid})
     </insert>
     <!--删除-->
+    <delete id="delete">
+        delete from tb_userinfo where userid=#{userid}
+    </delete>
     <!--更新-->
 </mapper>

@@ -4,6 +4,7 @@ import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.portal.feign_service.PortalUserInfoService;
 import com.gsau.portal.portal.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @date 2019/5/15 14:45
  * @Desc 调用远程微服务
  */
+@Service
 public class UserInfoServiceImpl implements UserInfoService {
     //fegin远程微服务接口
     @Autowired

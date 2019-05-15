@@ -2,6 +2,7 @@ package com.gsau.order_sersvice.services;
 
 import com.gsau.order_sersvice.projo.po.UserInfo;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -43,7 +44,7 @@ public interface UserInfoService {
      * @param userInfo
      */
     @RequestMapping(value = "/save" ,method = RequestMethod.POST)
-    void save(UserInfo userInfo);
+    void save(@RequestBody UserInfo userInfo);
 
     /**
      * 获取所有用户
@@ -57,5 +58,5 @@ public interface UserInfoService {
      * @param userInfo
      */
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    void delete(UserInfo userInfo);
+    void delete(@RequestBody UserInfo userInfo);
 }

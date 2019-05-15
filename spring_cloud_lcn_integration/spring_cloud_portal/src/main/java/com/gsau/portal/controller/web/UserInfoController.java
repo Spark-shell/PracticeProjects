@@ -3,7 +3,6 @@ package com.gsau.portal.controller.web;
 import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.portal.pojo.MessageObject;
 import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
-import com.gsau.portal.repository.UserRepository;
 import com.gsau.portal.util.MD5Util;
 import com.gsau.portal.util.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/web/userinfo")
 public class UserInfoController {
+
     @Autowired
     UserInfoServiceImpl userInfoService;
 
-    @Autowired
-    UserRepository userRepository;
+    // @Autowired
+    // UserRepository userRepository;
 
     /**
      * 开始页面
@@ -112,6 +112,7 @@ public class UserInfoController {
                 userInfo.setMstatus(mstatus);
                 userInfo.setUsername(username);
                 userInfo.setMsex(msex);
+
                 userInfoService.save(userInfo);
                 messageObject.setMdesc("数据保存成功");
                 return messageObject;
@@ -196,7 +197,7 @@ public class UserInfoController {
     @ResponseBody
     @RequestMapping(value = "/findByUserTel/{usertel}" )
     public String findUser(@PathVariable String usertel) {
-        com.gsau.order_sersvice.projo.po.UserInfo userInfo= userInfoService.findUserByTel(usertel);
+        UserInfo userInfo= userInfoService.findUserByTel(usertel);
         return userInfo.toString();
     }
 

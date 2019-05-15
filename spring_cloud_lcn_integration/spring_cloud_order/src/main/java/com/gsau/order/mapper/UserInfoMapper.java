@@ -2,6 +2,8 @@ package com.gsau.order.mapper;
 
 import com.gsau.order_sersvice.projo.po.UserInfo;
 
+import java.util.List;
+
 /**
  * @author WangGuoQing
  * @date 2019/5/15 9:22
@@ -25,4 +27,16 @@ public interface UserInfoMapper {
      * @param usertel
      */
     UserInfo  findByUserTel(String usertel);
+
+    /**
+     * 获取全部
+     * @return
+     */
+    List<UserInfo> findAll();
+
+    /**
+     * 删除
+     * @param userInfo
+     */
+    void delete(UserInfo userInfo);
 }

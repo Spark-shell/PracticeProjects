@@ -180,6 +180,7 @@ CREATE TABLE `tb_userinfo` (
   `mstatus` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '状态 user.stop 停止使用  user.normal 正常使用，默认正常',
   `createtime` bigint(20) DEFAULT NULL COMMENT '创建时间',
   `msex` varchar(20) COLLATE utf8_bin NOT NULL,
+  `tokenid` varchar(255) DEFAULT NULL COMMENT 'Tokenid',
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -190,7 +191,10 @@ CREATE TABLE `tb_userinfo` (
 
 LOCK TABLES `tb_userinfo` WRITE;
 /*!40000 ALTER TABLE `tb_userinfo` DISABLE KEYS */;
-INSERT INTO `tb_userinfo` VALUES (3,'18611600827','中国人','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499740776459,'msex.male'),(4,'18611600828','袁亮','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499740825767,'msex.male'),(5,'18811131101','居里夫人','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499762971976,'msex.male'),(6,'123','123','698d51a19d8a121ce581499d7b701668','mstatus.normal',1500277687794,'msex.male');
+INSERT INTO `tb_userinfo` VALUES (3,'18611600827','中国人','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499740776459,'msex.male',''),
+                                 (4,'18611600828','袁亮','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499740825767,'msex.male',''),
+                                 (5,'18811131101','居里夫人','698d51a19d8a121ce581499d7b701668','mstatus.normal',1499762971976,'msex.male',''),
+                                 (6,'123','123','698d51a19d8a121ce581499d7b701668','mstatus.normal',1500277687794,'msex.male','');
 /*!40000 ALTER TABLE `tb_userinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

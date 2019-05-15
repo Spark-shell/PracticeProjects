@@ -6,6 +6,8 @@ import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.order_sersvice.services.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,34 +30,39 @@ public class UserInfoController implements UserInfoService {
 
     /**
      * 方式二
+     *
      * @param usertel
      * @return
      */
     @Override
-    public UserInfo findByUserTel(@PathVariable("usertel")  String usertel) {
-        UserInfo userInfo=userInfoService.findByUserTel(usertel);
+    public UserInfo findByUserTel(@PathVariable("usertel") String usertel) {
+        UserInfo userInfo = userInfoService.findByUserTel(usertel);
         return userInfo;
     }
 
     @Override
     public UserInfo findByUserId(@PathVariable("id") int id) {
-        UserInfo userInfo=userInfoService.findByUserId(id);
+        UserInfo userInfo = userInfoService.findByUserId(id);
         return userInfo;
     }
 
+    @RequestMapping(value = "/save")
     @Override
-    public void save(UserInfo userInfo) {
-
+    public void save(@RequestBody UserInfo userInfo) {
+        userInfoService.save(userInfo);
     }
 
+    @RequestMapping(value = "/findAll")
     @Override
     public List<UserInfo> findAll() {
-        return null;
+        List<UserInfo> list = userInfoService.findAll();
+        return list;
     }
 
+    @RequestMapping(value = "/delete")
     @Override
-    public void delete(UserInfo userInfo) {
-
+    public void delete(@RequestBody UserInfo userInfo) {
+        userInfoService.delete(userInfo);
     }
 
 }

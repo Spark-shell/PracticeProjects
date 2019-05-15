@@ -22,4 +22,10 @@ public interface UserInfoService {
     UserInfo findByUserInfoBytokenid(long userid, String tokenid);
 
     void insertUser(UserInfo userInfo);
+
+    void save(UserInfo userInfo);
+
+    List<UserInfo> findAll();
+
+    void delete(UserInfo userInfo);
 }

@@ -54,4 +54,20 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void insertUser(UserInfo userInfo) {
         userInfoMapper.insertUserInfo(userInfo);
     }
+
+    @Override
+    public void save(UserInfo userInfo) {
+        userInfoMapper.insertUserInfo(userInfo);
+    }
+
+    @Override
+    public List<UserInfo> findAll() {
+        List<UserInfo> list=  userInfoMapper.findAll();
+        return list;
+    }
+
+    @Override
+    public void delete(UserInfo userInfo) {
+        userInfoMapper.delete(userInfo);
+    }
 }
