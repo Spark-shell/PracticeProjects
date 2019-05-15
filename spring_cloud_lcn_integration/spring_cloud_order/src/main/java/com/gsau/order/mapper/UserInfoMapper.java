@@ -18,11 +18,11 @@ public interface UserInfoMapper {
      *  根据useridc查询
      * @param userid
      */
-    void findByUserId(int userid);
+    UserInfo findByUserId(int userid);
 
     /**
      * 电话号查询
      * @param usertel
      */
-    void findByUserTel(int usertel);
+    UserInfo  findByUserTel(String usertel);
 }

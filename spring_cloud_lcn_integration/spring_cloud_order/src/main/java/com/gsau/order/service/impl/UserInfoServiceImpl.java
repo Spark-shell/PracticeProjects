@@ -1,21 +1,25 @@
 package com.gsau.order.service.impl;
 
+import com.codingapi.tx.annotation.TxTransaction;
+import com.gsau.order.mapper.UserInfoMapper;
 import com.gsau.order.service.UserInfoService;
 import com.gsau.order_sersvice.projo.po.UserInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * @author WangGuoQing
  * @date 2019/5/8 13:52
- * @Desc 
+ * @Desc
  */
-public class UserInfoServiceImpl  implements UserInfoService {
+@Service
+public class UserInfoServiceImpl implements UserInfoService {
+    @Autowired
+    private UserInfoMapper userInfoMapper;
 
-    @Override
-    public UserInfo findByUsertel(String usertel) {
-        return null;
-    }
 
     @Override
     public UserInfo findByUserId(int id) {
@@ -32,13 +36,22 @@ public class UserInfoServiceImpl  implements UserInfoService {
         return null;
     }
 
+
     @Override
-    public UserInfo findByUserid(long userid) {
-        return null;
+    public UserInfo findByUserTel(String usertel) {
+        UserInfo userInfo = userInfoMapper.findByUserTel(usertel);
+        return userInfo;
     }
 
     @Override
     public UserInfo findByUserInfoBytokenid(long userid, String tokenid) {
         return null;
+    }
+
+    @Transactional
+    @TxTransaction
+    @Override
+    public void insertUser(UserInfo userInfo) {
+        userInfoMapper.insertUserInfo(userInfo);
     }
 }

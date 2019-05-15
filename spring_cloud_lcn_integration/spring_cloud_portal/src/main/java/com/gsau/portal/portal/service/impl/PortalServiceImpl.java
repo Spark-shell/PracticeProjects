@@ -5,6 +5,7 @@ import com.gsau.inventory_sersvice.projo.Inventory;
 import com.gsau.order_sersvice.projo.Orders;
 import com.gsau.portal.feign_service.PortalInventoryService;
 import com.gsau.portal.feign_service.PortalOrderService;
+import com.gsau.portal.feign_service.PortalUserInfoService;
 import com.gsau.portal.portal.service.PortalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class PortalServiceImpl implements PortalService {
 
     @Autowired
     private PortalOrderService orderService;
+    @Autowired
+    private PortalUserInfoService userInfoService;
+
 
     @TxTransaction(isStart = true)
     @Override
@@ -29,4 +33,5 @@ public class PortalServiceImpl implements PortalService {
         orders.setPrice(10);
         orderService.addOder(orders);
     }
+
 }

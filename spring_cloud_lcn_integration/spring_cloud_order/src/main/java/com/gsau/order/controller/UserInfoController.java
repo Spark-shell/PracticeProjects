@@ -1,22 +1,61 @@
 package com.gsau.order.controller;
 
-import com.gsau.order.service.UserInfoService;
-import com.gsau.order_sersvice.projo.Orders;
-import com.gsau.order_sersvice.services.OrderService;
+
+import com.gsau.order.service.impl.UserInfoServiceImpl;
+import com.gsau.order_sersvice.projo.po.UserInfo;
+import com.gsau.order_sersvice.services.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-public class UserInfoController implements OrderService {
+public class UserInfoController implements UserInfoService {
     @Autowired
-    private UserInfoService userInfoService;
+    UserInfoServiceImpl userInfoService;
+
+    /**
+     * 方式一
+     * @param usertel
+     * @return
+     */
+    // @Override
+    // public UserInfo findByUserTel(@RequestParam("usertel")  String usertel) {
+    //     UserInfo userInfo=userInfoService.findByUserTel(usertel);
+    //     return userInfo;
+    // }
+
+    /**
+     * 方式二
+     * @param usertel
+     * @return
+     */
+    @Override
+    public UserInfo findByUserTel(@PathVariable("usertel")  String usertel) {
+        UserInfo userInfo=userInfoService.findByUserTel(usertel);
+        return userInfo;
+    }
 
     @Override
-    @Transactional
-    public void addOder(@RequestBody Orders order) {
-        userInfoService.findByUserId(1);
+    public UserInfo findByUserId(@PathVariable("id") int id) {
+        UserInfo userInfo=userInfoService.findByUserId(id);
+        return userInfo;
+    }
+
+    @Override
+    public void save(UserInfo userInfo) {
+
+    }
+
+    @Override
+    public List<UserInfo> findAll() {
+        return null;
+    }
+
+    @Override
+    public void delete(UserInfo userInfo) {
+
     }
 
 }

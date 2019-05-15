@@ -1,7 +1,8 @@
 package com.gsau.portal.controller.web;
 
+import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.portal.pojo.MessageObject;
-import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
 import com.gsau.portal.repository.UserRepository;
 import com.gsau.portal.util.MD5Util;
 import com.gsau.portal.util.SystemConfig;
@@ -21,6 +22,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/web/userinfo")
 public class UserInfoController {
+    @Autowired
+    UserInfoServiceImpl userInfoService;
+
     @Autowired
     UserRepository userRepository;
 
@@ -51,7 +55,7 @@ public class UserInfoController {
      */
     @RequestMapping(method = RequestMethod.GET, value = "/edit/{usertel}")
     public String eidt(@PathVariable String usertel, Model model) {
-        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        UserInfo userInfo = userInfoService.findUserByTel(usertel);
         model.addAttribute("userInfo", userInfo);
         if (userInfo != null) {
             System.out.println(userInfo.toString());
@@ -96,7 +100,7 @@ public class UserInfoController {
                                         @RequestParam(required = false) String msex,
                                         @RequestParam(required = false) String mstatus,
                                         Model model, HttpSession session) {
-        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        UserInfo userInfo = userInfoService.findUserByTel(usertel);
         MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
         try {
             if (userInfo == null) {
@@ -108,7 +112,7 @@ public class UserInfoController {
                 userInfo.setMstatus(mstatus);
                 userInfo.setUsername(username);
                 userInfo.setMsex(msex);
-                userRepository.save(userInfo);
+                userInfoService.save(userInfo);
                 messageObject.setMdesc("数据保存成功");
                 return messageObject;
             } else {
@@ -140,7 +144,7 @@ public class UserInfoController {
                                         @RequestParam(required = false) String mstatus,
                                         @RequestParam(required = false) int userid,
                                         Model model, HttpSession session) {
-        UserInfo userInfo = userRepository.findByUserid(userid);
+        UserInfo userInfo = userInfoService.findUserByUserId(userid);
         MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
         try {
             userpassword = MD5Util.getMD5Code(userpassword);
@@ -150,7 +154,7 @@ public class UserInfoController {
             userInfo.setMstatus(mstatus);
             userInfo.setUsername(username);
             userInfo.setMsex(msex);
-            userRepository.save(userInfo);
+            userInfoService.save(userInfo);
             return messageObject;
         } catch (Exception e) {
             e.printStackTrace();
@@ -169,7 +173,7 @@ public class UserInfoController {
     @RequestMapping(value = "/userinfolist", method = RequestMethod.GET)
     @ResponseBody
     public List<UserInfo> userlist(Model model) {
-        List<UserInfo> list = (List<UserInfo>) userRepository.findAll();
+        List<UserInfo> list = (List<UserInfo>) userInfoService.findAll();
         if (list != null) {
             model.addAttribute("userlist", list);
         }
@@ -184,11 +188,16 @@ public class UserInfoController {
     @RequestMapping(method = RequestMethod.GET, value = "/del/{usertel}")
     @ResponseBody
     public void del(@PathVariable String usertel) {
-        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        UserInfo userInfo = userInfoService.findUserByTel(usertel);
         if (userInfo != null) {
-            userRepository.delete(userInfo);
+            userInfoService.delete(userInfo);
         }
     }
-
+    @ResponseBody
+    @RequestMapping(value = "/findByUserTel/{usertel}" )
+    public String findUser(@PathVariable String usertel) {
+        com.gsau.order_sersvice.projo.po.UserInfo userInfo= userInfoService.findUserByTel(usertel);
+        return userInfo.toString();
+    }
 
 }

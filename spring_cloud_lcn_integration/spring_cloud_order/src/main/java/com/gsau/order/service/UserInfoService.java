@@ -10,10 +10,16 @@ import java.util.List;
  * @Desc 用户登录验证信息
  */
 public interface UserInfoService {
-    UserInfo findByUsertel(String usertel);
+
     UserInfo findByUserId(int id);
+
     UserInfo findUser(String usertel, String userPassword);
+
     List<UserInfo> queryList(int pageNumber, int pageSize);
-    UserInfo findByUserid(long userid);
+
+    UserInfo findByUserTel(String usertel);
+
     UserInfo findByUserInfoBytokenid(long userid, String tokenid);
+
+    void insertUser(UserInfo userInfo);
 }
