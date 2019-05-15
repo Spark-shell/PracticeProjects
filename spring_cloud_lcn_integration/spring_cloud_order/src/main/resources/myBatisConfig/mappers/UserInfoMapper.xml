@@ -12,7 +12,7 @@
     <select id="findByUserTel" resultType="com.gsau.order_sersvice.projo.po.UserInfo">
         SELECT *
         FROM tb_userinfo AS b
-        WHERE b.userid = #{usertel}
+        WHERE b.usertel = #{usertel}
     </select>
     <!--加入-->
     <insert id="insertUserInfo">
