@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsau.order.mapper.UserInfoMapper">
+    <!--查询-->
+    <select id="findByUserId" resultType="com.gsau.order_sersvice.projo.po.UserInfo">
+        SELECT *
+        FROM tb_userinfo AS b
+        WHERE b.userid = #{userid}
+    </select>
+    <select id="findByUserTel" resultType="com.gsau.order_sersvice.projo.po.UserInfo">
+        SELECT *
+        FROM tb_userinfo AS b
+        WHERE b.userid = #{usertel}
+    </select>
+    <!--加入-->
+    <insert id="insertUserInfo">
+        INSERT INTO tb_userinfo(
+                             usertel,
+                             username,
+                             userpassword,
+                             mstatus,
+                             createtime,
+                             msex,
+                             tokenid
+                             )
+        VALUES (
+                #{userInfo.usertel},
+                #{userInfo.username},
+                #{userInfo.userpassword},
+                #{userInfo.mstatus},
+                #{userInfo.createtime},
+                #{userInfo.msex},
+                #{userInfo.tokenid}
+                )
+    </insert>
+    <!--删除-->
+    <!--更新-->
+</mapper>
