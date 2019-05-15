@@ -86,9 +86,9 @@ userinfo.edit = function () {
     if (row == null) {
         $.messager.alert('提示', '请选取一行数据');
     } else {
-        var usertel = row.usertel;
+        var userid = row.userid;
         $("body").append($("<div id='userinfo_win_edit'></div>"));
-        var url = systemNamePath + '/userinfo/edit/' + usertel;
+        var url = systemNamePath + '/userinfo/edit/' + userid;
         $("#userinfo_win_edit").dialog({
             href: url,
             width: 400,
@@ -111,7 +111,7 @@ userinfo.del = function () {
     if (row == null) {
         $.messager.alert('提示', '请选取一行数据');
     } else {
-        var usertel = row.usertel;
+        var usertel = row.userid;
         /**
          * 下面的ajax的操作不是异步而是同步操作
          * 即等到删除完了之后 datagrid 页面才会reload

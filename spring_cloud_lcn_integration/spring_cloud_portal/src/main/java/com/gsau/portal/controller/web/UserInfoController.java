@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+
 /**
  * @author WangGuoQing
  * @date 2019/5/13 21:15
@@ -53,9 +54,9 @@ public class UserInfoController {
      *
      * @return
      */
-    @RequestMapping(method = RequestMethod.GET, value = "/edit/{usertel}")
-    public String eidt(@PathVariable String usertel, Model model) {
-        UserInfo userInfo = userInfoService.findUserByTel(usertel);
+    @RequestMapping(method = RequestMethod.GET, value = "/edit/{userid}")
+    public String eidt(@PathVariable int userid, Model model) {
+        UserInfo userInfo = userInfoService.findUserByUserId(userid);
         model.addAttribute("userInfo", userInfo);
         if (userInfo != null) {
             System.out.println(userInfo.toString());
@@ -186,10 +187,10 @@ public class UserInfoController {
      *
      * @param usertel
      */
-    @RequestMapping(method = RequestMethod.GET, value = "/del/{usertel}")
+    @RequestMapping(method = RequestMethod.GET, value = "/del/{userid}")
     @ResponseBody
-    public void del(@PathVariable String usertel) {
-        UserInfo userInfo = userInfoService.findUserByTel(usertel);
+    public void del(@PathVariable int userid) {
+        UserInfo userInfo = userInfoService.findUserByUserId(userid);
         if (userInfo != null) {
             userInfoService.delete(userInfo);
         }
