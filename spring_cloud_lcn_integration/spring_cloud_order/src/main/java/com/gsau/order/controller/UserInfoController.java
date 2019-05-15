@@ -39,10 +39,9 @@ public class UserInfoController implements UserInfoService {
         UserInfo userInfo = userInfoService.findByUserTel(usertel);
         return userInfo;
     }
-
     @Override
-    public UserInfo findByUserId(@PathVariable("id") int id) {
-        UserInfo userInfo = userInfoService.findByUserId(id);
+    public UserInfo findByUserId(@PathVariable("userid") int userid) {
+        UserInfo userInfo = userInfoService.findByUserId(userid);
         return userInfo;
     }
 

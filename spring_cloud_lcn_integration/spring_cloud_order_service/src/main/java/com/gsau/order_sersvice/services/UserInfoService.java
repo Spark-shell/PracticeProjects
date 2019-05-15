@@ -36,8 +36,8 @@ public interface UserInfoService {
      * @param userid
      * @return
      */
-    @RequestMapping(value = "/findByUserId/{usreid}" ,method = RequestMethod.GET)
-    UserInfo findByUserId( int userid);
+    @RequestMapping(value = "/findByUserId/{userid}" ,method = RequestMethod.GET)
+    UserInfo findByUserId(@PathVariable("userid") int userid);
 
     /**
      *  保存用户

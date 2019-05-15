@@ -23,7 +23,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfo findByUserId(int id) {
-        return null;
+        UserInfo info=userInfoMapper.findByUserId(id);
+        return info;
     }
 
     @Override
