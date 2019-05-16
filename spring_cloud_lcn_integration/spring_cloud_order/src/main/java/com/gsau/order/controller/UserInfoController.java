@@ -7,7 +7,6 @@ import com.gsau.order_sersvice.services.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -39,34 +38,38 @@ public class UserInfoController implements UserInfoService {
         UserInfo userInfo = userInfoService.findByUserTel(usertel);
         return userInfo;
     }
+
     @Override
     public UserInfo findByUserId(@PathVariable("userid") int userid) {
         UserInfo userInfo = userInfoService.findByUserId(userid);
         return userInfo;
     }
 
-    @RequestMapping(value = "/save")
     @Override
     public void save(@RequestBody UserInfo userInfo) {
         userInfoService.save(userInfo);
     }
 
-    @RequestMapping(value = "/findAll")
     @Override
     public List<UserInfo> findAll() {
         List<UserInfo> list = userInfoService.findAll();
         return list;
     }
 
-    @RequestMapping(value = "/delete")
     @Override
     public void delete(@RequestBody UserInfo userInfo) {
         userInfoService.delete(userInfo);
     }
 
     @Override
-    public UserInfo findUserByTelAndPwd(@PathVariable("usertel") String usertel,@PathVariable("userpassword")  String userpassword) {
-        UserInfo userInfo=userInfoService.findUserByTelAndPwd(usertel,userpassword);
+    public UserInfo findUserByTelAndPwd(@PathVariable("usertel") String usertel, @PathVariable("userpassword") String userpassword) {
+        UserInfo userInfo = userInfoService.findUserByTelAndPwd(usertel, userpassword);
+        return userInfo;
+    }
+
+    @Override
+    public UserInfo findByUserInfoByTokenidAndUserid(int userid, String tokenid) {
+        UserInfo userInfo = userInfoService.findByUserInfoByTokenidAndUserid(userid, tokenid);
         return userInfo;
     }
 

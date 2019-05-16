@@ -3,7 +3,11 @@ package com.gsau.portal.controller.web;
 import com.gsau.portal.pojo.MessageObject;
 import com.gsau.portal.pojo.po.Choicequestion;
 import com.gsau.portal.pojo.po.ChoicequestionExplain;
-import com.gsau.portal.repository.*;
+import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
+import com.gsau.portal.repository.ChoicequestionExplainRepository;
+import com.gsau.portal.repository.ChoicequestionRepository;
+import com.gsau.portal.repository.LearnCurrentRepository;
+import com.gsau.portal.repository.SubjectRepository;
 import com.gsau.portal.service.subjectservice.ChoiceQuestionManager;
 import com.gsau.portal.util.GsonUtil;
 import com.gsau.portal.util.IDmanager;
@@ -35,7 +39,7 @@ public class HisQuestionController {
     LearnCurrentRepository learnCurrentRepository;
 
     @Autowired
-    UserRepository userRepository;
+    UserInfoServiceImpl userInfoService;
 
     @Autowired
     SubjectRepository subjectRepository;
@@ -88,7 +92,7 @@ public class HisQuestionController {
         if(StringUtil.isEmpty(moniname)){
             return list;
         }
-        list= (List<Choicequestion>) choicequestionRepository.findallobjes(subjectid,moniname);
+        list= choicequestionRepository.findallobjes(subjectid,moniname);
         return list;
     }
 

@@ -68,4 +68,13 @@ public interface UserInfoService {
      */
     @RequestMapping(value = "/findUserByTelAndPwd/{usertel}/{userpassword}",method = RequestMethod.GET)
     UserInfo findUserByTelAndPwd(@PathVariable("usertel") String usertel, @PathVariable("userpassword")String userpassword);
+
+    /**
+     *
+     * @param userid
+     * @param tokenid
+     * @return
+     */
+    @RequestMapping(value = "/findByUserInfoByTokenidAndUserid/{userid}/{tokenid}",method = RequestMethod.GET)
+    UserInfo findByUserInfoByTokenidAndUserid(@PathVariable("userid")int userid,@PathVariable("tokenid") String tokenid);
 }

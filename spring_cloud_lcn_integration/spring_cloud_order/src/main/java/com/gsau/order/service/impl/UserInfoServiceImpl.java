@@ -77,4 +77,10 @@ public class UserInfoServiceImpl implements UserInfoService {
         UserInfo info=userInfoMapper.findUserByTelAndPwd(usertel,userpassword);
         return info;
     }
+
+    @Override
+    public UserInfo findByUserInfoByTokenidAndUserid(int userid, String tokenid) {
+        UserInfo info=userInfoMapper.findByUserInfoByTokenidAndUserid(userid,tokenid);
+        return info;
+    }
 }

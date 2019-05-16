@@ -24,6 +24,12 @@
         where b.usertel = #{usertel}
           and b.userpassword = #{userpassword}
     </select>
+    <select id="findByUserInfoByTokenidAndUserid" resultType="com.gsau.order_sersvice.projo.po.UserInfo" >
+        SELECT *
+        FROM tb_userinfo as b
+        where b.userid = #{userid}
+          and b.tokenid = #{tokenid}
+    </select>
     <!--加入-->
     <insert id="insertUserInfo">
         INSERT INTO tb_userinfo(usertel,

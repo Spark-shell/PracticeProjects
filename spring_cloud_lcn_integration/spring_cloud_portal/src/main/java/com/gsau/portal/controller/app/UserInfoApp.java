@@ -1,8 +1,8 @@
 package com.gsau.portal.controller.app;
 
+import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.portal.pojo.MessageObject;
-import com.gsau.portal.pojo.po.UserInfo;
-import com.gsau.portal.repository.UserRepository;
+import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
 import com.gsau.portal.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/app/userinfo")
 public class UserInfoApp {
     @Autowired
-    UserRepository userRepository;
+    UserInfoServiceImpl userInfoService;
     private MessageObject mo = new MessageObject(SystemConfig.mess_succ, "执行成功");
 
     @RequestMapping(value = "/dologin", method = RequestMethod.POST)
@@ -35,9 +35,9 @@ public class UserInfoApp {
                 return mo;
             }
             userpassword = MD5Util.getMD5Code(userpassword);
-            UserInfo user = userRepository.findUser(usertel, userpassword);
+            UserInfo user = userInfoService.findUserByTelAndPwd(usertel, userpassword);
             user.setTokenid(TokenManager.getInstance().createToken(user.getUsertel()));
-            userRepository.save(user);
+            userInfoService.save(user);
             if (user == null) {
                 mo.setMdesc("手机号或者用户密码错误");
                 mo.setCode(SystemConfig.mess_succ);
@@ -65,7 +65,7 @@ public class UserInfoApp {
                                     @RequestParam(required = false) String username,
                                     Model model) {
         System.out.println("usertel" + usertel);
-        UserInfo userInfo = userRepository.findByUsertel(usertel);
+        UserInfo userInfo =  userInfoService.findUserByUserId(Integer.parseInt( usertel));
         MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
         try {
             if (userInfo == null) {
@@ -78,9 +78,9 @@ public class UserInfoApp {
                 userInfo.setUsername(username);
                 userInfo.setMsex(SystemConfig.sex_male);
                 userInfo.setTokenid(TokenManager.getInstance().createToken(usertel.trim()));
-                userRepository.save(userInfo);
+                userInfoService.save(userInfo);
 
-                userInfo = userRepository.findByUsertel(usertel.trim());
+                userInfo = userInfoService.findUserByTel(usertel.trim());
 
                 String content = GsonUtil.objTOjson(userInfo);
                 System.out.println("***=" + content);
@@ -112,12 +112,12 @@ public class UserInfoApp {
     public MessageObject doout(@RequestParam(required = false) long userid,
                                @RequestParam(required = false) String tokenid) {
         System.out.println("tokenid" + tokenid);
-        UserInfo userInfo = userRepository.findByUserInfoBytokenid(userid, tokenid);
+        UserInfo userInfo = userInfoService.findByUserInfoByTokenidAndUserid(userid, tokenid);
         MessageObject messageObject = new MessageObject(SystemConfig.mess_succ, "执行成功！");
         try {
             if (userInfo != null) {
                 userInfo.setTokenid("");
-                userRepository.save(userInfo);
+                userInfoService.save(userInfo);
             }
             return messageObject;
         } catch (Exception e) {

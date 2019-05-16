@@ -48,4 +48,12 @@ public interface UserInfoMapper {
      * @return
      */
     UserInfo findUserByTelAndPwd(@Param("usertel") String usertel, @Param("userpassword")String userpassword);
+
+    /**
+     *
+     * @param userid
+     * @param tokenid
+     * @return
+     */
+    UserInfo findByUserInfoByTokenidAndUserid(@Param("userid")int userid,@Param("tokenid") String tokenid);
 }

@@ -49,4 +49,12 @@ public interface UserInfoService {
      * @return
      */
     UserInfo findUserByTelAndPwd(String usertel, String userpassword);
+
+    /**
+     * 根据用户id和tokenid查询
+     * @param userid
+     * @param tokenid
+     * @return
+     */
+    UserInfo findByUserInfoByTokenidAndUserid(long userid, String tokenid);
 }

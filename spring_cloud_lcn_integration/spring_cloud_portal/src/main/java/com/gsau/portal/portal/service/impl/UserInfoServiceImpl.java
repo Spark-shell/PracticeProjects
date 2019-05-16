@@ -52,4 +52,10 @@ public class UserInfoServiceImpl implements UserInfoService {
         UserInfo userInfo = userInfoService.findUserByTelAndPwd(usertel,userpassword);
         return userInfo;
     }
+
+    @Override
+    public UserInfo findByUserInfoByTokenidAndUserid(long userid, String tokenid) {
+        UserInfo userInfo = userInfoService.findByUserInfoByTokenidAndUserid((int)userid,tokenid);
+        return null;
+    }
 }

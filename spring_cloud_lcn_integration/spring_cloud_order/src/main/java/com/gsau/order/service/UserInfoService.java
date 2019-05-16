@@ -30,4 +30,6 @@ public interface UserInfoService {
     void delete(UserInfo userInfo);
 
     UserInfo findUserByTelAndPwd(String usertel, String userpassword);
+
+    UserInfo findByUserInfoByTokenidAndUserid(int userid, String tokenid);
 }

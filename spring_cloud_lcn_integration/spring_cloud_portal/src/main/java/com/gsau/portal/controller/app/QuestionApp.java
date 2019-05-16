@@ -1,20 +1,23 @@
 package com.gsau.portal.controller.app;
 
 
+import com.gsau.order_sersvice.projo.po.UserInfo;
 import com.gsau.portal.pojo.MessageObject;
 import com.gsau.portal.pojo.po.Choicequestion;
 import com.gsau.portal.pojo.po.ChoicequestionExplain;
-import com.gsau.portal.pojo.po.UserInfo;
+import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
 import com.gsau.portal.repository.ChoicequestionExplainRepository;
 import com.gsau.portal.repository.ChoicequestionRepository;
 import com.gsau.portal.repository.LearnCurrentRepository;
-import com.gsau.portal.repository.UserRepository;
 import com.gsau.portal.util.GsonUtil;
 import com.gsau.portal.util.SystemConfig;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -37,7 +40,7 @@ public class QuestionApp {
     LearnCurrentRepository learnCurrentRepository;
 
     @Autowired
-    UserRepository userRepository;
+    UserInfoServiceImpl userInfoService;
 
     MessageObject mo;
 
@@ -78,14 +81,14 @@ public class QuestionApp {
         }
 
         if(maxcode < mcode ){
-            question= (Choicequestion) choicequestionRepository.findSubjectChoiceQuestion(subjectid,mcode);
+            question= choicequestionRepository.findSubjectChoiceQuestion(subjectid,mcode);
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("已经是最后一道题目！");
             String content = GsonUtil.objTOjson(question);
             mo.setMcontent(content);
             return mo;
         }
-        question= (Choicequestion) choicequestionRepository.findSubjectChoiceQuestion(subjectid,mcode);
+        question= choicequestionRepository.findSubjectChoiceQuestion(subjectid,mcode);
         if(question!=null){
             String content = GsonUtil.objTOjson(question);
             mo.setMcontent(content);
@@ -105,7 +108,7 @@ public class QuestionApp {
     public MessageObject findquestionexplain( @RequestParam(required = false) String questionid ){
 //        System.out.println(questionid+"--");
         mo = new MessageObject();
-        ChoicequestionExplain questionExplain= (ChoicequestionExplain) choicequestionExplainRepository.findChoiceQuestionExplain(questionid);
+        ChoicequestionExplain questionExplain= choicequestionExplainRepository.findChoiceQuestionExplain(questionid);
         if(questionExplain!=null){
             String content = GsonUtil.objTOjson(questionExplain);
 //            System.out.println("****questionExplain***"+questionExplain);
@@ -133,7 +136,7 @@ public class QuestionApp {
                                            @RequestParam(required = false) long userid
     ){
         mo = new MessageObject();
-        UserInfo userInfo =  userRepository.findByUserid(userid);
+        UserInfo userInfo =  userInfoService.findUserByUserId((int)userid);
         if(userInfo == null){
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("用户失效，校验失败！");
@@ -164,7 +167,7 @@ public class QuestionApp {
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("恭喜您，你很厉害，已经学习完了整个练习！");
             //查询最后一题
-            question= (Choicequestion) choicequestionRepository.findMoniChoiceQuestion(subjectid,moniname,maxmonicode);
+            question= choicequestionRepository.findMoniChoiceQuestion(subjectid,moniname,maxmonicode);
             if(question!=null){
                 String content = GsonUtil.objTOjson(question);
                 System.out.println("***="+content);
@@ -173,7 +176,7 @@ public class QuestionApp {
             return mo;
         }
 
-        question= (Choicequestion) choicequestionRepository.findMoniChoiceQuestion(subjectid,moniname,++currtyCode);
+        question= choicequestionRepository.findMoniChoiceQuestion(subjectid,moniname,++currtyCode);
         if(question!=null){
             String content = GsonUtil.objTOjson(question);
             System.out.println("***="+content);
@@ -197,7 +200,7 @@ public class QuestionApp {
                                            @RequestParam(required = false) long userid
     ){
         mo = new MessageObject();
-        UserInfo userInfo =  userRepository.findByUserid(userid);
+        UserInfo userInfo =  userInfoService.findUserByUserId((int) userid);
         if(userInfo == null){
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("用户失效，校验失败！");
@@ -206,7 +209,7 @@ public class QuestionApp {
 
         //根据 科目 、 模拟年份 查询最大的编码比较 是否是最后一题
         long maxmonicode = 0;
-        Choicequestion question= (Choicequestion) choicequestionRepository.findChoiceQuestion(questionid);
+        Choicequestion question= choicequestionRepository.findChoiceQuestion(questionid);
         if(question!=null){
             //try catch 如果没有数据查询为null 报异常，如果是异常暂定为无数据
             try{
@@ -237,7 +240,7 @@ public class QuestionApp {
                 mo.setMdesc("请您选择一个答案后，在来点我！！");
                 return mo;
             }else if(question.getMcode() <= currtyCode){
-                question= (Choicequestion) choicequestionRepository.findMoniChoiceQuestion(question.getSublevel1(),question.getMoniname(),(question.getMcode()+1));
+                question= choicequestionRepository.findMoniChoiceQuestion(question.getSublevel1(),question.getMoniname(),(question.getMcode()+1));
 
             }
         }else{
@@ -268,14 +271,14 @@ public class QuestionApp {
                                            @RequestParam(required = false) long userid
     ){
         mo = new MessageObject();
-        UserInfo userInfo =  userRepository.findByUserid(userid);
+        UserInfo userInfo =  userInfoService.findUserByUserId((int) userid);
         if(userInfo == null){
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("用户失效，校验失败！");
             return mo;
         }
 
-        Choicequestion question= (Choicequestion) choicequestionRepository.findChoiceQuestion(questionid);
+        Choicequestion question= choicequestionRepository.findChoiceQuestion(questionid);
         if(question!=null){
             if(question.getMcode() == 1){
                 mo.setCode(SystemConfig.mess_failed);
@@ -284,7 +287,7 @@ public class QuestionApp {
             }else if(question.getMcode()>1){
                 long kmcode = question.getMcode()-1;
                 System.out.println(kmcode+"--"+question.getSublevel1()+"--"+question.getMoniname()+"--"+question.getMcode());
-                question = (Choicequestion) choicequestionRepository.findMoniChoiceQuestion(question.getSublevel1(),question.getMoniname(),(question.getMcode()-1));
+                question = choicequestionRepository.findMoniChoiceQuestion(question.getSublevel1(),question.getMoniname(),(question.getMcode()-1));
             }else{
                 mo.setCode(SystemConfig.mess_failed);
                 mo.setMdesc("题目的mcode不能小于1");
