@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b62a9da-fa7d-4006-9eb9-aff4e0fc4375" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_cloud_portal/src/main/java/com/gsau/portal/controller/web/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_cloud_portal/src/main/java/com/gsau/portal/controller/web/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_cloud_portal/src/main/resources/static/js/userinfo/userinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/spring_cloud_portal/src/main/resources/static/js/userinfo/userinfo.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/spring-cloud-tx-client-api/target/" />
@@ -696,7 +694,7 @@
       <option name="presentableId" value="Default" />
       <updated>1557737996137</updated>
       <workItem from="1557737998580" duration="38567000" />
-      <workItem from="1557888145890" duration="18977000" />
+      <workItem from="1557888145890" duration="19052000" />
     </task>
     <task id="LOCAL-00001" summary="添加EasyUI">
       <created>1557739098277</created>
@@ -810,15 +808,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557912369792</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="UserInfo fegin接口GET方式和POST方式调用,UserInfo的增删改查测试成功">
+      <created>1557914285518</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557914285518</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57544000" />
+    <option name="totallyTimeSpent" value="57619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="JRebel" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -831,7 +835,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.37960956" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.5155807" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.5155807" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -850,7 +854,7 @@
       <window_info anchor="right" id="Maven" order="0" weight="0.26066098" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.4883041" visible="true" weight="0.22855228" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49008498" visible="true" weight="0.22855228" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Redis Servers" order="6" />
@@ -858,7 +862,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info anchor="right" id="Structure" order="11" sideWeight="0.5116959" side_tool="true" visible="true" weight="0.22855228" />
+      <window_info anchor="right" id="Structure" order="11" sideWeight="0.509915" side_tool="true" visible="true" weight="0.22855228" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
