@@ -191,6 +191,7 @@ public class SubjectController {
 
     /**
      * 根据 parentid 查询列表对象
+     *
      * @param pid
      * @return
      */
@@ -201,4 +202,5 @@ public class SubjectController {
         System.out.println(list.size() + "--aa--");
         return list;
     }
+
 }
