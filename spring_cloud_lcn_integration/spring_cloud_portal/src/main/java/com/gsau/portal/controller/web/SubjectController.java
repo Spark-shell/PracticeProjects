@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author WangGuoQing
  * @date 2019/5/13 21:15
- * @Desc 
+ * @Desc
  */
 @Controller
 @RequestMapping("/web/subject")
@@ -29,74 +29,91 @@ public class SubjectController {
     private MessageObject mo;
 
     /**
-     * 初始的页面
+     * 界面入口
+     *
      * @return
      */
-    @RequestMapping(value="/subject-trees")
-    @ResponseBody
-    public String subject_tree(){
-        System.out.println("controller:"+subjectTree.getTrees_json().toString());
-        return subjectTree.getTrees_json().toString();
-    }
-    @RequestMapping(value="/startpage")
-    public String startpage(){
+    @RequestMapping(value = "/startpage")
+    public String startpage() {
         return "subject/subject-main";
     }
+
     /**
-     * add 的页面
+     * 初始的页面
+     *
      * @return
      */
-    @RequestMapping(value="/add/{parentid}")
-    public String add(@PathVariable String parentid,Model model ){
+    @RequestMapping(value = "/subject-trees")
+    @ResponseBody
+    public String subject_tree() {
+        System.out.println("controller:" + subjectTree.getTrees_json().toString());
+        return subjectTree.getTrees_json().toString();
+    }
+
+    /**
+     * add 的页面
+     *
+     * @return
+     */
+    @RequestMapping(value = "/add/{parentid}")
+    public String add(@PathVariable String parentid, Model model) {
         Subject parent = subjectRepository.findSubject(parentid);
-        if(parent != null){
-            model.addAttribute("parent",parent);
+        if (parent != null) {
+            model.addAttribute("parent", parent);
         }
         return "subject/subject-add";
     }
-    @RequestMapping(value="/delete/{subjectid}")
+
+    /**
+     * 删除
+     *
+     * @param subjectid
+     * @return
+     */
+    @RequestMapping(value = "/delete/{subjectid}")
     @ResponseBody
-    public MessageObject del(@PathVariable String subjectid){
+    public MessageObject del(@PathVariable String subjectid) {
         mo = new MessageObject();
         Subject subject = subjectRepository.findSubject(subjectid);
-        if(null != subject){
+        if (null != subject) {
             subjectRepository.delete(subject);
             subjectTree.init();
-        }else{
+        } else {
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("对象不存在！");
         }
         return mo;
     }
+
     /**
      * 查看某一个资源
+     *
      * @param model
      * @param subjectid
      * @return
      */
-    @RequestMapping(value="/subject-view/{subjectid}")
-    public String subject_view(Model model , @PathVariable String subjectid){
+    @RequestMapping(value = "/subject-view/{subjectid}")
+    public String subject_view(Model model, @PathVariable String subjectid) {
         Subject subject = subjectRepository.findSubject(subjectid);
-        if(subject != null)
-        {
-            Subject parent =new Subject();
-            if(SystemConfig.root.equals(subject.getParentid()))
-            {
+        if (subject != null) {
+            Subject parent = new Subject();
+            if (SystemConfig.root.equals(subject.getParentid())) {
                 parent.setParentid("root");
                 parent.setSubjectid("root");
                 parent.setSubjectname("根目录");
-            }else{
+            } else {
                 parent = subjectRepository.findSubject(subject.getParentid());
             }
-            model.addAttribute("parent",parent);
+            model.addAttribute("parent", parent);
         }
 
-        model.addAttribute("subject",subject);
+        model.addAttribute("subject", subject);
         return "subject/subject-view";
     }
 
     /**
      * 创建对象
+     *
      * @param subjectid
      * @param subjectname
      * @param parentid
@@ -104,42 +121,42 @@ public class SubjectController {
      * @param model
      * @return
      */
-    @RequestMapping(value="/save" , method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
     public MessageObject save(
-                    @RequestParam(required = false) String subjectid ,
-                    @RequestParam(required = false) String subjectname ,
-                    @RequestParam(required = false) String parentid ,
-                    @RequestParam(required = false) String mstatus ,
-                    Model model){
-        mo = new MessageObject(SystemConfig.mess_succ,"保存成功");
+            @RequestParam(required = false) String subjectid,
+            @RequestParam(required = false) String subjectname,
+            @RequestParam(required = false) String parentid,
+            @RequestParam(required = false) String mstatus,
+            Model model) {
+        mo = new MessageObject(SystemConfig.mess_succ, "保存成功");
 
-        Subject sub = subjectRepository.findSubject(parentid+"_"+subjectid);
+        Subject sub = subjectRepository.findSubject(parentid + "_" + subjectid);
         Subject parent = subjectRepository.findSubject(parentid);
-        if(parent == null){
+        if (parent == null) {
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("父类科目不能为空！");
             return mo;
         }
-        if(sub != null){
+        if (sub != null) {
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("科目编号已经存在！");
             return mo;
         }
 
-        try{
+        try {
             sub = new Subject();
-            sub.setSubjectid(parentid+"_"+subjectid);
+            sub.setSubjectid(parentid + "_" + subjectid);
             sub.setSubjectname(subjectname);
             sub.setCtime(System.currentTimeMillis());
             sub.setMstatus(mstatus);
             sub.setParentid(parentid);
-            sub.setMlevel(parent.getMlevel()+1);
+            sub.setMlevel(parent.getMlevel() + 1);
 
             subjectRepository.save(sub);
             subjectTree.init();
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
             mo.setCode(SystemConfig.mess_failed);
             mo.setMdesc("系统异常！");
@@ -150,9 +167,9 @@ public class SubjectController {
     }
 
 
-    @RequestMapping(value="/viewlist")
+    @RequestMapping(value = "/viewlist")
     @ResponseBody
-    public List<Subject> viewlist(){
+    public List<Subject> viewlist() {
         List<Subject> list = (List<Subject>) subjectRepository.findAll();
         return list;
     }
@@ -160,12 +177,13 @@ public class SubjectController {
 
     /**
      * 根据 mlevel 查询列表对象
+     *
      * @param mlevel
      * @return
      */
-    @RequestMapping(value="/findSubjectByLevel")
+    @RequestMapping(value = "/findSubjectByLevel")
     @ResponseBody
-    public List<Subject> findSubjectByLevel(@RequestParam int mlevel){
+    public List<Subject> findSubjectByLevel(@RequestParam int mlevel) {
         List<Subject> list = (List<Subject>) subjectRepository.findSubjectByLevel(mlevel);
         return list;
     }
@@ -176,14 +194,11 @@ public class SubjectController {
      * @param pid
      * @return
      */
-    @RequestMapping(value="/findSubjectBypid/{pid}")
+    @RequestMapping(value = "/findSubjectBypid/{pid}")
     @ResponseBody
-    public List<Subject> findSubjectBypid(@PathVariable String pid){
+    public List<Subject> findSubjectBypid(@PathVariable String pid) {
         List<Subject> list = (List<Subject>) subjectRepository.findSubjectBypid(pid);
-        System.out.println(list.size()+"--aa--");
+        System.out.println(list.size() + "--aa--");
         return list;
     }
-
-
-
 }

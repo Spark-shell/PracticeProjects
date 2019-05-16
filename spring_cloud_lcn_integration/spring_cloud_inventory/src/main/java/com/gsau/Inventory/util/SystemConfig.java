@@ -1,4 +1,4 @@
-package com.gsau.portal.util;
+package com.gsau.Inventory.util;
 
 /**
  * @author WangGuoQing

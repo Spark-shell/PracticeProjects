@@ -26,9 +26,6 @@ public class UserInfoController {
     @Autowired
     UserInfoServiceImpl userInfoService;
 
-    // @Autowired
-    // UserRepository userRepository;
-
     /**
      * 开始页面
      *
