@@ -22,8 +22,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping(value="/sys")
 public class SystemController {
-    // @Autowired
-    // UserRepository userRepository;
     @Autowired
     UserInfoServiceImpl userInfoService;
     @RequestMapping(value="/dologin")
