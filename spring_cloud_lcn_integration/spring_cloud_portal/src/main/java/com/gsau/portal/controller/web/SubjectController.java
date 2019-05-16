@@ -38,12 +38,10 @@ public class SubjectController {
         System.out.println("controller:"+subjectTree.getTrees_json().toString());
         return subjectTree.getTrees_json().toString();
     }
-
     @RequestMapping(value="/startpage")
     public String startpage(){
         return "subject/subject-main";
     }
-
     /**
      * add 的页面
      * @return
@@ -51,13 +49,11 @@ public class SubjectController {
     @RequestMapping(value="/add/{parentid}")
     public String add(@PathVariable String parentid,Model model ){
         Subject parent = subjectRepository.findSubject(parentid);
-
         if(parent != null){
             model.addAttribute("parent",parent);
         }
         return "subject/subject-add";
     }
-
     @RequestMapping(value="/delete/{subjectid}")
     @ResponseBody
     public MessageObject del(@PathVariable String subjectid){
@@ -72,7 +68,6 @@ public class SubjectController {
         }
         return mo;
     }
-
     /**
      * 查看某一个资源
      * @param model
@@ -99,7 +94,6 @@ public class SubjectController {
         model.addAttribute("subject",subject);
         return "subject/subject-view";
     }
-
 
     /**
      * 创建对象

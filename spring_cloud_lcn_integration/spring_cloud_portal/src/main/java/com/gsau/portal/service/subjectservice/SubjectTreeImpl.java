@@ -127,8 +127,6 @@ public class SubjectTreeImpl {
         }
 //		AuResourceTrees_json.append("}]");
     }
-
-
     /**
      * 根据parentID 查找 下级节点 返回列表
      * @param parentID
@@ -147,21 +145,10 @@ public class SubjectTreeImpl {
         }
         return childs;
     }
-
-
-
     public  List<Subject> getTrees() {
         return all_list;
     }
-
-
-
     public  StringBuffer getTrees_json() {
         return trees_json;
     }
-
-
-
-
-
 }
