@@ -1,7 +1,7 @@
 package com.gsau.portal.controller.web;
 
-import com.gsau.portal.pojo.po.UserInfo;
-import com.gsau.portal.repository.UserRepository;
+import com.gsau.order_sersvice.projo.po.UserInfo;
+import com.gsau.portal.portal.service.impl.UserInfoServiceImpl;
 import com.gsau.portal.util.MD5Util;
 import com.gsau.portal.util.StringUtil;
 import com.gsau.portal.util.SystemConfig;
@@ -22,9 +22,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping(value="/sys")
 public class SystemController {
+    // @Autowired
+    // UserRepository userRepository;
     @Autowired
-    UserRepository userRepository;
-
+    UserInfoServiceImpl userInfoService;
     @RequestMapping(value="/dologin")
     public ModelAndView dologin(@RequestParam(required = false) String usertel ,
                                 @RequestParam(required = false) String userpassword ,
@@ -43,7 +44,7 @@ public class SystemController {
                 modelAndView.setViewName("index");
                 return modelAndView;
             }
-            UserInfo user =  userRepository.findByUsertel(usertel);
+            UserInfo user =  userInfoService.findUserByTel(usertel);
             if(null == user)
             {
                 modelAndView.setViewName("index");
@@ -53,7 +54,7 @@ public class SystemController {
             //变成md5 在查询
             userpassword = MD5Util.getMD5Code(userpassword);
 
-            user = userRepository.findUser(usertel,userpassword);
+            user = userInfoService.findUserByTelAndPwd(usertel,userpassword);
             if(user==null){
                 modelAndView.setViewName("index");
                 return modelAndView;

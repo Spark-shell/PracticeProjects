@@ -41,4 +41,12 @@ public interface UserInfoService {
      * @param userInfo
      */
     void delete(UserInfo userInfo);
+
+    /**
+     * 用户名和密码查询用户
+     * @param usertel
+     * @param userpassword
+     * @return
+     */
+    UserInfo findUserByTelAndPwd(String usertel, String userpassword);
 }

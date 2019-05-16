@@ -1,6 +1,7 @@
 package com.gsau.order.mapper;
 
 import com.gsau.order_sersvice.projo.po.UserInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -39,4 +40,12 @@ public interface UserInfoMapper {
      * @param userInfo
      */
     void delete(UserInfo userInfo);
+
+    /**
+     * 用户名和密码查询
+     * @param usertel
+     * @param userpassword
+     * @return
+     */
+    UserInfo findUserByTelAndPwd(@Param("usertel") String usertel, @Param("userpassword")String userpassword);
 }

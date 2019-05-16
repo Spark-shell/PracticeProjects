@@ -32,18 +32,24 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfo findUserByUserId(int userid) {
-        UserInfo userInfo=userInfoService.findByUserId(userid);
+        UserInfo userInfo = userInfoService.findByUserId(userid);
         return userInfo;
     }
 
     @Override
     public List<UserInfo> findAll() {
-        List<UserInfo> list=userInfoService.findAll();
+        List<UserInfo> list = userInfoService.findAll();
         return list;
     }
 
     @Override
     public void delete(UserInfo userInfo) {
-       userInfoService.delete(userInfo);
+        userInfoService.delete(userInfo);
+    }
+
+    @Override
+    public UserInfo findUserByTelAndPwd(String usertel, String userpassword) {
+        UserInfo userInfo = userInfoService.findUserByTelAndPwd(usertel,userpassword);
+        return userInfo;
     }
 }

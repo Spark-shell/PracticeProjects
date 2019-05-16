@@ -28,4 +28,6 @@ public interface UserInfoService {
     List<UserInfo> findAll();
 
     void delete(UserInfo userInfo);
+
+    UserInfo findUserByTelAndPwd(String usertel, String userpassword);
 }

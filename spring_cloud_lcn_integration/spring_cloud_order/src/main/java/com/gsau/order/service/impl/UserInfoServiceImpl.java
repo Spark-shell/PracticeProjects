@@ -71,4 +71,10 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void delete(UserInfo userInfo) {
         userInfoMapper.delete(userInfo);
     }
+
+    @Override
+    public UserInfo findUserByTelAndPwd(String usertel, String userpassword) {
+        UserInfo info=userInfoMapper.findUserByTelAndPwd(usertel,userpassword);
+        return info;
+    }
 }

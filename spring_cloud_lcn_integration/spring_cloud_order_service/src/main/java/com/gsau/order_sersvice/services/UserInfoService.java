@@ -59,4 +59,13 @@ public interface UserInfoService {
      */
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     void delete(@RequestBody UserInfo userInfo);
+
+    /**
+     * 根据用户名和密码查询
+     * @param usertel
+     * @param userpassword    MD5加密过的
+     * @return
+     */
+    @RequestMapping(value = "/findUserByTelAndPwd/{usertel}/{userpassword}",method = RequestMethod.GET)
+    UserInfo findUserByTelAndPwd(@PathVariable("usertel") String usertel, @PathVariable("userpassword")String userpassword);
 }

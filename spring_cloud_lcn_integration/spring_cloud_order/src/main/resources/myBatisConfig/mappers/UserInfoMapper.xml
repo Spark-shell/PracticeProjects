@@ -18,6 +18,12 @@
         SELECT *
         FROM tb_userinfo
     </select>
+    <select id="findUserByTelAndPwd" resultType="com.gsau.order_sersvice.projo.po.UserInfo" >
+        SELECT *
+        FROM tb_userinfo as b
+        where b.usertel = #{usertel}
+          and b.userpassword = #{userpassword}
+    </select>
     <!--加入-->
     <insert id="insertUserInfo">
         INSERT INTO tb_userinfo(usertel,
@@ -37,7 +43,9 @@
     </insert>
     <!--删除-->
     <delete id="delete">
-        delete from tb_userinfo where userid=#{userid}
+        delete
+        from tb_userinfo
+        where userid = #{userid}
     </delete>
     <!--更新-->
 </mapper>

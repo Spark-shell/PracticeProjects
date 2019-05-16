@@ -64,4 +64,10 @@ public class UserInfoController implements UserInfoService {
         userInfoService.delete(userInfo);
     }
 
+    @Override
+    public UserInfo findUserByTelAndPwd(@PathVariable("usertel") String usertel,@PathVariable("userpassword")  String userpassword) {
+        UserInfo userInfo=userInfoService.findUserByTelAndPwd(usertel,userpassword);
+        return userInfo;
+    }
+
 }
