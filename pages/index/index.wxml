@@ -1,0 +1,18 @@
+
+<van-row custom-class="list" wx:for="{{classData}}" wx:key="*this" wx:for-item="class_data" gutter="1em" >
+  <van-col span="3" >
+     <van-icon name="records" size="3em" bind:click="goClass" data-index="{{class_data.id}}" />
+  </van-col>
+  <van-col span="25">
+        <van-cell title="{{class_data.name}}" label="{{'负责人:18893910548'}}" center="true"
+        size="large"
+        title-width="10em"  
+        border="true"
+        custom-class="item_cell"
+        value="2019-05-23"
+        bind:click="goClass" 
+        data-index="{{class_data.id}}"
+        >
+        </van-cell>    
+  </van-col>
+ </van-row>

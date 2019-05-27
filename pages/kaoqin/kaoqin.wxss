@@ -1,0 +1,38 @@
+.row {
+  height: 44px;
+  margin-bottom: 15px;
+}
+
+.item_rihgt {
+  height: 100%;
+  position: relative;
+  left: 0em;
+}
+
+.list {
+  height: 5em;
+  border-style: none;
+  background-color: black;
+}
+
+.list1 {
+  height: 5em;
+  background-color: black;
+}
+
+.ev_icon {
+  margin-left: 20px;
+  position: relative;
+  top: 0.4em;
+}
+
+.ev_txt {
+  margin-left: 20px;
+  position: relative;
+  top: 0.4em;
+}
+.btn_complete{
+   margin-top: 1em;
+   margin-bottom: 1em;
+   background-color: red ;
+}

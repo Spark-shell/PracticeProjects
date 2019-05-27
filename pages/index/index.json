@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "点名册",
+  "usingComponents": {
+    "van-button": "/dist/button/index",
+    "van-panel": "/dist/panel/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-icon": "/dist/icon/index",
+    "van-toast": "/dist/toast/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index"
+  }
+}

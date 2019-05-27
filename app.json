@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kaoqin/kaoqin",
+    "pages/person/person"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#38A45A",
+    "list": [
+      {
+        "text": "点名册",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_press.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "统计",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_press.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "历史",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_press.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_press.png",
+        "pagePath": "pages/person/person"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
