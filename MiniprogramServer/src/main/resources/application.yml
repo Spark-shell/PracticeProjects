@@ -1,0 +1,28 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:2047968_miniprogram.luxurycell.com.cn.pfx
+    key-store-password: c43H6Ws4
+    client-auth: want
+    key-store-type: PKCS12
+wx:
+  miniapp:
+    configs:
+        - appid: wxff2d688511171c96 #微信小程序的appid
+          secret: 1321a32c12f92a8beead9401bd911591 #微信小程序的Secret
+          token: #微信小程序消息服务器配置的token
+          aesKey: #微信小程序消息服务器配置的EncodingAESKey
+          msgDataFormat: JSON
+#spring:
+#  jpa:
+#    database: mysql
+#    show-sql: true
+#  application:
+#    name: weicatLogin
+#  datasource:
+#      driverClassName: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf-8
+#      username: root
+#      password: 123456
+
