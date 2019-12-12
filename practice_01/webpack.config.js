@@ -4,7 +4,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "boundle.js",
-        publicPath:'../../dist/'
+        publicPath: '../../dist/'
     },
     module: {
         rules: [
@@ -35,18 +35,18 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 1024,
-                            name:'images/[name].[hash:8].[ext]'
+                            name: 'images/[name].[hash:8].[ext]'
                         }
                     }
                 ]
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules|bower_components)/,         //排除
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['es2015']
                     }
                 }
             }
