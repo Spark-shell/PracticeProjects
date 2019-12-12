@@ -3,7 +3,8 @@ module.exports = {
     entry: "./src/js/main.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "boundle.js"
+        filename: "boundle.js",
+        publicPath:'../../dist/'
     },
     module: {
         rules: [
@@ -26,6 +27,18 @@ module.exports = {
                 }, {
                     loader: "less-loader" // compiles Less to CSS
                 }]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024,
+                            name:'images/[name].[hash:8].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     }
