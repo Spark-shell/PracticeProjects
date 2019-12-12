@@ -6,27 +6,9 @@ require('../css/style.css')
 require('../css/special.less')
 //1.安装vue   npm install vue --save
 //2.引入vue
-import Vue from 'vue'
-const App={
-    template:`
-      <div>
-            <h2> {{ msg }}</h2>
-            <button @click="btnClick">点我啊！</button>
-            <h2> {{ num }}</h2>
-       </div>
-    `,
-    data(){
-        return {
-            num:0,
-            msg:"世界你好！！！"
-        }
-    },
-    methods:{
-        btnClick(){
-            this.num ++
-        }
-    }
-}
+import Vue from 'vue'                           //
+// import App from '../vue/app.js'              //方式一
+import App from '../vue/App.vue'                //方式二 配置加载vue文件的loader   npm install --save-dev vue-loader vue-template-compiler
 const app=new Vue({
     el:'#app',
      template: '<App/>',
