@@ -1,2 +1,3 @@
-##### 安装本地依赖
-npm install webpack@3.6.0 --save-dev
+#配置weppack
+* 配置基本
+* 配置css加载
