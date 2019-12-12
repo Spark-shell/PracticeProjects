@@ -1,8 +1,13 @@
-const path=require('path')
+const path = require('path')
 module.exports={
-    entiry:"./src/js/main.js",
+    entry:"./src/js/main.js",
     output:{
-        path:path.reslove(__dirname,"dist"),
+        path: path.resolve(__dirname,"dist"),
         filename:"boundle.js"
+    },
+    module:{
+
     }
 }
+
+
