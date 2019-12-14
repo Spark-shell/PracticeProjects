@@ -71,10 +71,14 @@ const vueRouter = new VueRouter({
 })
 //3.将vueRouter挂在到Vue实例上面去
 //4.配饰全局导航守卫
-vueRouter.beforeEach((to,from,next) =>{
-  //to from 其实就是 route
+//前置守卫
+vueRouter.beforeEach((to,from,next) =>{       //前置钩子   //to from 其实就是 route 对象
   document.title=to.matched[0].meta.title
   next()
+})
+//后置守卫
+vueRouter.afterEach((to,from) =>{
+    console.log('-afterEach---')
 })
 //导出vueRouter
 export default vueRouter
