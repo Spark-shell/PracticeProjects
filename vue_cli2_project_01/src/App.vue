@@ -5,7 +5,9 @@
     <button @click="btnHome">首页</button>
     <button @click="btnAbout">关于</button>
     <router-link :to ="'/user/'+ userId">用户</router-link>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script>

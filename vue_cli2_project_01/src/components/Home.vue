@@ -28,7 +28,13 @@
           }
         })
       }
-    }
+    },
+  created(){
+    console.log("create")
+  },
+  destroyed(){
+    console.log("destroy")
+  }
   }
 </script>
 <style scoped>

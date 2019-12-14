@@ -17,20 +17,20 @@ Vue.use(VueRouter)
 //2.创建路由对象
 const vueRouter = new VueRouter({
   //配置路由和组件之间的对应关系
-  mode:'history',
+  mode: 'history',
   routes: [
     //路由重定向
     {
       path: '',
       redirect: '/home',
-      meta:{
-        title:'首页'
-      }
+      meta: {
+        title: '首页'
+      },
     },
     {
       path: '/home',
       component: Home,
-      children:[
+      children: [
         {
           path: '',
           component: HomeNews
@@ -48,23 +48,27 @@ const vueRouter = new VueRouter({
           component: HomeMsgs
         },
       ],
-      meta:{
-        title:'首页'
+      meta: {
+        title: '首页'
+      },
+      beforeEnter: (to, from, next) => {
+        console.log('路由独享守卫')
+        next()
       }
     },
 
     {
       path: '/about',
       component: About,
-      meta:{
-        title:'关于'
+      meta: {
+        title: '关于'
       }
-    } ,
+    },
     {
       path: '/user/:userId',
       component: User,
-      meta:{
-        title:'用户'
+      meta: {
+        title: '用户'
       }
     }
   ]
@@ -72,14 +76,17 @@ const vueRouter = new VueRouter({
 //3.将vueRouter挂在到Vue实例上面去
 //4.配饰全局导航守卫
 //前置守卫
-vueRouter.beforeEach((to,from,next) =>{       //前置钩子   //to from 其实就是 route 对象
-  document.title=to.matched[0].meta.title
+vueRouter.beforeEach((to, from, next) => {       //前置钩子   //to from 其实就是 route 对象
+  document.title = to.matched[0].meta.title
   next()
 })
 //后置守卫
-vueRouter.afterEach((to,from) =>{
-    console.log('-afterEach---')
+vueRouter.afterEach((to, from) => {
+  console.log('-afterEach---')
 })
+//路由独享守卫
+
+//组件内守卫
 //导出vueRouter
 export default vueRouter
 
