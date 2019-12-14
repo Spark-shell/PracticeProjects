@@ -11,6 +11,7 @@ const About = () => import('../components/About.vue')
 const User = () => import('../components/User.vue')
 const HomeMsgs = () => import('../components/HomeMsgs.vue')
 const HomeNews = () => import('../components/HomeNews.vue')
+const UrlParam = () => import('../components/UrlParam.vue')
 //1.通过Vue.use(插件)来安装插件
 Vue.use(VueRouter)
 //2.创建路由对象
@@ -28,8 +29,16 @@ const vueRouter = new VueRouter({
       component: Home,
       children:[
         {
+          path: '',
+          component: HomeNews
+        },
+        {
           path: 'homeNews',
           component: HomeNews
+        },
+        {
+          path: 'urlParam',
+          component: UrlParam
         },
         {
           path: 'homeMsgs',
