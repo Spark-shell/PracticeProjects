@@ -2,9 +2,13 @@
 //0.安装VueRouter  npm install vue-router --save-dev
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import Home from '../components/Home.vue'
-import About from '../components/About.vue'
-import User from '../components/User.vue'
+// import Home from '../components/Home.vue'
+// import About from '../components/About.vue'
+// import User from '../components/User.vue'
+//路由懒加载方式导入组件的写法
+const Home = () => import('../components/Home.vue')
+const About = () => import('../components/About.vue')
+const User = () => import('../components/User.vue')
 //1.通过Vue.use(插件)来安装插件
 Vue.use(VueRouter)
 //2.创建路由对象
