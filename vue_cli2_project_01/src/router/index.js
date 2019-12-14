@@ -22,7 +22,10 @@ const vueRouter = new VueRouter({
     //路由重定向
     {
       path: '',
-      redirect: '/home'
+      redirect: '/home',
+      meta:{
+        title:'首页'
+      }
     },
     {
       path: '/home',
@@ -44,20 +47,35 @@ const vueRouter = new VueRouter({
           path: 'homeMsgs',
           component: HomeMsgs
         },
-      ]
+      ],
+      meta:{
+        title:'首页'
+      }
     },
 
     {
       path: '/about',
-      component: About
+      component: About,
+      meta:{
+        title:'关于'
+      }
     } ,
     {
       path: '/user/:userId',
-      component: User
+      component: User,
+      meta:{
+        title:'用户'
+      }
     }
   ]
 })
 //3.将vueRouter挂在到Vue实例上面去
+//4.配饰全局导航守卫
+vueRouter.beforeEach((to,from,next) =>{
+  //to from 其实就是 route
+  document.title=to.matched[0].meta.title
+  next()
+})
 //导出vueRouter
 export default vueRouter
 
