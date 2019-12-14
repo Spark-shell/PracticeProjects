@@ -1,16 +1,13 @@
 <template>
   <div>
-    <h1>欢迎来到About!!!</h1>
-    <img src="../assets/girl.jpg">
+    <h1>欢迎来到用户界面!!!</h1>
   </div>
 </template>
-
 <script>
     export default {
-        name: "About"
+        name: "User"
     }
 </script>
-
 <style scoped>
    
 </style>

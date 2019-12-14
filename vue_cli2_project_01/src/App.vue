@@ -4,12 +4,19 @@
 <!--    <router-link  to="/about">关于</router-link>-->
     <button @click="btnHome">首页</button>
     <button @click="btnAbout">关于</button>
+    <router-link :to ="'/user/'+ userId">用户</router-link>
     <router-view></router-view>
   </div>
 </template>
 <script>
 export default {
   name: 'App',
+  data(){
+    return {
+      img:'assets/girl.jpg',
+      userId:'lisi'
+    }
+  },
   methods:{
     btnHome(){
       this.$router.push("/home")
@@ -22,10 +29,10 @@ export default {
 </script>
 <style scoped>
   .router-link-active{
-    color: red;
+    color: #d0ff64;
   }
   #app{
     position: relative;
-    left: 50%;
+    left: 0%;
   }
 </style>
