@@ -14,7 +14,7 @@ export default {
   data(){
     return {
       img:'assets/girl.jpg',
-      userId:'lisi'
+      userId:'王国庆'
     }
   },
   methods:{
