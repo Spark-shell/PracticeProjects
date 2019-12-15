@@ -30,10 +30,17 @@ new Vue({
 //   .catch(function (error) {
 //     console.log(error);
 //   });
+// request({
+//   url: 'get222'
+// }, (data) => {
+//   console.log(data)
+// }, (error) => {
+//   console.log(error)
+// })
 request({
   url: 'get222'
-}, (data) => {
-  console.log(data)
-}, (error) => {
+},  res=> {
+  console.log(res)
+}, error => {
   console.log(error)
 })
