@@ -1,34 +1,41 @@
 <template>
   <div id="app">
-    <div id="tab-bar">
-      <div class="tab-bar-item">首页</div>
-      <div class="tab-bar-item">分类</div>
-      <div class="tab-bar-item">购物车</div>
-      <div class="tab-bar-item">我的</div>
-    </div>
+    <tab-bar>
+      <tab-bar-item>
+        <img slot="item-icon" src="./assets/imgs/tabbar/home.svg">
+        <img slot="item-icon-active" src="./assets/imgs/tabbar/home_active.svg">
+        <div slot="item-text">首页</div>
+      </tab-bar-item>
+      <tab-bar-item>
+        <img slot="item-icon-active" src="./assets/imgs/tabbar/category_active.svg">
+        <img slot="item-icon" src="./assets/imgs/tabbar/category.svg">
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+      <tab-bar-item>
+        <img slot="item-icon-active" src="./assets/imgs/tabbar/shopcart_active.svg">
+        <img slot="item-icon" src="./assets/imgs/tabbar/shopcart.svg">
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item>
+        <img slot="item-icon-active" src="./assets/imgs/tabbar/profile_active.svg">
+        <img  slot="item-icon" src="./assets/imgs/tabbar/profile.svg">
+        <div slot="item-text">我的</div>
+      </tab-bar-item>
+    </tab-bar>
   </div>
 </template>
 <script>
+  import TabBar from './components/tabbar/TabBar'
+  import TabBarItem from './components/tabbar/TabBarItem'
   export default {
-    name: 'App'
+    name: 'App',
+    components:{
+      TabBar,
+      TabBarItem
+    }
   }
 </script>
 <style>
   /*在style中引入css文件的方式*/
   @import "assets/css/base.css";
-
-  #tab-bar {
-    display: flex;
-    background: #42b983;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0px -3px 1px rgba(66, 185, 131, 0.1);
-  }
-  .tab-bar-item {
-    flex: 1;
-    text-align: center;
-    height: 49px;
-  }
 </style>
