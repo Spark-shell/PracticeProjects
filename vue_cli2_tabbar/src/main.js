@@ -12,15 +12,17 @@ new Vue({
   render: h => h(App)
 })
 //安装axios
+//axios的全局配置
+axios.defaults.baseURL='http://httpbin.org/'
+// axios.defaults.timeout=5
 axios({
-  url:'http://httpbin.org/get',
+  url:'get',
   method:'get'
 }).then(res => {
   console.log(res)
 })
-
 //请求方式2
-axios.get('http://httpbin.org/get')
+axios.get('get')
   .then(function (response) {
     console.log(response);
   })
