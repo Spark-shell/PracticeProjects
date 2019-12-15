@@ -22,8 +22,15 @@ const store = new Vuex.Store({
         state.userInfo.addr='?'
       }
     },
-  getters: {        //对state的数据进行筛选，过滤
-
+  getters: {        //对state的数据进行筛选，过滤，处理
+      pwd(state){
+          let info=''
+        info+=state.userInfo.username +"|"
+        info+=state.userInfo.age+"|"
+        info+=state.userInfo.addr+"|"
+        info+=state.userInfo.phone+"|"
+        return info
+      }
   },
   actions: {},
   modules: {}
