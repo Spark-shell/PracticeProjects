@@ -1,19 +1,6 @@
-# vue_cli3_projecr_01
+### vue练习案例项目
+**开发工具**
+* vue cli3
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ 
