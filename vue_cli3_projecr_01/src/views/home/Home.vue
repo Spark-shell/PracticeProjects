@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import NavBar from '../../components/common/navbar/NavBar'
-    import TabControl from '../../components/content/tabControl/TabControl'
+    import NavBar from  'components/common/navbar/NavBar'
+    import TabControl from 'components/content/tabControl/TabControl'
     export default {
         name: "Home",
         components: {
@@ -27,6 +27,7 @@
         height: 100vh;
         position: relative;
     }
+
     .home-nav {
         background-color: var(--color-tint);
         color: #fff;
