@@ -1,8 +1,5 @@
-import axios from 'axios/index'
-
-
 //引入axios
-import axios from 'axios/index'
+import axios from 'axios'
 
 //导出
 export function request(config) {
@@ -11,7 +8,6 @@ export function request(config) {
         baseURL: 'http://123.207.32.32:8000',
         timeout: 5000
     })
-
     // 2.axios的拦截器
     // 2.1.请求拦截的作用
     axiosInstace.interceptors.request.use(config => {
