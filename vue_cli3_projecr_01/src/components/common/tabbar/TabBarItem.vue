@@ -19,7 +19,7 @@
       path:String,
       activeColor:{
         type:String,
-        default:'red'
+        default:'#9f5355'
       }
     },
     data() {
