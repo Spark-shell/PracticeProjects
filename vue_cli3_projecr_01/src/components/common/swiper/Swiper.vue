@@ -83,7 +83,6 @@
         // 4.滚动完成
         this.scrolling = false
       },
-
       /**
        * 校验正确的位置
        */
