@@ -1,7 +1,7 @@
+/*导入normallize.css*/
 @import "./normalize.css";
-
 /*:root -> 获取根元素html*/
-:root {
+:root {               /* 伪类 定义css变量 */
     --color-text: #666;
     --color-high-text: #ff5777;
     --color-tint: #ff8198;
@@ -9,7 +9,6 @@
     --font-size: 14px;
     --line-height: 1.5;
 }
-
 *,
 *::before,
 *::after {

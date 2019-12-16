@@ -20,8 +20,9 @@ export default new VueRouter({
     ]
 })
 ```
-* 路径别名配置
+* 路径别名配置 
 ```js
+//configureWebpack 
 module.exports = {
     configureWebpack: {
         resolve: {
