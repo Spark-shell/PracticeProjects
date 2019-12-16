@@ -64,8 +64,11 @@ export function request(config) {
     // 3.发送真正的网络请求
     return axiosInstace(config)
 }
-
 ```
+* 安装Scroll
+~~~shell
+npm install better-scroll --dev
+~~~
 
 
 
