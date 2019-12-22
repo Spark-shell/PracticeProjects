@@ -1,0 +1,39 @@
+server:
+  port: 8082
+person:
+    lastName: hello
+    age: 18
+    boss: false
+    birth: 2017/12/12
+    port: ${server.port}
+file:
+  path: 123456
+  prefix: 123456
+  fileType: 123456
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    enabled: true
+    mode: LEGACYHTML5
+  devtools:
+    restart:
+      enabled: true
+  profiles:
+    active: defaut #指定要激活的配置
+debug: true
+---
+server:
+  port: 8081
+spring:
+  profiles: prod
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
