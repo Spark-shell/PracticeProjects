@@ -26,7 +26,7 @@ spring:
       enabled: true
   profiles:
     active: defaut #指定要激活的配置
-debug: true
+debug: true        #debug=true属性；来让控制台打印自动配置报告
 ---
 server:
   port: 8081
