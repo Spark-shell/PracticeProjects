@@ -26,7 +26,14 @@ spring:
       enabled: true
   profiles:
     active: defaut #指定要激活的配置
-debug: true        #debug=true属性；来让控制台打印自动配置报告
+debug: true
+logging:
+#  file: logs/system.log     # 日志文件,相对路径,日志文件会建在当前项目根目录下，D:\WorkSpace\JavaWebEdit\springBootProjects\springboots\spring-boot-basic-practice\logs\system.log
+  path: logs                 # 日志路径相对路径,日志文件会建在当前项目根目录下
+  pattern:
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+
 ---
 server:
   port: 8081

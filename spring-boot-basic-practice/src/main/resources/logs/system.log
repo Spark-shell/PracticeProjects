@@ -1,0 +1,2 @@
+#  在控制台输出的日志的格式 logging.pattern.console=%d{yyyy‐MM‐dd} [%thread] %‐5level %logger{50} ‐ %msg%n
+# 指定文件中日志输出的格式 logging.pattern.file=%d{yyyy‐MM‐dd} === [%thread] === %‐5level === %logger{50} ==== %msg%n
