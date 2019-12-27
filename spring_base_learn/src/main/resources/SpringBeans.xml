@@ -23,5 +23,6 @@
             factory-bean 属性：用于指定实例工厂 bean 的 id。
             factory-method 属性：用于指定实例工厂中创建对象的方法。
     -->
-    <bean id="emp" factory-bean="com.gsau.factory.SpringBeanFactory" factory-method="instanceBean"></bean>
+    <bean id="springBeanFactory" class="com.gsau.factory.SpringBeanFactory"></bean>
+    <bean id="dept" factory-bean="springBeanFactory" factory-method="createBean"></bean>
 </beans>
