@@ -9,4 +9,12 @@
     <!--把创建的对象交给容器统一管理-->
     <bean id="accountDaoImpl" class="com.gsau.dao.impl.AccountDaoImpl"></bean>
     <bean id="accountServiceImpl" class="com.gsau.service.impl.AccountServiceImpl"></bean>
+    <!--在默认情况下：它会根据默认无参构造函数来创建类对象。如果 bean 中没有默认无参构造函数，将会创建失败。-->
+    <bean id="person" class="com.gsau.entity.Person"></bean>
+    <!--此种方式是:
+     使用 StaticFactory 类中的静态方法 createAccountService 创建对象，并存入 spring 容器
+     id 属性：指定 bean 的 id，用于从容器中获取
+     class 属性：指定静态工厂的全限定类名
+     factory-method 属性：指定生产对象的静态方法-->
+    <bean id="person" class="com.gsau.factory.SpringBeanFactory" factory-method="instanceBean"></bean>
 </beans>

@@ -1,5 +1,6 @@
 package com.gsau.factory;
 
+import com.gsau.entity.Emp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -31,5 +32,14 @@ public class SpringBeanFactory {
     }
     public static  < obj > obj getBean(String beanName,Class<obj> obj){
         return  ioc.getBean(beanName,obj);
+    }
+     /**
+      * @ Description:   用于测试bean创建的三种方式:使用自定义工厂类 
+      * @ Date: 2019/12/27 13:43
+      * @ Author: wgq
+      * @ Version: 1.0
+      */
+    public static Object instanceBean(){
+        return new Emp();
     }
 }

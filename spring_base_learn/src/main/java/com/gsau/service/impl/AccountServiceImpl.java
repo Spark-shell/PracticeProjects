@@ -9,9 +9,14 @@ import static java.lang.System.out;
 
 public class AccountServiceImpl implements AccountService {
     private AccountDaoImpl dao= (AccountDaoImpl) BeanFactory.getBean("accountDaoImpl");
+
+    public AccountServiceImpl() {
+        out.println("AccountServiceImpl-AccountServiceImpl-对象创建->"+System.currentTimeMillis());
+    }
+
     @Override
     public void saveAccount() {
         dao.saveAcount();
-        out.printf("AccountServiceImpl.java--saveAccount--10--> ","保存成功");
+        out.println("AccountServiceImpl-AccountServiceImpl-16->"+System.currentTimeMillis());
     }
 }
