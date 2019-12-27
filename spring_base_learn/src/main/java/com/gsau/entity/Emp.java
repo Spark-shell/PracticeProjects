@@ -9,5 +9,5 @@ public class Emp {
     public Emp(){
         System.out.println("Emp-Emp-6->"+System.currentTimeMillis());
     }
-    private String id="123";
+    public String id="123";
 }

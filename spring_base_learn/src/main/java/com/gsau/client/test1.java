@@ -1,5 +1,6 @@
 package com.gsau.client;
 
+import com.gsau.entity.Emp;
 import com.gsau.entity.Person;
 import com.gsau.factory.BeanFactory;
 import com.gsau.factory.SpringBeanFactory;
@@ -10,7 +11,10 @@ public class test1 {
 //        AccountServiceImpl service= (AccountServiceImpl) BeanFactory.getBean("accountServiceImpl");
         AccountServiceImpl service= SpringBeanFactory.getBean("accountServiceImpl",AccountServiceImpl.class);
         Person person=SpringBeanFactory.getBean("person", Person.class);
+        Emp emp=SpringBeanFactory.getBean("emp", Emp.class);
+
         System.out.println("test1-test1-13->"+person.toString());
+        System.out.println("test1-test1-17->"+emp.id);
         service.saveAccount();
     }
 }
