@@ -6,6 +6,7 @@ import com.gsau.entity.Person;
 import com.gsau.factory.BeanFactory;
 import com.gsau.factory.SpringBeanFactory;
 import com.gsau.service.impl.AccountServiceImpl;
+import com.gsau.service.impl.CollectionInjectionImpl;
 import com.gsau.service.impl.ConstructInjectionImpl;
 import com.gsau.service.impl.SetMethodInjectionImpl;
 
@@ -22,7 +23,9 @@ public class test1 {
 //         service.saveAccount();
         ConstructInjectionImpl constructInjectionImpl=SpringBeanFactory.getBean("constructInjectionImpl", ConstructInjectionImpl.class);
         SetMethodInjectionImpl setMethodInjectionImpl=SpringBeanFactory.getBean("setMethodInjectionImpl", SetMethodInjectionImpl.class);
+        CollectionInjectionImpl collectionInjectionImpl=SpringBeanFactory.getBean("collectionInjectionImpl", CollectionInjectionImpl.class);
         constructInjectionImpl.println();
         setMethodInjectionImpl.println();
+        collectionInjectionImpl.println();
     }
 }

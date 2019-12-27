@@ -48,8 +48,39 @@
             实际开发中，此种方式用的较多。
      -->
     <bean id="setMethodInjectionImpl" class="com.gsau.service.impl.SetMethodInjectionImpl">
-        <property name="name" value="test"></property>
+        <property name="name" value="王国庆"></property>
         <property name="age" value="21"></property>
         <property name="birth" ref="now"></property>
     </bean>
+    <!-- 注入集合数据
+        List 结构的：
+            array,list,set
+        Map 结构的
+            map,entry,props,prop
+    -->
+    <bean id="collectionInjectionImpl" class="com.gsau.service.impl.CollectionInjectionImpl">
+        <property name="name" value="王国庆"></property>
+        <!--map-->
+        <property name="injections">
+                <map>
+                    <entry key="dept33" value="dept"></entry>
+                </map>
+        </property>
+        <!--list-->
+        <property name="depts">
+            <list>
+                <value >123</value>
+                <value>124</value>
+                <value>125</value>
+            </list>
+        </property>
+        <property name="nums">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+    </bean>
+
 </beans>
