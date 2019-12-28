@@ -29,5 +29,6 @@ public class ApplicationTest {
           AccountDao dao4=BeanFactory.getBean("accountDaoImpl1", AccountDao.class);
           out.println("ApplicationTest.java--main--28-->"+ "@Scope测试"+(dao1==dao0));
           out.println("ApplicationTest.java--main--29-->"+ "@Scope测试"+(dao3==dao4));
+          BeanFactory.close();
      }
 }

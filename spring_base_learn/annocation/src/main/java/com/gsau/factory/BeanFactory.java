@@ -10,7 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
   * @ Description: 使用spring容器获取bean实例
   */
 public class BeanFactory {
-    private static ApplicationContext ioc=null;
+    // private static ApplicationContext ioc=null;
+    private static ClassPathXmlApplicationContext ioc=null;
     static {
         ioc=new ClassPathXmlApplicationContext("SpringBeans.xml");
     }
@@ -22,5 +23,14 @@ public class BeanFactory {
       */
     public static <T> T getBean(String beanName,Class<T> cls){
             return ioc.getBean(beanName,cls);
+    }
+     /**
+      * @ Author: WangGQ
+      * @ Date: 2019/12/28 18:51
+      * @ Version: 1.0
+      * @ Description: 关闭容器 
+      */
+    public static void close(){
+        ioc.close();
     }
 }
