@@ -1,6 +1,7 @@
 package com.gsau.dao.impl;
 
 import com.gsau.dao.AccountDao;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import static java.lang.System.out;
@@ -11,6 +12,7 @@ import static java.lang.System.out;
   * @ Version: 1.0
   * @ Description: 持久层注解
   */
+@Scope("singleton")
 @Repository
 public class AccountDaoImpl implements AccountDao {
     @Override
