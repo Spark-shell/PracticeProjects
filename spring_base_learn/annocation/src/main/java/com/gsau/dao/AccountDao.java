@@ -1,8 +1,13 @@
 package com.gsau.dao;
 
+import com.gsau.entity.Account;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 public interface AccountDao {
-    public void saveAccount();
+    void saveAccount();
+    Account updateAccount(Account account);
+    List<Account> findByName(String name);
 }
