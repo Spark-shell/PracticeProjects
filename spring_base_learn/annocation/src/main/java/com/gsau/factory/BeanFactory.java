@@ -1,6 +1,9 @@
 package com.gsau.factory;
 
+import com.gsau.config.SpringConfig;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,9 +14,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
   */
 public class BeanFactory {
     // private static ApplicationContext ioc=null;
-    private static ClassPathXmlApplicationContext ioc=null;
+    // private static ClassPathXmlApplicationContext ioc=null;
+    private static AnnotationConfigApplicationContext ioc=null;
     static {
-        ioc=new ClassPathXmlApplicationContext("SpringBeans.xml");
+        // ioc=new ClassPathXmlApplicationContext("SpringBeans.xml");
+       ioc = new AnnotationConfigApplicationContext(SpringConfig.class);
     }
      /**
       * @ Author: WangGQ
@@ -28,7 +33,7 @@ public class BeanFactory {
       * @ Author: WangGQ
       * @ Date: 2019/12/28 18:51
       * @ Version: 1.0
-      * @ Description: 关闭容器 
+      * @ Description: 关闭容器
       */
     public static void close(){
         ioc.close();
