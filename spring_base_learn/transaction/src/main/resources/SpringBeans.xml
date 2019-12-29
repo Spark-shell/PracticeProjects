@@ -13,10 +13,10 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--注入JdbcTemplate 组件-->
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource"></property>
-    </bean>
+    <!--&lt;!&ndash;注入JdbcTemplate 组件&ndash;&gt;-->
+    <!--<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+    <!--    <property name="dataSource" ref="dataSource"></property>-->
+    <!--</bean>-->
     <!--数据源配置-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
@@ -26,6 +26,7 @@
     </bean>
     <!--配置dao-->
     <bean id="accountDaoImpl" class="com.gsau.dao.impl.AccountDaoImpl">
-        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+        <property name="dataSource" ref="dataSource"></property>
     </bean>
+
 </beans>
