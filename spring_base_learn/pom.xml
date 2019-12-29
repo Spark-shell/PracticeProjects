@@ -13,7 +13,6 @@
       <module>aop</module>
       <module>transaction</module>
     </modules>
-
     <name>spring_base_learn</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
