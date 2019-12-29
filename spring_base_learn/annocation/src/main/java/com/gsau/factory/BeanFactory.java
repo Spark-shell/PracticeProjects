@@ -14,11 +14,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
   */
 public class BeanFactory {
     // private static ApplicationContext ioc=null;
-    // private static ClassPathXmlApplicationContext ioc=null;
-    private static AnnotationConfigApplicationContext ioc=null;
+    private static ClassPathXmlApplicationContext ioc=null;
     static {
-        // ioc=new ClassPathXmlApplicationContext("SpringBeans.xml");
-       ioc = new AnnotationConfigApplicationContext(SpringConfig.class);
+        ioc=new ClassPathXmlApplicationContext("SpringBeans.xml");
     }
      /**
       * @ Author: WangGQ
