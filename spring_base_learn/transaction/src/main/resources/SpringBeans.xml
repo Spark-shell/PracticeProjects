@@ -25,8 +25,20 @@
         <property name="password" value="root"></property>
     </bean>
     <!--配置dao-->
-    <bean id="accountDaoImpl" class="com.gsau.dao.impl.AccountDaoImpl">
+    <bean id="accountDao" class="com.gsau.dao.impl.AccountDaoImpl">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+    <!-- 配置Logger类 -->
+    <bean id="logger" class="com.gsau.utils.Logger"></bean>
+    <!--配置AOP-->
+    <aop:config>
+        <!--切面配置-->
+        <!--<aop:pointcut id="point" expression="execution(* com.gsau.dao.impl.*.*(..))"></aop:pointcut>-->
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--配置切入点-->
+            <aop:before method="beforeNotice" pointcut="execution(* com.gsau.dao.impl.*.*(..))"></aop:before>
+            <aop:after method="afterNotice" pointcut="execution(* com.gsau.dao.impl.*.*(..))"></aop:after>
+        </aop:aspect>
+    </aop:config>
 
 </beans>
