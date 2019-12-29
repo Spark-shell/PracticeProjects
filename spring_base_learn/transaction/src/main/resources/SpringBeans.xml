@@ -24,4 +24,8 @@
         <property name="username" value="root"></property>
         <property name="password" value="root"></property>
     </bean>
+    <!--配置dao-->
+    <bean id="accountDaoImpl" class="com.gsau.dao.impl.AccountDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
 </beans>
