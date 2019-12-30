@@ -1,6 +1,7 @@
 package com.gsau.config;
 
 
+import org.apache.commons.dbutils.QueryRunner;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -46,5 +47,9 @@ public class JdbcConfig {
     @Bean
     public JdbcTemplate jdbcTemplate(@Qualifier("dataSource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
+    }
+    @Bean
+    public QueryRunner queryRunner(){
+        return new QueryRunner();
     }
 }

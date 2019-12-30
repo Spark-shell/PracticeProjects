@@ -48,5 +48,10 @@
             <artifactId>spring-context</artifactId>
             <version>5.2.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
 </project>

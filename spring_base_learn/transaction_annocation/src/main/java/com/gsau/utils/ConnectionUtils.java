@@ -16,7 +16,6 @@ public class ConnectionUtils {
     private ThreadLocal<Connection> tl = new ThreadLocal<Connection>();
     @Autowired
     private DataSource dataSource;
-
      /**
       * @ Description:  获取当前线程上的连接
       * @ Date: 2019/12/30 14:19

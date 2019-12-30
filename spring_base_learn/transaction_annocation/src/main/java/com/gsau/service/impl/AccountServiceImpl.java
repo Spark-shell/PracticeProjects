@@ -35,6 +35,5 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     public void update(Account account) {
         dao.udpate(account);
-        int i=1/0;
     }
 }

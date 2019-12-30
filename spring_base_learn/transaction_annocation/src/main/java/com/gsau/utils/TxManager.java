@@ -15,9 +15,11 @@ import static java.lang.System.out;
   */
 @Component("txManager")
 @Aspect
+
 public class TxManager {
     @Autowired
      private ConnectionUtils connectionUtils;
+
     @Pointcut("execution(* com.gsau.service.impl.*.*(..))")
     public void pointCut(){}
      /**
