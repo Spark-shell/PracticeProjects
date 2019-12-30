@@ -1,5 +1,6 @@
 package com.gsau.utils;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,7 @@ public class TxManager {
       * @ Author: wgq
       * @ Version: 1.0
       */
-     @Before("pointCut()")
+     // @Before("pointCut()")
     public  void beginTransaction(){
         try {
             out.println("TxManager-TxManager-33->"+"开启事务");
@@ -41,7 +42,7 @@ public class TxManager {
       * @ Author: wgq
       * @ Version: 1.0
       */
-     @AfterReturning("pointCut()")
+     // @AfterReturning("pointCut()")
     public  void commit(){
         try {
             out.println("TxManager-TxManager-50->"+"提交事务");
@@ -57,7 +58,7 @@ public class TxManager {
       * @ Author: wgq
       * @ Version: 1.0
       */
-     @AfterThrowing("pointCut()")
+     // @AfterThrowing("pointCut()")
     public  void rollback(){
         try {
             out.println("TxManager-TxManager-65->"+"回滚事务");
@@ -73,6 +74,7 @@ public class TxManager {
       * @ Author: wgq
       * @ Version: 1.0
       */
+     // @After("pointCut()")
     public  void release(){
         try {
             connectionUtils.getThreadConnection().close();//还回连接池中
@@ -81,7 +83,7 @@ public class TxManager {
             e.printStackTrace();
         }
     }
-     @Around("pt1()")
+     @Around("pointCut()")
      public Object aroundAdvice(ProceedingJoinPoint pjp){
          Object rtValue = null;
          try {
