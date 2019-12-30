@@ -7,12 +7,13 @@ import com.gsau.utils.JdbcDaoSupport;
 import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 import static java.lang.System.out;
 
-@Repository
+@Service("accountDao")
 @Scope("singleton")
 public class AccountDaoImpl extends JdbcDaoSupport implements IAccountDao {
     @Override

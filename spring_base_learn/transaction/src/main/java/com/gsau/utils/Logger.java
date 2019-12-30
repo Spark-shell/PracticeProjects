@@ -1,5 +1,8 @@
 package com.gsau.utils;
 
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+
 import static java.lang.System.out;
 
 /**
@@ -8,6 +11,7 @@ import static java.lang.System.out;
  * @ Version: 1.0
  * @ Description: aop切面通知
  */
+
 public class Logger {
     public void beforeNotice() {
         out.println("Logger.java--beforeNotice--14-->" + "前置通知");

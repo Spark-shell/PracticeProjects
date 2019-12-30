@@ -1,14 +1,22 @@
 package com.gsau.utils;
 
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
 import static java.lang.System.out;
 
 /**
  * @ Author: WangGQ
  * @ Date: 2019/12/29 21:12
  * @ Version: 1.0
- * @ Description: aop切面通知
+ * @ Description: aop切面类配置
  */
+@Component("logger")
+@Aspect
 public class Logger {
+    @Before("execution(* com.gsau.dao.impl.*.*(..))")
     public void beforeNotice() {
         out.println("Logger.java--beforeNotice--14-->" + "前置通知");
     }
