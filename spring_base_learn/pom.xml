@@ -12,6 +12,7 @@
       <module>annocation</module>
       <module>aop</module>
       <module>transaction</module>
+        <module>transaction_annocation</module>
     </modules>
     <name>spring_base_learn</name>
   <properties>
