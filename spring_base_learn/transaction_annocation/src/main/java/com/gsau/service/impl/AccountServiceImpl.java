@@ -19,11 +19,6 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
-    public void update(Account account) {
-
-    }
-
-    @Override
     public List<Account> findByName(String name) {
         dao.findAccountsByName(name);
         return null;
@@ -35,5 +30,11 @@ public class AccountServiceImpl implements IAccountService {
     }
     public void findAll(){
         dao.findAll();
+    }
+
+    @Override
+    public void update(Account account) {
+        dao.udpate(account);
+        int i=1/0;
     }
 }

@@ -15,4 +15,5 @@ public interface IAccountDao {
     Account findById(int id);
     int insert(Account account);
     List<Account> findAll();
+    void udpate(Account account);
 }

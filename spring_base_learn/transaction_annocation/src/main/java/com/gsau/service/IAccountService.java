@@ -12,8 +12,8 @@ import java.util.List;
   */
 public interface IAccountService {
     Account findById(int id);
-    void update(Account account);
     List<Account> findByName(String name);
     void insert(Account account);
     void findAll();
+    void update(Account account);
 }

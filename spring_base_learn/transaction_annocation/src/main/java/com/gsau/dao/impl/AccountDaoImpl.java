@@ -23,8 +23,7 @@ public class AccountDaoImpl extends JdbcDaoSupport implements IAccountDao {
 
     @Override
     public Account findById(int id) {
-        out.println("AccountDaoImpl-AccountDaoImpl-27->"+super.getJdbcTemplate().query("select * from account where id=? ",new AccountMapper(),id));
-        return null;
+        return super.getJdbcTemplate().query("select * from account where id=? ",new AccountMapper(),id).get(0);
     }
 
     @Override
@@ -35,5 +34,16 @@ public class AccountDaoImpl extends JdbcDaoSupport implements IAccountDao {
     public List<Account> findAll(){
         out.println("AccountDaoImpl-AccountDaoImpl-36->"+super.getJdbcTemplate().query("select * from account",new BeanPropertyRowMapper<Account>(Account.class)));
         return null;
+    }
+
+    @Override
+    public void udpate(Account account) {
+        int id=account.getId();
+        Account ac= this.findById(id);
+        if(ac!=null){
+            super.getJdbcTemplate().update("update account set name=?,price=? where id=? ",account.getName(),account.getPrice(),ac.getId());
+        }else{
+            out.println("AccountDaoImpl-AccountDaoImpl-46->"+"更新的账户不存在");
+        }
     }
 }
