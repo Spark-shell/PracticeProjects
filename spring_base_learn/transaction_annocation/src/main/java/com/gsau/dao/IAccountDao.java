@@ -12,4 +12,7 @@ import java.util.List;
   */
 public interface IAccountDao {
     List<Account> findAccountsByName(String name);
+    Account findById(int id);
+    int insert(Account account);
+    List<Account> findAll();
 }
