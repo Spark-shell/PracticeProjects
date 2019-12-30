@@ -81,5 +81,30 @@ public class TxManager {
             e.printStackTrace();
         }
     }
+     @Around("pt1()")
+     public Object aroundAdvice(ProceedingJoinPoint pjp){
+         Object rtValue = null;
+         try {
+             //1.获取参数
+             Object[] args = pjp.getArgs();
+             //2.开启事务
+             this.beginTransaction();
+             //3.执行方法
+             rtValue = pjp.proceed(args);
+             //4.提交事务
+             this.commit();
+
+             //返回结果
+             return  rtValue;
+
+         }catch (Throwable e){
+             //5.回滚事务
+             this.rollback();
+             throw new RuntimeException(e);
+         }finally {
+             //6.释放资源
+             this.release();
+         }
+     }
 }
 
